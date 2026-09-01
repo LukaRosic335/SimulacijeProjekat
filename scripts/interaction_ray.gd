@@ -15,9 +15,6 @@ func __find_target() -> Node:
 	
 	return get_collider().get_parent()
 
-func uninteract() -> void:
-	if target_serviceable != null:
-		__abort_fix()
 
 func interact() -> void:
 	var target = __find_target()
@@ -27,23 +24,7 @@ func interact() -> void:
 	if target.is_in_group("Pickable"):
 		player.holster()
 		pick_up(target)
-	
-	if target.is_in_group("Serviceable"):
-		service(target)
-		
 
-
-func service(target) -> void:
-	assert(target != null)
-	if !target.is_fixable():
-		return 
-	
-	target_serviceable = target
-	target_serviceable.begin_fix()
-	
-	target_serviceable.connect("fix_begun", __handle_fix_beginning)
-	target_serviceable.connect("fix_completed", __handle_fix_completion)
-	#print("Fix Begun : " + target_serviceable.get_name())
 
 func pick_up(target) -> void:
 	if item != null:
@@ -70,34 +51,3 @@ func drop(force: Vector3):
 	camera_3d.remove_child(item)
 	player.drop_item.emit(item, global_position - camera_3d.basis.z, force)
 	item = null
-
-func minigame_input(input_name_string) -> void:
-	var target = __find_target()
-	#print(is_colliding())
-	if(target == null):
-		#print("null target")
-		return
-	if target.is_in_group("Minigame") == false:
-		#print("not a minigame")
-		return
-	#print("minigame interaction")
-	#print(target.name)
-	target.getMinigame().action()
-	pass
-
-func __clear_target_serviceable():
-	target_serviceable.disconnect("fix_begun", __handle_fix_beginning)
-	target_serviceable.disconnect("fix_completed", __handle_fix_completion)
-	target_serviceable = null
-
-func __abort_fix():
-	print("Fix aborted")
-	target_serviceable.stop_fix()
-	__clear_target_serviceable()
-
-func __handle_fix_beginning(_length):
-	print("Fix begun")
-
-func __handle_fix_completion():
-	print("Fix completed")
-	__clear_target_serviceable()
