@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dahnvfrmv83kt"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_3p835"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2venv"]
+
+[node name="TestLevel" type="Node3D" unique_id=222213529]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=217615891]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=324031479]
+shape = SubResource("WorldBoundaryShape3D_3p835")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=656681526]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
+mesh = SubResource("PlaneMesh_2venv")
