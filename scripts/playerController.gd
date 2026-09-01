@@ -4,9 +4,7 @@ signal drop_item(item : Node3D, item_position : Vector3, force : Vector3)
 
 @onready var camera_3d: Camera3D = $Camera3D
 @onready var interaction_ray: RayCast3D = $Camera3D/InteractionRay
-#@onready var pistolj: Node3D = $Camera3D/pistolj
-
-@onready var is_drawing: bool = false
+@onready var puska: Node3D = $Camera3D/puska
 
 
 @onready var _g_vector: Vector3 = ProjectSettings.get_setting("physics/3d/default_gravity_vector")
@@ -39,12 +37,8 @@ func __get_look_vector():
 func __has_no_active_fixings():
 	return (interaction_ray.target_serviceable == null)
 
-func __permit_movement():
-	_allow_movement = !is_drawing && __has_no_active_fixings()
 
 func _process(_delta: float) -> void:
-	# OBAVEZNO PRVO U FUNCKIJI
-	__permit_movement()
 	
 	if Input.is_action_just_released("quit"):
 		get_tree().quit(0)
@@ -59,15 +53,14 @@ func _process(_delta: float) -> void:
 	var res_dir = Vector3.ZERO
 	
 	# interact
-	if !is_drawing:
-		if Input.is_action_just_pressed("interact"):
-			interaction_ray.interact()
+	if Input.is_action_just_pressed("interact"):
+		interaction_ray.interact()
+	
+	if Input.is_action_just_released("interact"):
+		interaction_ray.uninteract()
 		
-		if Input.is_action_just_released("interact"):
-			interaction_ray.uninteract()
-		
-		if Input.is_action_just_pressed("drop_item"):
-			interaction_ray.drop(Vector3.ZERO)
+	if Input.is_action_just_pressed("drop_item"):
+		interaction_ray.drop(Vector3.ZERO)
 		
 		# GUN
 		#if Input.is_action_just_pressed("gun"):
@@ -82,9 +75,11 @@ func _process(_delta: float) -> void:
 			_do_jump = true
 		
 		if Input.is_action_just_pressed("left_click"):
-			interaction_ray.drop(-camera_3d.basis.z * 8)
-			interaction_ray.minigame_input("left_click")
+			if !puska.reloading:
+				puska.shoot()
 				
+		if Input.is_action_just_pressed("right_click"):
+			interaction_ray.drop(-camera_3d.basis.z * 8)
 		
 		var forward = __get_look_vector()
 		var right = forward.cross(Vector3.UP)

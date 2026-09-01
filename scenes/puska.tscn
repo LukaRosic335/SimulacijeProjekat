@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ctgdlyu4q8jl2"]
+
+[ext_resource type="Script" uid="uid://gs1cvy8lxlcg" path="res://scripts/puska.gd" id="1_cduws"]
+[ext_resource type="PackedScene" uid="uid://bcjuu6roiirof" path="res://assets/models/puska.blend" id="1_xgy0g"]
+
+[node name="puska" type="Node3D" unique_id=1499535131]
+script = ExtResource("1_cduws")
+
+[node name="puska" parent="." unique_id=994821527 instance=ExtResource("1_xgy0g")]
+
+[node name="Cylinder" parent="puska" index="0" unique_id=573945999]
+transform = Transform3D(-2.7078852e-09, 1, 0, -0.061949193, -4.371139e-08, 0, 0, 0, 0.061949193, 0, 0, 0)
+
+[node name="Cylinder_001" parent="puska" index="1" unique_id=144518493]
+transform = Transform3D(0.49730957, -0.014721309, 0, 0.007321841, 0.99989164, 0, 0, 0, 1, 0.35389543, 0.0068478067, 0)
+
+[editable path="puska"]
