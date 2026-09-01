@@ -1,13 +1,7 @@
 [gd_scene format=3 uid="uid://cclpek0cpsohx"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_53oxd"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_53oxd"]
-albedo_color = Color(0.8509804, 0.7647059, 0.5411765, 1)
-metallic_specular = 0.2
-roughness = 0.9
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_emdr5"]
+[ext_resource type="PackedScene" uid="uid://clvia347ah0w2" path="res://scenes/player.tscn" id="1_emdr5"]
+[ext_resource type="Shader" uid="uid://cittesf1rf1qo" path="res://shader.gdshader" id="2_nobgd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nobgd"]
 size = Vector3(40, 2, 0.5)
@@ -22,30 +16,56 @@ size = Vector3(20, 2, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_j8oaa"]
 size = Vector3(20, 2, 1)
 
+[sub_resource type="BoxMesh" id="BoxMesh_emdr5"]
+size = Vector3(40, 1, 20)
+
+[sub_resource type="MeshTexture" id="MeshTexture_nobgd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j8oaa"]
+albedo_color = Color(0.7607843, 0.69803923, 0.5019608, 1)
+albedo_texture = SubResource("MeshTexture_nobgd")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_th5tu"]
+size = Vector3(40, 1, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_emdr5"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_nobgd"]
+material = SubResource("StandardMaterial3D_emdr5")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j8oaa"]
+render_priority = 0
+shader = ExtResource("2_nobgd")
+shader_parameter/water_color = Color(0.05, 0.45, 0.65, 0.75)
+shader_parameter/wave_strength = 0.08
+shader_parameter/wave_speed = 1.5
+shader_parameter/wave_scale = 2.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_th5tu"]
+resource_local_to_scene = true
+resource_name = "wwater2"
+material = SubResource("ShaderMaterial_j8oaa")
+size = Vector3(80, 1.7, 40)
+
 [node name="svet" type="Node3D" unique_id=2031295995]
-
-[node name="pod" type="MeshInstance3D" parent="." unique_id=1406444513]
-transform = Transform3D(20, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0)
-mesh = SubResource("PlaneMesh_53oxd")
-surface_material_override/0 = SubResource("StandardMaterial3D_53oxd")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="pod" unique_id=1401040265]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="pod/StaticBody3D" unique_id=1457179051]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0.2, 20)
-shape = SubResource("BoxShape3D_emdr5")
 
 [node name="zid20" type="StaticBody3D" parent="." unique_id=1527144326]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 10)
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="zid20" unique_id=1315010195]
 shape = SubResource("BoxShape3D_nobgd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="zid20" unique_id=460456602]
+visible = false
 mesh = SubResource("BoxMesh_j8oaa")
 
 [node name="zid10" type="StaticBody3D" parent="." unique_id=314294906]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20, 1, 0)
+collision_layer = 2
+collision_mask = 2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="zid10" unique_id=2055326717]
 mesh = SubResource("BoxMesh_53oxd")
@@ -55,6 +75,8 @@ shape = SubResource("BoxShape3D_j8oaa")
 
 [node name="zid21" type="StaticBody3D" parent="." unique_id=1301295076]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -10)
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="zid21" unique_id=1944552188]
 shape = SubResource("BoxShape3D_nobgd")
@@ -64,9 +86,37 @@ mesh = SubResource("BoxMesh_j8oaa")
 
 [node name="zid11" type="StaticBody3D" parent="." unique_id=121243431]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -20, 1, 0)
+collision_layer = 2
+collision_mask = 2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="zid11" unique_id=1951824925]
 mesh = SubResource("BoxMesh_53oxd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="zid11" unique_id=2124896255]
 shape = SubResource("BoxShape3D_j8oaa")
+
+[node name="pod" type="StaticBody3D" parent="." unique_id=399550547]
+collision_layer = 2
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="pod" unique_id=1142461601]
+mesh = SubResource("BoxMesh_emdr5")
+surface_material_override/0 = SubResource("StandardMaterial3D_j8oaa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pod" unique_id=1416327161]
+shape = SubResource("BoxShape3D_th5tu")
+
+[node name="Player" parent="." unique_id=1628964637 instance=ExtResource("1_emdr5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5818505, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1381777977]
+transform = Transform3D(0.8660254, 0.38302222, -0.32139382, 0, 0.64278764, 0.76604444, 0.5, -0.66341394, 0.5566704, -13.982055, 10.849291, -2.0844889)
+light_energy = 1.5
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DirectionalLight3D" unique_id=39257326]
+mesh = SubResource("SphereMesh_nobgd")
+
+[node name="water" type="MeshInstance3D" parent="." unique_id=952391397]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)
+mesh = SubResource("BoxMesh_th5tu")
