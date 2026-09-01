@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c5ltodt6vi478"]
+
+[ext_resource type="PackedScene" uid="uid://cclpek0cpsohx" path="res://skromanPocetak.tscn" id="1_khnfa"]
+
+[node name="Node2D" type="Node2D" unique_id=567376124]
+
+[node name="CharacterBody2D" parent="." unique_id=1143021802 instance=ExtResource("1_khnfa")]
+position = Vector2(303, 157)
