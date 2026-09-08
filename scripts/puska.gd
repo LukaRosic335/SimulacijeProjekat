@@ -5,22 +5,15 @@ extends Node3D
 
 @onready var reloading = false
 
+
 func reload() -> void:
 	reloading = true
 	animation_player.play("reload")
 	await animation_player.animation_finished
 	reloading = false
 
+
 func shoot() -> void:
 	animation_player.play("shoot")
 	await animation_player.animation_finished
 	reload()
-
-
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-
-func _process(delta: float) -> void:
-	pass

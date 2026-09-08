@@ -1,0 +1,226 @@
+[gd_scene format=3 uid="uid://cgcl86iip81al"]
+
+[ext_resource type="PackedScene" uid="uid://i2m4w27753hj" path="res://assets/models/galeb2.blend" id="1_glt5j"]
+[ext_resource type="Script" uid="uid://cnm384qlol0w5" path="res://scripts/galeb_2.gd" id="1_x4ql3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k6fdo"]
+radius = 0.0201037
+height = 0.201037
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xweqa"]
+radius = 0.025
+height = 0.1
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6hgdd"]
+radius = 0.00802912
+height = 0.0802912
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wruwv"]
+radius = 0.0091258
+height = 0.091258
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m6hb3"]
+radius = 0.00802912
+height = 0.0802912
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sudc7"]
+radius = 0.0091258
+height = 0.091258
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k2h45"]
+radius = 0.0081887
+height = 0.081887
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ml162"]
+radius = 0.00710528
+height = 0.0710528
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_55jwg"]
+radius = 0.00525513
+height = 0.0525513
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r7lin"]
+radius = 0.2
+height = 0.6
+
+[node name="Galeb2" type="CharacterBody3D" unique_id=2098463881 groups=["Galeb", "Pickable"]]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_x4ql3")
+
+[node name="galeb2" parent="." unique_id=1317593116 instance=ExtResource("1_glt5j")]
+
+[node name="Skeleton3D" parent="galeb2/Armature" parent_id_path=PackedInt32Array(1317593116, 984571296) index="0" unique_id=1101933154]
+bones/1/rotation = Quaternion(0.499908, -0.5000921, 0.500092, -0.499908)
+bones/2/rotation = Quaternion(0.111300305, -0.65327024, -0.3622119, 0.6554791)
+bones/3/rotation = Quaternion(0.07462601, 0.32810187, 0.023564776, 0.9413952)
+bones/4/rotation = Quaternion(-0.17949829, -0.2711828, 0.2246434, 0.91857266)
+bones/5/rotation = Quaternion(-0.36221197, -0.6554793, 0.111300364, 0.65326995)
+bones/6/rotation = Quaternion(0.07462613, -0.32810172, -0.02356476, 0.94139516)
+bones/7/rotation = Quaternion(-0.17949833, 0.2711828, -0.22464335, 0.9185726)
+bones/8/rotation = Quaternion(-0.6352914, 0.77225935, -0.0034876957, 0.0028692412)
+bones/9/rotation = Quaternion(0.0034875993, 0.0028690933, 0.6352914, 0.77225935)
+bones/10/rotation = Quaternion(0.53550255, 0.4617761, -0.53550225, 0.4617763)
+bones/11/rotation = Quaternion(0.03794215, 1.8624974e-07, -1.6688235e-08, 0.9992799)
+bones/12/rotation = Quaternion(0.038508818, -2.8220366e-08, -6.758391e-08, 0.9992583)
+bones/13/rotation = Quaternion(0.52796626, 7.051431e-08, 1.13713085e-07, 0.84926546)
+bones/14/rotation = Quaternion(0.380239, -0.59616965, -0.380239, -0.5961697)
+
+[node name="PhysicalBoneSimulator3D" type="PhysicalBoneSimulator3D" parent="galeb2/Armature/Skeleton3D" index="1" unique_id=1572621370]
+
+[node name="Physical Bone Root" type="PhysicalBone3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D" unique_id=791412294]
+transform = Transform3D(-0.99999994, 0.00036801017, 6.3150075e-19, 6.315022e-19, 3.8131903e-21, 1, 0.00036801017, 0.99999994, -4.0455893e-21, 0, 0, 0)
+collision_layer = 4
+collision_mask = 2
+body_offset = Transform3D(1.0000001, -1.1059456e-09, -6.3150225e-19, 1.1059456e-09, 1.0000001, -3.813191e-21, 6.315022e-19, 3.8131903e-21, 1, 0, 0, 0)
+mass = 0.2
+bone_name = "Root"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone Root" unique_id=1859123504]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_k6fdo")
+
+[node name="Physical Bone Telo" type="PhysicalBone3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D" unique_id=1395958841]
+transform = Transform3D(7.044006e-07, 5.954696e-07, -1, -1.19209105e-07, -1, -5.9546966e-07, -1, 1.1920953e-07, -7.044005e-07, 3.6915666e-12, 0.2010375, 2.980233e-08)
+collision_layer = 4
+collision_mask = 2
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06581385e-14, -6.3527633e-22, 6.3431348e-21)
+body_offset = Transform3D(1.0000002, -1.1923146e-07, 6.249763e-07, 5.9604538e-08, 1.0000002, 4.762604e-07, -5.951449e-07, -5.3586507e-07, 1.0000002, -1.0658141e-14, 0, 0)
+mass = 0.2
+bone_name = "Telo"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone Telo" unique_id=120302555]
+shape = SubResource("CapsuleShape3D_xweqa")
+
+[node name="Physical Bone Krilo_R" type="PhysicalBone3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D" unique_id=1897682490]
+transform = Transform3D(-0.49240386, -0.6897459, -0.5308381, 0.31118548, 0.4300708, -0.8474684, 0.8128358, -0.58248585, 0.0028703976, 0.09040978, 0.27289996, 0.017427204)
+collision_layer = 4
+collision_mask = 2
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.74965e-05, 4.61828e-05, -6.9070884e-05)
+body_offset = Transform3D(0.09475819, 0.33585554, 0.9371352, -0.794466, -0.5417403, 0.2744841, 0.5998708, -0.77053165, 0.21549141, 5.3718686e-05, 6.2435865e-06, 7.896125e-05)
+mass = 0.2
+friction = 0.35
+bone_name = "Krilo.R"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone Krilo_R" unique_id=653194307]
+shape = SubResource("CapsuleShape3D_6hgdd")
+
+[node name="Physical Bone Krilo_001_R" type="PhysicalBone3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D" unique_id=1429173426]
+transform = Transform3D(0.0427987, 0.9979784, 0.04698326, -0.45673582, -0.022280654, 0.88932335, 0.8885723, -0.059520822, 0.4548589, 0.013608724, 0.26997566, 0.021268258)
+collision_layer = 4
+collision_mask = 2
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0032177158, 0.12930162, -0.05610493)
+body_offset = Transform3D(0.71617365, -0.6065909, -0.3451712, 0.21194471, 0.66023964, -0.72053003, 0.6649626, 0.44286737, 0.60140985, 0.056762934, -0.12647732, -0.025661066)
+mass = 0.2
+friction = 0.35
+bone_name = "Krilo.001.R"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone Krilo_001_R" unique_id=1049803234]
+shape = SubResource("CapsuleShape3D_wruwv")
+
+[node name="Physical Bone Krilo_L" type="PhysicalBone3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D" unique_id=306876682]
+transform = Transform3D(-0.49240437, 0.6897427, 0.53084177, -0.3111874, 0.430074, -0.8474661, -0.81283474, -0.58248734, 0.002868905, -0.090446495, 0.2729642, 0.017366167)
+collision_layer = 4
+collision_mask = 2
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0236826e-07, 8.304696e-06, 5.0331646e-06)
+body_offset = Transform3D(0.094757296, -0.33585182, -0.9371366, 0.7944671, -0.5417402, 0.27448082, -0.59986913, -0.7705331, 0.21548948, 7.5250864e-06, 3.2782555e-06, 5.1930547e-06)
+mass = 0.2
+friction = 0.35
+bone_name = "Krilo.L"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone Krilo_L" unique_id=806314589]
+shape = SubResource("CapsuleShape3D_m6hb3")
+
+[node name="Physical Bone Krilo_001_L" type="PhysicalBone3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D" unique_id=1550255750]
+transform = Transform3D(0.042797178, -0.9979785, -0.046981104, 0.45673645, -0.022279384, 0.88932306, -0.8885721, -0.05951849, 0.4548597, -0.013607547, 0.26998004, 0.021272726)
+collision_layer = 4
+collision_mask = 2
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0032156613, 0.12930302, -0.05611112)
+body_offset = Transform3D(0.7161745, 0.60659117, 0.34516943, -0.21194433, 0.6602379, -0.72053164, -0.6649617, 0.4428695, 0.60140884, -0.056763247, -0.12648213, -0.025656931)
+mass = 0.2
+friction = 0.35
+bone_name = "Krilo.001.L"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone Krilo_001_L" unique_id=1176394036]
+shape = SubResource("CapsuleShape3D_sudc7")
+
+[node name="Physical Bone Telo_001" type="PhysicalBone3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D" unique_id=1525278269]
+transform = Transform3D(1, -6.180795e-07, -2.9169192e-07, 3.79409e-07, 0.14704905, 0.9891292, -5.6846744e-07, -0.9891292, 0.14704905, 3.6800207e-12, 0.20103751, 2.9802319e-08)
+collision_layer = 4
+collision_mask = 2
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0658134e-14, -2.3045238e-21, -3.103376e-21)
+body_offset = Transform3D(1.0000006, -2.405454e-07, -4.5508708e-07, 2.1622273e-07, 1.0000004, 2.115965e-06, 2.9117405e-07, -1.9967556e-06, 1.0000002, -1.0658141e-14, 0, 0)
+mass = 0.2
+bone_name = "Telo.001"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone Telo_001" unique_id=92478439]
+shape = SubResource("CapsuleShape3D_k2h45")
+
+[node name="Physical Bone Telo_002" type="PhysicalBone3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D" unique_id=373963885]
+transform = Transform3D(1, -6.5178e-07, 2.4501505e-08, 1.2056336e-07, 0.22163236, 0.9751303, -6.410007e-07, -0.9751303, 0.22163236, 2.2634765e-09, 0.21307845, -0.08099683)
+collision_layer = 4
+collision_mask = 2
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3174874e-08, 5.9604172e-08, 6.1094744e-07)
+body_offset = Transform3D(1.0000006, -3.35209e-07, -5.380169e-07, 2.9852637e-07, 1.0000005, 7.4505806e-07, 3.764207e-07, -5.9604645e-07, 1.0000004, 3.3175247e-08, -5.9604645e-08, -6.109476e-07)
+mass = 0.2
+bone_name = "Telo.002"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone Telo_002" unique_id=1524822581]
+shape = SubResource("CapsuleShape3D_ml162")
+
+[node name="Physical Bone Vrat" type="PhysicalBone3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D" unique_id=397368100]
+transform = Transform3D(1, -6.3192994e-07, 1.8054463e-07, 1.4612952e-08, 0.2960229, 0.9551809, -6.570527e-07, -0.9551809, 0.29602292, -1.4375235e-08, 0.22882636, -0.15028244)
+collision_layer = 4
+collision_mask = 2
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.902942e-08, 1.1920945e-07, 2.8312192e-07)
+body_offset = Transform3D(1.0000005, -4.9248433e-07, -3.4306498e-07, 4.4347354e-07, 1.0000005, -6.854534e-07, 1.8477189e-07, 7.748604e-07, 1.0000002, 3.9029594e-08, -1.1920929e-07, -2.8312206e-07)
+mass = 0.2
+bone_name = "Vrat"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone Vrat" unique_id=1945980654]
+shape = SubResource("CapsuleShape3D_55jwg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=914528933]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.250606, 0)
+shape = SubResource("CapsuleShape3D_r7lin")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=507640718]
+collision_layer = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=154694473]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.250606, 0)
+shape = SubResource("CapsuleShape3D_r7lin")
+
+[editable path="galeb2"]

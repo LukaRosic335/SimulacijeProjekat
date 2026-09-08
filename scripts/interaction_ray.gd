@@ -1,13 +1,11 @@
 extends RayCast3D
 
 @onready var camera_3d: Camera3D = $".."
-@export var item_position := Vector3(0.5,-0.25,-0.5)
+@export var item_position := Vector3(-0.5,-0.5,-0.5)
 @onready var player: CharacterBody3D = $"../.."
 
 @onready var item = null
-@onready var target_serviceable = null
 
-#signal drop_item(item : Node3D, item_position : Vector3)
 
 func __find_target() -> Node:
 	if !is_colliding():
@@ -20,9 +18,8 @@ func interact() -> void:
 	var target = __find_target()
 	if !target:
 		return
-		
+	
 	if target.is_in_group("Pickable"):
-		player.holster()
 		pick_up(target)
 
 

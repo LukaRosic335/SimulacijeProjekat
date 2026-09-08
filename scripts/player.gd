@@ -16,14 +16,14 @@ signal drop_item(item : Node3D, item_position : Vector3, force : Vector3)
 @export var _air_smoothing: float = 0.12
 @export var _sprint_multiplier: float = 2
 @export var _jump_height: float = 0.5
-@export var _mouse_sensitivity: float = 0.3
+@export var _mouse_sensitivity: float = 0.15
 
 @onready var _vxz: Vector3 = Vector3.ZERO
 @onready var _do_jump: bool = false
 @onready var _is_sprinting: bool = false
 @onready var _allow_movement: bool = true
 
-@onready var _gun_holstered: bool = true
+#@onready var _gun_holstered: bool = true
 
 
 func _ready() -> void:
@@ -34,31 +34,25 @@ func __get_look_vector():
 	var v = -camera_3d.basis.z
 	return Vector3(v.x, 0, v.z)
 
-func __has_no_active_fixings():
-	return (interaction_ray.target_serviceable == null)
-
 
 func _process(_delta: float) -> void:
-	
 	if Input.is_action_just_released("quit"):
 		get_tree().quit(0)
-	#if __has_no_active_fixings() && Input.is_action_just_pressed("toggle_mouse"):
-		#if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-				#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-				#is_drawing = true
-		#else:
-				#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-				#is_drawing = false
 	
 	var res_dir = Vector3.ZERO
+	
+	if Input.is_action_just_pressed("toggle_mouse"):
+		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			_allow_movement = false
+		else:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			_allow_movement = true
 	
 	# interact
 	if Input.is_action_just_pressed("interact"):
 		interaction_ray.interact()
 	
-	if Input.is_action_just_released("interact"):
-		interaction_ray.uninteract()
-		
 	if Input.is_action_just_pressed("drop_item"):
 		interaction_ray.drop(Vector3.ZERO)
 		
@@ -83,11 +77,13 @@ func _process(_delta: float) -> void:
 		
 		var forward = __get_look_vector()
 		var right = forward.cross(Vector3.UP)
-		var move_dirs = {"move_forward":forward,
+		var move_dirs = {
+			"move_forward":forward,
 			"move_back":-forward,
 			"move_left":-right, 
-			"move_right":right}
-			
+			"move_right":right
+			}
+		
 		for d in move_dirs:
 			if (Input.is_action_pressed(d)):
 				res_dir += move_dirs[d]
