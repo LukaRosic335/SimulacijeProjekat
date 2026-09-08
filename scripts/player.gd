@@ -72,7 +72,7 @@ func _process(_delta: float) -> void:
 			if !puska.reloading:
 				puska.shoot()
 				
-		if Input.is_action_just_pressed("right_click"):
+		if Input.is_action_just_released("right_click"):
 			interaction_ray.drop(-camera_3d.basis.z * 8)
 		
 		var forward = __get_look_vector()
