@@ -23,6 +23,8 @@ signal drop_item(item : Node3D, item_position : Vector3, force : Vector3)
 @onready var _is_sprinting: bool = false
 @onready var _allow_movement: bool = true
 
+const GALEB_THROW_FORCE_MULTIPLIER = 1.5
+
 #@onready var _gun_holstered: bool = true
 
 
@@ -73,7 +75,7 @@ func _process(_delta: float) -> void:
 				puska.shoot()
 				
 		if Input.is_action_just_released("right_click"):
-			interaction_ray.drop(-camera_3d.basis.z * 8)
+			interaction_ray.drop(-camera_3d.basis.z * GALEB_THROW_FORCE_MULTIPLIER)
 		
 		var forward = __get_look_vector()
 		var right = forward.cross(Vector3.UP)

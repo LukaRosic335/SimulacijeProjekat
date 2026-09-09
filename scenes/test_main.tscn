@@ -4,6 +4,35 @@
 [ext_resource type="PackedScene" uid="uid://dahnvfrmv83kt" path="res://scenes/test_level.tscn" id="1_xl5go"]
 [ext_resource type="PackedScene" uid="uid://clvia347ah0w2" path="res://scenes/player.tscn" id="2_3hvsj"]
 [ext_resource type="PackedScene" uid="uid://cgcl86iip81al" path="res://scenes/galeb_2.tscn" id="3_3hvsj"]
+[ext_resource type="Material" uid="uid://b7s60e6s6qarf" path="res://assets/resources/skybox.tres" id="5_31pel"]
+[ext_resource type="Shader" uid="uid://cittesf1rf1qo" path="res://shader.gdshader" id="6_bcbe7"]
+
+[sub_resource type="Sky" id="Sky_31pel"]
+sky_material = ExtResource("5_31pel")
+
+[sub_resource type="Environment" id="Environment_bcbe7"]
+background_mode = 2
+sky = SubResource("Sky_31pel")
+fog_mode = 1
+fog_light_color = Color(0.7529692, 0.5146157, 0.99273974, 1)
+fog_density = 0.952
+fog_aerial_perspective = 0.248
+fog_sky_affect = 0.254
+fog_depth_end = 50.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j8oaa"]
+render_priority = 0
+shader = ExtResource("6_bcbe7")
+shader_parameter/water_color = Color(0.05, 0.45, 0.65, 0.75)
+shader_parameter/wave_strength = 0.08
+shader_parameter/wave_speed = 1.5
+shader_parameter/wave_scale = 2.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_4jmdl"]
+resource_local_to_scene = true
+resource_name = "wwater2"
+material = SubResource("ShaderMaterial_j8oaa")
+size = Vector3(80, 1.7, 40)
 
 [node name="TestMain" type="Node3D" unique_id=642261019]
 script = ExtResource("1_7yu4j")
@@ -14,10 +43,17 @@ script = ExtResource("1_7yu4j")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4567878, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1052065534]
-transform = Transform3D(0.97841096, 0.10991057, -0.17501919, -0.01639951, 0.885477, 0.46439373, 0.20601724, -0.45149767, 0.8681629, 0, 7, 8)
+transform = Transform3D(0.93597466, -0.347759, -0.054911174, -0.013348535, -0.19090845, 0.9815171, -0.35181445, -0.91794205, -0.18332754, 0, 7, -14.743384)
 
 [node name="Galeb2" parent="." unique_id=2098463881 instance=ExtResource("3_3hvsj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.443187, 0.22369742, -4.1553087)
 starting_animation = "Peck_Floor"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1097617979]
+environment = SubResource("Environment_bcbe7")
+
+[node name="water" type="MeshInstance3D" parent="." unique_id=1751993946]
+transform = Transform3D(2.9687982, 0, 0, 0, 1, 0, 0, 0, 5.981792, 0, -0.9338994, -127.231186)
+mesh = SubResource("BoxMesh_4jmdl")
 
 [connection signal="drop_item" from="Player" to="." method="_on_player_drop_item"]

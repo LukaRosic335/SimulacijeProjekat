@@ -47,4 +47,5 @@ func set_thrown(force : Vector3):
 		dead = true
 	physical_bone_simulator_3d.physical_bones_start_simulation()
 	thrown = true
-	physical_bone.apply_central_impulse(force * 2)
+	for bone in physical_bone_simulator_3d.get_children():
+		bone.apply_central_impulse(force * randf_range(1.0, 1.5))

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cui565ibaqlsd"
-path="res://.godot/imported/gun barrel base.png-b84b95490814b68bba4fc4464458e8bc.ctex"
+uid="uid://o02d5uj5qdtf"
+path="res://.godot/imported/Material Base Color (copy).png-1afa936b2a84ab77d6a80d5fa904ec64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/models/textures/gun barrel base.png"
-dest_files=["res://.godot/imported/gun barrel base.png-b84b95490814b68bba4fc4464458e8bc.ctex"]
+source_file="res://assets/models/textures/Material Base Color (copy).png"
+dest_files=["res://.godot/imported/Material Base Color (copy).png-1afa936b2a84ab77d6a80d5fa904ec64.ctex"]
 
 [params]
 
