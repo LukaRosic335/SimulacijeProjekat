@@ -16,7 +16,7 @@ signal drop_item(item : Node3D, item_position : Vector3, force : Vector3)
 @export var _air_smoothing: float = 0.12
 @export var _sprint_multiplier: float = 2
 @export var _jump_height: float = 0.5
-@export var _mouse_sensitivity: float = 0.15
+@export var _mouse_sensitivity: float = 0.05
 
 @onready var _vxz: Vector3 = Vector3.ZERO
 @onready var _do_jump: bool = false
@@ -76,6 +76,7 @@ func _process(_delta: float) -> void:
 				
 		if Input.is_action_just_released("right_click"):
 			interaction_ray.drop(-camera_3d.basis.z * GALEB_THROW_FORCE_MULTIPLIER)
+		
 		
 		var forward = __get_look_vector()
 		var right = forward.cross(Vector3.UP)
