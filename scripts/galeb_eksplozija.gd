@@ -7,5 +7,7 @@ extends Node3D
 
 
 func explode() -> void:
+	krv.emitting = false
 	krv.emitting = true
+	perje.emitting = false
 	perje.emitting = true

@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://i2m4w27753hj" path="res://assets/models/galeb2.blend" id="1_glt5j"]
 [ext_resource type="Script" uid="uid://cnm384qlol0w5" path="res://scripts/galeb_2.gd" id="1_x4ql3"]
-[ext_resource type="PackedScene" uid="uid://b878yk40f1ngi" path="res://scenes/galeb_eksplozija.tscn" id="3_o3wgy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k6fdo"]
 radius = 0.0201037
@@ -67,12 +66,12 @@ transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_k6fdo")
 
 [node name="Physical Bone Telo" type="PhysicalBone3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D" unique_id=1395958841]
-transform = Transform3D(7.0440063e-07, 5.9720526e-07, -1, -1.19209105e-07, -1, -5.972053e-07, -1, 1.1920953e-07, -7.044006e-07, 3.6915666e-12, 0.2010375, 2.980233e-08)
+transform = Transform3D(7.0440063e-07, 5.997723e-07, -1, -1.19209105e-07, -1, -5.9977236e-07, -1, 1.1920953e-07, -7.044006e-07, 3.6915666e-12, 0.2010375, 2.980233e-08)
 collision_layer = 4
 collision_mask = 2
 joint_type = 1
 joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06581385e-14, -1.2705525e-21, 8.884233e-21)
-body_offset = Transform3D(1.0000002, -1.1916576e-07, 8.037613e-07, 1.19209034e-07, 1.0000002, 7.164148e-07, -8.335637e-07, -7.164147e-07, 1.0000004, -1.0658141e-14, 0, 0)
+body_offset = Transform3D(1.0000002, -1.1916576e-07, 8.037613e-07, 1.19209034e-07, 1.0000002, 7.189818e-07, -8.335637e-07, -7.1898177e-07, 1.0000004, -1.0658141e-14, 0, 0)
 mass = 0.2
 bone_name = "Telo"
 joint_constraints/bias = 0.3
@@ -134,12 +133,12 @@ joint_constraints/impulse_clamp = 0.0
 shape = SubResource("CapsuleShape3D_m6hb3")
 
 [node name="Physical Bone Krilo_001_L" type="PhysicalBone3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D" unique_id=1550255750]
-transform = Transform3D(0.04279667, -0.9979786, -0.046980996, 0.45673674, -0.022279503, 0.88932294, -0.888572, -0.059518002, 0.45485997, -0.013607547, 0.26998, 0.021272728)
+transform = Transform3D(0.042796638, -0.9979786, -0.046980977, 0.45673668, -0.022279507, 0.8893229, -0.8885719, -0.05951797, 0.45485988, -0.013607547, 0.26998, 0.021272728)
 collision_layer = 4
 collision_mask = 2
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014496287, 0.14146598, 0.050339542)
-body_offset = Transform3D(0.8358035, -0.23401907, 0.49665728, -0.18800493, 0.72792715, 0.6593759, -0.51583654, -0.64448243, 0.564407, -0.00401181, -0.13344423, 0.07023807)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014496289, 0.14146598, 0.050339542)
+body_offset = Transform3D(0.83580357, -0.23401906, 0.49665725, -0.18800491, 0.72792715, 0.6593759, -0.5158366, -0.64448243, 0.564407, -0.00401181, -0.13344423, 0.07023807)
 mass = 0.2
 friction = 0.35
 bone_name = "Krilo.001.L"
@@ -167,12 +166,12 @@ joint_constraints/impulse_clamp = 0.0
 shape = SubResource("CapsuleShape3D_k2h45")
 
 [node name="Physical Bone Telo_002" type="PhysicalBone3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D" unique_id=373963885]
-transform = Transform3D(1, -6.5177994e-07, 2.4501494e-08, 1.2056339e-07, 0.22163236, 0.9751303, -6.410007e-07, -0.9751303, 0.22163236, 2.0465585e-09, 0.21307841, -0.08099668)
+transform = Transform3D(1, -6.5177994e-07, 2.4501494e-08, 1.2056339e-07, 0.22163236, 0.9751303, -6.410007e-07, -0.9751303, 0.22163236, 1.7256774e-09, 0.21307841, -0.08099668)
 collision_layer = 4
 collision_mask = 2
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8917632e-08, -0.0022751577, 0.026333485)
-body_offset = Transform3D(1.0000005, -2.5723455e-07, -5.248104e-07, 5.7475506e-07, 0.84226924, 0.53905773, 1.10486894e-07, -0.53905773, 0.8422691, 3.2152478e-08, -0.012278974, -0.023406327)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.859675e-08, -0.0022751577, 0.026333485)
+body_offset = Transform3D(1.0000005, -2.5723455e-07, -5.248104e-07, 5.7475506e-07, 0.84226924, 0.53905773, 1.10486894e-07, -0.53905773, 0.8422691, 3.1831597e-08, -0.012278974, -0.023406327)
 mass = 0.2
 bone_name = "Telo.002"
 joint_constraints/bias = 0.3
@@ -183,12 +182,12 @@ joint_constraints/impulse_clamp = 0.0
 shape = SubResource("CapsuleShape3D_ml162")
 
 [node name="Physical Bone Vrat" type="PhysicalBone3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D" unique_id=397368100]
-transform = Transform3D(1, -6.319303e-07, 1.8054405e-07, 1.4613647e-08, 0.29602298, 0.9551809, -6.5705285e-07, -0.9551809, 0.29602298, -1.4663385e-08, 0.22882634, -0.15028244)
+transform = Transform3D(1, -6.319303e-07, 1.8054405e-07, 1.4613647e-08, 0.29602298, 0.9551809, -6.5705285e-07, -0.9551809, 0.29602298, -1.5305147e-08, 0.22882634, -0.15028244)
 collision_layer = 4
 collision_mask = 2
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9825286e-08, -0.008468112, 0.06548063)
-body_offset = Transform3D(1.0000005, -2.680685e-07, -3.279963e-07, 3.9332286e-07, 0.54214644, 0.8402846, -2.525993e-07, -0.8402846, 0.5421463, 3.9032663e-08, -0.0504314, -0.042615697)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9183524e-08, -0.008468112, 0.06548063)
+body_offset = Transform3D(1.0000005, -2.680685e-07, -3.279963e-07, 3.9332286e-07, 0.54214644, 0.8402846, -2.525993e-07, -0.8402846, 0.5421463, 3.83909e-08, -0.0504314, -0.042615697)
 mass = 0.2
 bone_name = "Vrat"
 joint_constraints/bias = 0.3
@@ -203,12 +202,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.250606, 0)
 shape = SubResource("CapsuleShape3D_r7lin")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=507640718]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25244275, 0)
 collision_layer = 16
+collision_mask = 21
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=154694473]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.250606, 0)
 shape = SubResource("CapsuleShape3D_r7lin")
 
-[node name="GalebEksplozija" parent="." unique_id=1850971459 instance=ExtResource("3_o3wgy")]
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 
 [editable path="galeb2"]

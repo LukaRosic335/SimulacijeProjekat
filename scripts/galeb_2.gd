@@ -6,7 +6,7 @@ extends CharacterBody3D
 @onready var animation_player: AnimationPlayer = $galeb2/AnimationPlayer
 @onready var physical_bone_simulator_3d: PhysicalBoneSimulator3D = $galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D
 @onready var physical_bone: PhysicalBone3D = $"galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone Telo"
-@onready var galeb_eksplozija: GalebEksplozija = $GalebEksplozija
+@onready var galeb_eksplozija = preload("res://scenes/galeb_eksplozija.tscn")
 
 
 var dead : bool = false # TODO implementirati smrt tako da upali ragdoll i posledice i pri pucnju/pogotku itemom
@@ -31,6 +31,7 @@ func _physics_process(delta: float) -> void:
 	if thrown:
 		ragdoll_time -= delta
 		position = physical_bone.global_position
+		position.y -= 1.5
 	move_and_slide()
 
 
@@ -62,10 +63,30 @@ func set_thrown(force : Vector3):
 
 
 func kill(force: Vector3) -> void:
+	physical_bone_simulator_3d.physical_bones_stop_simulation()
 	animation_player.stop()
 	dead = true
-	galeb_eksplozija.explode()
+	var eksplozija = galeb_eksplozija.instantiate()
+	add_child(eksplozija)
+	eksplozija.connect("finished", func() -> void:
+		eksplozija.queue_free()
+	)
+	eksplozija.explode()
 	physical_bone_simulator_3d.physical_bones_start_simulation()
 	thrown = true
 	for bone in physical_bone_simulator_3d.get_children():
 		bone.apply_central_impulse(force * randf_range(1.0, 1.5))
+
+
+func get_inertia() -> Vector3:
+	return physical_bone.linear_velocity
+
+
+func _on_area_3d_area_entered(area: Area3D) -> void:
+	if thrown:
+		return
+	
+	var obj = area.get_parent_node_3d()
+	var inertia: Vector3 = obj.get_inertia()
+	if inertia.abs() > Vector3.ONE * 2: # magicni faking brojevi upomoc
+		set_thrown(inertia / 7)
