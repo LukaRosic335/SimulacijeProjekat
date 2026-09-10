@@ -41,13 +41,6 @@ script = ExtResource("1_7yu4j")
 
 [node name="Player" parent="." unique_id=1628964637 instance=ExtResource("2_3hvsj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4567878, 0)
-_walk_speed = null
-_air_speed = null
-_walk_smoothing = null
-_air_smoothing = null
-_sprint_multiplier = null
-_jump_height = null
-_mouse_sensitivity = null
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1052065534]
 transform = Transform3D(0.93597466, -0.347759, -0.054911174, -0.013348535, -0.19090845, 0.9815171, -0.35181445, -0.91794205, -0.18332754, 0, 7, -14.743384)

@@ -27,6 +27,17 @@ signal drop_item(item : Node3D, item_position : Vector3, force : Vector3)
 @onready var _is_sprinting: bool = false
 @onready var _allow_movement: bool = true
 
+var _look_pitch := 0.0
+var _look_yaw := 0.0
+
+var _recoil_pitch := 0.0
+var _recoil_target := 0.0
+
+@export var _recoil_amount := 30.0
+@export var _recoil_recovery_speed := 35.0
+@export var _recoil_smoothness := 20.0
+
+
 # head bob
 const BOB_FREQ = 2.0
 const BOB_AMP = 0.05
@@ -37,6 +48,9 @@ const GALEB_THROW_FORCE_MULTIPLIER = 1.5
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
+	_look_pitch = head.rotation_degrees.x
+	_look_yaw = head.rotation_degrees.y
 
 
 func __get_look_vector():
@@ -73,7 +87,8 @@ func _process(_delta: float) -> void:
 		if Input.is_action_just_pressed("left_click"):
 			if !puska.reloading:
 				puska.shoot(gun_ray.get_target(), -head.basis.z)
-			
+				_recoil_target += _recoil_amount
+		
 		if Input.is_action_just_released("right_click"):
 			interaction_ray.drop(-head.basis.z * GALEB_THROW_FORCE_MULTIPLIER)
 		
@@ -84,7 +99,7 @@ func _process(_delta: float) -> void:
 			"move_back":-forward,
 			"move_left":-right, 
 			"move_right":right
-			}
+		}
 		
 		for d in move_dirs:
 			if (Input.is_action_pressed(d)):
@@ -96,17 +111,20 @@ func _process(_delta: float) -> void:
 				_is_sprinting = true
 		else:
 				_is_sprinting = false
-	
+		
 	_vxz = res_dir.normalized()
+	
+	_recoil_target = move_toward(_recoil_target, 0.0, _recoil_recovery_speed * _delta)
+	_recoil_pitch = lerpf(_recoil_pitch, _recoil_target, 1.0 - exp(-_recoil_smoothness * _delta))
+
 
 func _input(event) -> void:
-	if _allow_movement && event is InputEventMouseMotion:
-		var rot = head.rotation_degrees + Vector3(
-			-event.screen_relative.y * _mouse_sensitivity, 
-			-event.screen_relative.x * _mouse_sensitivity, 
-			0)
-		rot.x = clampf(rot.x, -89, 89)
-		head.rotation_degrees = rot
+	if _allow_movement and event is InputEventMouseMotion:
+		_look_pitch -= event.screen_relative.y * _mouse_sensitivity
+		_look_yaw -= event.screen_relative.x * _mouse_sensitivity
+
+		_look_pitch = clampf(_look_pitch, -89.0, 89.0)
+
 
 func _physics_process(delta: float) -> void:
 	# jump
@@ -143,7 +161,9 @@ func _physics_process(delta: float) -> void:
 		t_bob += delta * velocity.length()
 	else:
 		t_bob += delta * velocity.length() * 0.5
-	camera_3d.transform.origin = _headbob(t_bob)
+	camera_3d.position = _headbob(t_bob)
+	
+	head.rotation_degrees = Vector3(_look_pitch + _recoil_pitch, _look_yaw, 0.0)
 	
 	move_and_slide()
 
