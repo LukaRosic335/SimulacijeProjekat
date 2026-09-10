@@ -37,12 +37,14 @@ script = ExtResource("1_06nmh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
 shape = SubResource("CapsuleShape3D_vfoq8")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1176762713]
+[node name="head" type="Node3D" parent="." unique_id=834052077]
+
+[node name="Camera3D" type="Camera3D" parent="head" unique_id=1176762713]
 physics_interpolation_mode = 1
 current = true
 fov = 95.0
 
-[node name="InteractionRay" type="RayCast3D" parent="Camera3D" unique_id=1684898446]
+[node name="InteractionRay" type="RayCast3D" parent="head" unique_id=1684898446]
 transform = Transform3D(1, 0, 0, 0, 0.00441569, -0.99999, 0, 0.99999, 0.00441569, 0, 0, 0)
 target_position = Vector3(0, -2, 0)
 collision_mask = 30
@@ -50,7 +52,7 @@ collide_with_areas = true
 collide_with_bodies = false
 script = ExtResource("2_4ob08")
 
-[node name="puska" parent="Camera3D" unique_id=1499535131 instance=ExtResource("3_dqkch")]
+[node name="puska" parent="head" unique_id=1499535131 instance=ExtResource("3_dqkch")]
 transform = Transform3D(-0.25342986, 0.056928363, 0.9656772, 0.3006284, 0.9534715, 0.022687335, -0.9194541, 0.29605964, -0.25875244, 0.532, -0.41, 0.005)
 
 [node name="HUD" type="Control" parent="." unique_id=1813176096]

@@ -1,8 +1,10 @@
 extends RayCast3D
 
-@onready var camera_3d: Camera3D = $".."
-@export var item_position := Vector3(-0.5,-0.5,-0.5)
+
+@onready var head: Node3D = $".."
 @onready var player: CharacterBody3D = $"../.."
+
+@export var item_position := Vector3(-0.5,-0.5,-0.5)
 
 @onready var item = null
 
@@ -29,7 +31,7 @@ func pick_up(target) -> void:
 	item = target
 	#item.apply_force(Vector3.ZERO, item.global_position)
 	item.get_parent().remove_child(item)
-	camera_3d.add_child(item)
+	head.add_child(item)
 	item.position = item_position
 	# TODO namestiti rotaciju itema
 	if item.is_in_group("Galeb"):
@@ -45,6 +47,6 @@ func drop(force: Vector3):
 	if item == null:
 		print("No item") # DEBUG
 		return
-	camera_3d.remove_child(item)
-	player.drop_item.emit(item, global_position - camera_3d.basis.z, force)
+	head.remove_child(item)
+	player.drop_item.emit(item, global_position - head.basis.z, force)
 	item = null

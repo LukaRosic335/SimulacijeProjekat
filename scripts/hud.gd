@@ -1,6 +1,6 @@
 extends Control
 
-@onready var interaction_ray: RayCast3D = $"../Camera3D/InteractionRay"
+@onready var interaction_ray: RayCast3D = $"../head/InteractionRay"
 @onready var crosshair: TextureRect = $crosshair
 
 @onready var general = preload("res://assets/crosshairs/general.png")

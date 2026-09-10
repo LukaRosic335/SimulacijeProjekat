@@ -1,11 +1,13 @@
 extends CharacterBody3D
 
+
 signal drop_item(item : Node3D, item_position : Vector3, force : Vector3)
 
-@onready var camera_3d: Camera3D = $Camera3D
-@onready var interaction_ray: RayCast3D = $Camera3D/InteractionRay
-@onready var puska: Node3D = $Camera3D/puska
 
+@onready var head: Node3D = $head
+@onready var camera_3d: Camera3D = $head/Camera3D
+@onready var interaction_ray: RayCast3D = $head/InteractionRay
+@onready var puska: Node3D = $head/puska
 
 @onready var _g_vector: Vector3 = ProjectSettings.get_setting("physics/3d/default_gravity_vector")
 @onready var _g_const: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -23,9 +25,12 @@ signal drop_item(item : Node3D, item_position : Vector3, force : Vector3)
 @onready var _is_sprinting: bool = false
 @onready var _allow_movement: bool = true
 
-const GALEB_THROW_FORCE_MULTIPLIER = 1.5
+# head bob
+const BOB_FREQ = 2.0
+const BOB_AMP = 0.05
+var t_bob = 0.0
 
-#@onready var _gun_holstered: bool = true
+const GALEB_THROW_FORCE_MULTIPLIER = 1.5
 
 
 func _ready() -> void:
@@ -33,7 +38,7 @@ func _ready() -> void:
 
 
 func __get_look_vector():
-	var v = -camera_3d.basis.z
+	var v = -head.basis.z
 	return Vector3(v.x, 0, v.z)
 
 
@@ -57,13 +62,6 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("drop_item"):
 		interaction_ray.drop(Vector3.ZERO)
-		
-		# GUN
-		#if Input.is_action_just_pressed("gun"):
-			#if _gun_holstered:
-				#pull_out()
-			#else:
-				#holster()
 	
 	# movement
 	if _allow_movement:
@@ -75,8 +73,7 @@ func _process(_delta: float) -> void:
 				puska.shoot()
 				
 		if Input.is_action_just_released("right_click"):
-			interaction_ray.drop(-camera_3d.basis.z * GALEB_THROW_FORCE_MULTIPLIER)
-		
+			interaction_ray.drop(-head.basis.z * GALEB_THROW_FORCE_MULTIPLIER)
 		
 		var forward = __get_look_vector()
 		var right = forward.cross(Vector3.UP)
@@ -102,12 +99,12 @@ func _process(_delta: float) -> void:
 
 func _input(event) -> void:
 	if _allow_movement && event is InputEventMouseMotion:
-		var rot = camera_3d.rotation_degrees + Vector3(
+		var rot = head.rotation_degrees + Vector3(
 			-event.screen_relative.y * _mouse_sensitivity, 
 			-event.screen_relative.x * _mouse_sensitivity, 
 			0)
 		rot.x = clampf(rot.x, -89, 89)
-		camera_3d.rotation_degrees = rot
+		head.rotation_degrees = rot
 
 func _physics_process(delta: float) -> void:
 	# jump
@@ -138,17 +135,18 @@ func _physics_process(delta: float) -> void:
 	
 	# end calculation
 	velocity = res_vxz + vy
+	
+	# head bob
+	if is_on_floor():
+		t_bob += delta * velocity.length()
+	else:
+		t_bob += delta * velocity.length() * 0.5
+	camera_3d.transform.origin = _headbob(t_bob)
+	
 	move_and_slide()
 
-#func holster():
-	#_gun_holstered = true
-	#pistolj.hide()
-
-#func pull_out():
-	#if interaction_ray.item != null:
-		#interaction_ray.drop(Vector3.ZERO)
-	#_gun_holstered = false
-	#pistolj.show()
-
-#func is_holstered() -> bool:
-	#return _gun_holstered
+func _headbob(time) -> Vector3:
+	var pos = Vector3.ZERO
+	pos.y = sin(time * BOB_FREQ) * BOB_AMP
+	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
+	return pos
