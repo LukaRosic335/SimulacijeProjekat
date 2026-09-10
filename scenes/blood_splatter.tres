@@ -1,0 +1,13 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://b6di72nknfonl"]
+
+[resource]
+resource_local_to_scene = true
+emission_shape_scale = Vector3(0.3, 0.3, 0.3)
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 0.2, 0)
+spread = 12.429
+initial_velocity_max = 5.0
+scale_min = 0.19999999
+scale_max = 0.5
+color = Color(1, 0.34237343, 0.37187055, 1)

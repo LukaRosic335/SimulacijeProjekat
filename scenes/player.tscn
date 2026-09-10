@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://blnbd44jplhnm" path="res://scripts/player.gd" id="1_06nmh"]
 [ext_resource type="Script" uid="uid://cnwh1hf7wmtai" path="res://scripts/interaction_ray.gd" id="2_4ob08"]
 [ext_resource type="PackedScene" uid="uid://ctgdlyu4q8jl2" path="res://scenes/puska.tscn" id="3_dqkch"]
+[ext_resource type="Script" uid="uid://b7fjuc2qv8nid" path="res://scripts/gun_ray.gd" id="3_qlg0r"]
 [ext_resource type="Script" uid="uid://delnw76340bj3" path="res://scripts/hud.gd" id="5_ep83s"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vfoq8"]
@@ -23,7 +24,7 @@ image = SubResource("Image_dqkch")
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
-[node name="Player" type="CharacterBody3D" unique_id=1628964637]
+[node name="Player" type="CharacterBody3D" unique_id=1679093002]
 collision_mask = 18
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -32,6 +33,7 @@ platform_on_leave = 2
 platform_floor_layers = 4294901762
 platform_wall_layers = 2
 script = ExtResource("1_06nmh")
+metadata/_custom_type_script = "uid://blnbd44jplhnm"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=891400182]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
@@ -47,10 +49,18 @@ fov = 95.0
 [node name="InteractionRay" type="RayCast3D" parent="head" unique_id=1684898446]
 transform = Transform3D(1, 0, 0, 0, 0.00441569, -0.99999, 0, 0.99999, 0.00441569, 0, 0, 0)
 target_position = Vector3(0, -2, 0)
-collision_mask = 30
+collision_mask = 22
 collide_with_areas = true
 collide_with_bodies = false
 script = ExtResource("2_4ob08")
+
+[node name="gunRay" type="RayCast3D" parent="head" unique_id=1508147025]
+transform = Transform3D(1, 0, 0, 0, 0.00441569, -0.99999, 0, 0.99999, 0.00441569, 0, 0, 0)
+target_position = Vector3(0, -100, 0)
+collision_mask = 22
+collide_with_areas = true
+collide_with_bodies = false
+script = ExtResource("3_qlg0r")
 
 [node name="puska" parent="head" unique_id=1499535131 instance=ExtResource("3_dqkch")]
 transform = Transform3D(-0.25342986, 0.056928363, 0.9656772, 0.3006284, 0.9534715, 0.022687335, -0.9194541, 0.29605964, -0.25875244, 0.532, -0.41, 0.005)

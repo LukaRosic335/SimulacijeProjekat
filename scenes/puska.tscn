@@ -34,8 +34,9 @@ scale_curve = SubResource("CurveTexture_fv13m")
 color = Color(1.3528494, 1.1791254, 0.74685854, 1)
 alpha_curve = SubResource("CurveTexture_ku1xs")
 
-[node name="puska" type="Node3D" unique_id=1499535131]
+[node name="puska" type="Node3D" unique_id=1158997249]
 script = ExtResource("1_cduws")
+metadata/_custom_type_script = "uid://gs1cvy8lxlcg"
 
 [node name="puska" parent="." unique_id=994821527 instance=ExtResource("1_xgy0g")]
 

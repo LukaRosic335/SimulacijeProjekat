@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c65vinshnq6ax"]
 
-[ext_resource type="Script" uid="uid://bqtd0bdoh1p6f" path="res://scenes/test_main.gd" id="1_7yu4j"]
+[ext_resource type="Script" uid="uid://bqtd0bdoh1p6f" path="res://scripts/test_main.gd" id="1_7yu4j"]
 [ext_resource type="PackedScene" uid="uid://dahnvfrmv83kt" path="res://scenes/test_level.tscn" id="1_xl5go"]
 [ext_resource type="PackedScene" uid="uid://clvia347ah0w2" path="res://scenes/player.tscn" id="2_3hvsj"]
 [ext_resource type="PackedScene" uid="uid://cgcl86iip81al" path="res://scenes/galeb_2.tscn" id="3_3hvsj"]
@@ -41,12 +41,43 @@ script = ExtResource("1_7yu4j")
 
 [node name="Player" parent="." unique_id=1628964637 instance=ExtResource("2_3hvsj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4567878, 0)
+_walk_speed = null
+_air_speed = null
+_walk_smoothing = null
+_air_smoothing = null
+_sprint_multiplier = null
+_jump_height = null
+_mouse_sensitivity = null
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1052065534]
 transform = Transform3D(0.93597466, -0.347759, -0.054911174, -0.013348535, -0.19090845, 0.9815171, -0.35181445, -0.91794205, -0.18332754, 0, 7, -14.743384)
 
 [node name="Galeb2" parent="." unique_id=2098463881 instance=ExtResource("3_3hvsj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.443187, 0.22369742, -4.1553087)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.2930152, 0.22369742, -4.1553087)
+starting_animation = "Peck_Floor"
+
+[node name="Galeb3" parent="." unique_id=565030494 instance=ExtResource("3_3hvsj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.3442113, 0.22369742, -4.1553087)
+starting_animation = "Idle"
+
+[node name="Galeb4" parent="." unique_id=1223279645 instance=ExtResource("3_3hvsj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.2091935, 0.22369742, -4.1553087)
+starting_animation = "Peck_Floor"
+
+[node name="Galeb5" parent="." unique_id=2021055381 instance=ExtResource("3_3hvsj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.20586205, 0.22369742, -4.1553087)
+starting_animation = "Peck_Floor"
+
+[node name="Galeb6" parent="." unique_id=1165677865 instance=ExtResource("3_3hvsj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.8278189, 0.22369742, -4.1553087)
+starting_animation = "Peck_Floor"
+
+[node name="Galeb7" parent="." unique_id=1960890796 instance=ExtResource("3_3hvsj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.7846799, 0.22369742, -4.1553087)
+starting_animation = "Idle"
+
+[node name="Galeb8" parent="." unique_id=2048943155 instance=ExtResource("3_3hvsj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.9265122, 0.22369742, -4.1553087)
 starting_animation = "Peck_Floor"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1097617979]

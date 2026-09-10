@@ -2,7 +2,7 @@ extends RayCast3D
 
 
 @onready var head: Node3D = $".."
-@onready var player: CharacterBody3D = $"../.."
+@onready var player: Player = $"../.."
 
 @export var item_position := Vector3(-0.5,-0.5,-0.5)
 

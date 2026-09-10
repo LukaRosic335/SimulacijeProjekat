@@ -1,3 +1,4 @@
+class_name Galeb
 extends CharacterBody3D
 
 @export_enum("T_Pose", "Idle", "Peck_Floor", "Peck_Wall", "Flying", "Walking", "Struggle") var starting_animation : String = "T_Pose"
@@ -5,6 +6,8 @@ extends CharacterBody3D
 @onready var animation_player: AnimationPlayer = $galeb2/AnimationPlayer
 @onready var physical_bone_simulator_3d: PhysicalBoneSimulator3D = $galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D
 @onready var physical_bone: PhysicalBone3D = $"galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone Telo"
+@onready var galeb_eksplozija: GalebEksplozija = $GalebEksplozija
+
 
 var dead : bool = false # TODO implementirati smrt tako da upali ragdoll i posledice i pri pucnju/pogotku itemom
 var dropped : bool = false
@@ -13,8 +16,10 @@ var thrown : bool = false
 @onready var area_3d: Area3D = $Area3D
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
 
+
 func _ready() -> void:
 	animation_player.play(starting_animation)
+
 
 func _physics_process(delta: float) -> void:
 	if dropped:
@@ -28,23 +33,38 @@ func _physics_process(delta: float) -> void:
 		position = physical_bone.global_position
 	move_and_slide()
 
+
 func play_animation(animation : String):
 	animation_player.play(animation)
 
+
 func is_ragdolling() -> bool:
 	return physical_bone_simulator_3d.is_simulating_physics()
+
 
 func stop_ragdoll():
 	physical_bone_simulator_3d.physical_bones_stop_simulation()
 	thrown = false
 
+
 func set_dropped():
 	dropped = true
+
 
 func set_thrown(force : Vector3):
 	if not dead:
 		animation_player.stop()
 		dead = true
+	physical_bone_simulator_3d.physical_bones_start_simulation()
+	thrown = true
+	for bone in physical_bone_simulator_3d.get_children():
+		bone.apply_central_impulse(force * randf_range(1.0, 1.5))
+
+
+func kill(force: Vector3) -> void:
+	animation_player.stop()
+	dead = true
+	galeb_eksplozija.explode()
 	physical_bone_simulator_3d.physical_bones_start_simulation()
 	thrown = true
 	for bone in physical_bone_simulator_3d.get_children():

@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody3D
 
 
@@ -7,7 +8,8 @@ signal drop_item(item : Node3D, item_position : Vector3, force : Vector3)
 @onready var head: Node3D = $head
 @onready var camera_3d: Camera3D = $head/Camera3D
 @onready var interaction_ray: RayCast3D = $head/InteractionRay
-@onready var puska: Node3D = $head/puska
+@onready var gun_ray: RayCast3D = $head/gunRay
+@onready var puska: Puska = $head/puska
 
 @onready var _g_vector: Vector3 = ProjectSettings.get_setting("physics/3d/default_gravity_vector")
 @onready var _g_const: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -70,8 +72,8 @@ func _process(_delta: float) -> void:
 		
 		if Input.is_action_just_pressed("left_click"):
 			if !puska.reloading:
-				puska.shoot()
-				
+				puska.shoot(gun_ray.get_target(), -head.basis.z)
+			
 		if Input.is_action_just_released("right_click"):
 			interaction_ray.drop(-head.basis.z * GALEB_THROW_FORCE_MULTIPLIER)
 		
