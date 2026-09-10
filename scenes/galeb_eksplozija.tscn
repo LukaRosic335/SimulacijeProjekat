@@ -33,6 +33,32 @@ scale_max = 0.5
 [sub_resource type="PlaneMesh" id="PlaneMesh_2bbmu"]
 size = Vector2(0.1, 0.3)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8fwdg"]
+transparency = 1
+cull_mode = 2
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hardb"]
+resource_local_to_scene = true
+particle_flag_align_y = true
+particle_flag_rotate_y = true
+emission_shape_scale = Vector3(0.3, 0.3, 0.3)
+emission_shape = 1
+emission_sphere_radius = 1.0
+angle_min = -82.49999
+angle_max = 139.6
+direction = Vector3(0, 0.2, 0)
+spread = 12.429
+initial_velocity_max = 5.0
+gravity = Vector3(0, -5, 0)
+scale_min = 0.19999999
+scale_max = 0.5
+color = Color(0.15725425, 0.10904928, 0.035583258, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_u2pkn"]
+size = Vector2(0.1, 0.3)
+
 [node name="GalebEksplozija" type="Node3D" unique_id=1736023269]
 script = ExtResource("1_8fwdg")
 metadata/_custom_type_script = "uid://bv3sq0kfcn4qw"
@@ -60,3 +86,15 @@ randomness = 1.0
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_20n0f")
 draw_pass_1 = SubResource("PlaneMesh_2bbmu")
+
+[node name="perje2" type="GPUParticles3D" parent="." unique_id=195892569]
+material_override = SubResource("StandardMaterial3D_8fwdg")
+emitting = false
+amount = 10
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_hardb")
+draw_pass_1 = SubResource("PlaneMesh_u2pkn")
