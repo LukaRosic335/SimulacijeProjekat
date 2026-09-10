@@ -31,7 +31,6 @@ func _physics_process(delta: float) -> void:
 	if thrown:
 		ragdoll_time -= delta
 		position = physical_bone.global_position
-		position.y -= 1.5
 	move_and_slide()
 
 

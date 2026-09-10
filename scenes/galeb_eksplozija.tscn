@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b878yk40f1ngi"]
 
-[ext_resource type="Material" uid="uid://dq1xnnsxbgd6o" path="res://scenes/blood_splatter_material_3d.tres" id="1_2bbmu"]
+[ext_resource type="Material" uid="uid://dq1xnnsxbgd6o" path="res://assets/resources/blood_splatter_material_3d.tres" id="1_2bbmu"]
 [ext_resource type="Script" uid="uid://bv3sq0kfcn4qw" path="res://scripts/galeb_eksplozija.gd" id="1_8fwdg"]
-[ext_resource type="Material" uid="uid://b6di72nknfonl" path="res://scenes/blood_splatter.tres" id="1_20n0f"]
+[ext_resource type="Material" uid="uid://b6di72nknfonl" path="res://assets/resources/blood_splatter.tres" id="1_20n0f"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_2bbmu"]
 radius = 0.05

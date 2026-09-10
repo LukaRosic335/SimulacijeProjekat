@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cgcl86iip81al" path="res://scenes/galeb_2.tscn" id="3_3hvsj"]
 [ext_resource type="Material" uid="uid://b7s60e6s6qarf" path="res://assets/resources/skybox.tres" id="5_31pel"]
 [ext_resource type="Shader" uid="uid://cittesf1rf1qo" path="res://shader.gdshader" id="6_bcbe7"]
+[ext_resource type="PackedScene" uid="uid://byvyej1v6bl0y" path="res://scenes/kuca.tscn" id="7_4jmdl"]
 
 [sub_resource type="Sky" id="Sky_31pel"]
 sky_material = ExtResource("5_31pel")
@@ -79,5 +80,8 @@ environment = SubResource("Environment_bcbe7")
 [node name="water" type="MeshInstance3D" parent="." unique_id=1751993946]
 transform = Transform3D(2.9687982, 0, 0, 0, 1, 0, 0, 0, 5.981792, 0, -0.9338994, -127.231186)
 mesh = SubResource("BoxMesh_4jmdl")
+
+[node name="Kuca" parent="." unique_id=49636183 instance=ExtResource("7_4jmdl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.243187, 2.1077518, 0)
 
 [connection signal="drop_item" from="Player" to="." method="_on_player_drop_item"]
