@@ -98,3 +98,7 @@ randomness = 1.0
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_hardb")
 draw_pass_1 = SubResource("PlaneMesh_u2pkn")
+
+[connection signal="finished" from="krv" to="." method="_on_krv_finished"]
+[connection signal="finished" from="perje" to="." method="_on_perje_finished"]
+[connection signal="finished" from="perje2" to="." method="_on_perje_2_finished"]
