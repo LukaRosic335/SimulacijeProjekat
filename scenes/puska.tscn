@@ -2,16 +2,61 @@
 
 [ext_resource type="Script" uid="uid://gs1cvy8lxlcg" path="res://scripts/puska.gd" id="1_cduws"]
 [ext_resource type="PackedScene" uid="uid://bcjuu6roiirof" path="res://assets/models/puska.blend" id="1_xgy0g"]
+[ext_resource type="Texture2D" uid="uid://bsbgn02yeryl1" path="res://assets/models/textures/muzzle_flash.png" id="3_4wqey"]
+[ext_resource type="ArrayMesh" uid="uid://bk8r6mgit7hgg" path="res://assets/models/muzzlePlanes.obj" id="3_qjdjx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qjdjx"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("3_4wqey")
+
+[sub_resource type="Curve" id="Curve_fv13m"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ku1xs"]
+curve = SubResource("Curve_fv13m")
+
+[sub_resource type="Curve" id="Curve_4wqey"]
+_data = [Vector2(0, 0), 0.0, 2.4929168, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_fv13m"]
+curve = SubResource("Curve_4wqey")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ku1xs"]
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_fv13m")
+color = Color(1.3528494, 1.1791254, 0.74685854, 1)
+alpha_curve = SubResource("CurveTexture_ku1xs")
 
 [node name="puska" type="Node3D" unique_id=1499535131]
 script = ExtResource("1_cduws")
 
 [node name="puska" parent="." unique_id=994821527 instance=ExtResource("1_xgy0g")]
 
-[node name="Cylinder" parent="puska" index="0" unique_id=573945999]
+[node name="Cylinder" parent="puska" index="0" unique_id=1210292973]
 transform = Transform3D(-2.7078852e-09, 1, 0, -0.061949193, -4.371139e-08, 0, 0, 0, 0.061949193, 0, 0, 0)
 
-[node name="Cylinder_001" parent="puska" index="1" unique_id=144518493]
+[node name="Cylinder_001" parent="puska" index="1" unique_id=53526296]
 transform = Transform3D(0.49730957, -0.014721309, 0, 0.007321841, 0.99989164, 0, 0, 0, 1, 0.35389543, 0.0068478067, 0)
+
+[node name="muzzleFlash" type="Node3D" parent="." unique_id=94222493]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.9928805, 0, 0)
+
+[node name="muzzle" type="GPUParticles3D" parent="muzzleFlash" unique_id=472245210]
+material_override = SubResource("StandardMaterial3D_qjdjx")
+emitting = false
+amount = 1
+lifetime = 0.09999999999999999
+one_shot = true
+randomness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_ku1xs")
+draw_pass_1 = ExtResource("3_qjdjx")
 
 [editable path="puska"]
