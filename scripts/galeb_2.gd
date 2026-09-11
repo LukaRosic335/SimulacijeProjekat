@@ -40,18 +40,19 @@ func play_animation(animation : String):
 
 
 func is_ragdolling() -> bool:
-	collision_shape_3d.disabled = true
 	return physical_bone_simulator_3d.is_simulating_physics()
 
 
 func stop_ragdoll():
 	physical_bone_simulator_3d.physical_bones_stop_simulation()
 	thrown = false
-	collision_shape_3d.disabled = false
 
 
 func set_dropped():
+	global_rotation_degrees.x = 0
+	global_rotation_degrees.z = 0
 	dropped = true
+	animation_player.play("Flying")
 
 
 func set_thrown(force : Vector3):

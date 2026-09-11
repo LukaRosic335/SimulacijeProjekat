@@ -14,9 +14,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			fullscreen = true
 
 
-func _on_player_drop_item(item: Node3D, item_position: Vector3, force: Vector3) -> void:
-	add_child(item)
-	item.position = item_position
+func _on_player_drop_item(item: Node3D, force: Vector3) -> void:
+	item.reparent(self)
 	if item.is_in_group("Galeb"):
 		if force == Vector3.ZERO:
 			if not item.dead:

@@ -2,7 +2,7 @@ extends RayCast3D
 
 
 @onready var head: Node3D = $".."
-@onready var player: Player = $"../.."
+@onready var player: Player = $"../../.."
 
 @export var item_position := Vector3(-0.5,-0.5,-0.5)
 
@@ -13,7 +13,12 @@ func __find_target() -> Node:
 	if !is_colliding():
 		return null
 	
-	return get_collider().get_parent()
+	var target = get_collider().get_parent()
+	
+	if !__target_is_visible(target):
+		return null
+	
+	return target
 
 
 func interact() -> void:
@@ -30,8 +35,7 @@ func pick_up(target) -> void:
 		drop(Vector3.ZERO)
 	item = target
 	#item.apply_force(Vector3.ZERO, item.global_position)
-	item.get_parent().remove_child(item)
-	head.add_child(item)
+	item.reparent(head)
 	item.position = item_position
 	# TODO namestiti rotaciju itema
 	if item.is_in_group("Galeb"):
@@ -43,10 +47,28 @@ func pick_up(target) -> void:
 		item.freeze = true
 	print("Item picked up") # DEBUG
 
+
 func drop(force: Vector3):
 	if item == null:
 		print("No item") # DEBUG
 		return
-	head.remove_child(item)
-	player.drop_item.emit(item, global_position - head.basis.z, force)
+	player.drop_item.emit(item, force)
 	item = null
+
+
+func __target_is_visible(target: Node3D) -> bool:
+	var from := head.global_position
+	var to := target.global_position
+	
+	var query := PhysicsRayQueryParameters3D.create(
+		from,
+		to,
+		1 << 1 # bit mask za teren vradzbina
+	)
+	
+	query.collide_with_bodies = true
+	query.collide_with_areas = false
+	
+	var result := get_world_3d().direct_space_state.intersect_ray(query)
+	
+	return result.is_empty()

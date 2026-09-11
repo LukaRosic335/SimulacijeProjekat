@@ -1,7 +1,8 @@
 extends Control
 
-@onready var interaction_ray: RayCast3D = $"../head/InteractionRay"
+@onready var interaction_ray: RayCast3D = $"../head/Camera3D/InteractionRay"
 @onready var crosshair: TextureRect = $crosshair
+@onready var camera_3d: Camera3D = $"../head/Camera3D"
 
 @onready var general = preload("res://assets/crosshairs/general.png")
 @onready var interact = preload("res://assets/crosshairs/interact.png")
@@ -10,19 +11,11 @@ extends Control
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if not interaction_ray.is_colliding():
+	var target = interaction_ray.__find_target()
+	if target == null:
 		crosshair.texture = general
-	
-	var intersection = interaction_ray.get_collider()
-	if not intersection:
 		return
-	var target = intersection.get_parent()
 	if target.is_in_group("Pickable"):
 		crosshair.texture = interact
-		return
-	if target.is_in_group("Serviceable"):
-		crosshair.texture = service
-		return
-	if target.is_in_group("Minigame"):
-		crosshair.texture = screen
-		return
+	else:
+		crosshair.texture = general
