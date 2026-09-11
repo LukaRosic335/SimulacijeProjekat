@@ -38,12 +38,12 @@ alpha_curve = SubResource("CurveTexture_ku1xs")
 script = ExtResource("1_cduws")
 metadata/_custom_type_script = "uid://gs1cvy8lxlcg"
 
-[node name="puska" parent="." unique_id=994821527 instance=ExtResource("1_xgy0g")]
+[node name="puska" parent="." unique_id=1314788078 instance=ExtResource("1_xgy0g")]
 
-[node name="Cylinder" parent="puska" index="0" unique_id=1210292973]
+[node name="Cylinder" parent="puska" index="0" unique_id=1272635764]
 transform = Transform3D(-2.7078852e-09, 1, 0, -0.061949193, -4.371139e-08, 0, 0, 0, 0.061949193, 0, 0, 0)
 
-[node name="Cylinder_001" parent="puska" index="1" unique_id=53526296]
+[node name="Cylinder_001" parent="puska" index="1" unique_id=1767783689]
 transform = Transform3D(0.49730957, -0.014721309, 0, 0.007321841, 0.99989164, 0, 0, 0, 1, 0.35389543, 0.0068478067, 0)
 
 [node name="muzzleFlash" type="Node3D" parent="." unique_id=94222493]
@@ -53,7 +53,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.99
 material_override = SubResource("StandardMaterial3D_qjdjx")
 emitting = false
 amount = 1
-lifetime = 0.09999999999999999
+lifetime = 0.1
 one_shot = true
 randomness = 1.0
 fixed_fps = 60

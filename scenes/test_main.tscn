@@ -40,7 +40,7 @@ script = ExtResource("1_7yu4j")
 
 [node name="TestLevel" parent="." unique_id=990706140 instance=ExtResource("1_xl5go")]
 
-[node name="Player" parent="." unique_id=1628964637 instance=ExtResource("2_3hvsj")]
+[node name="Player" parent="." unique_id=1679093002 instance=ExtResource("2_3hvsj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4567878, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1052065534]
@@ -78,10 +78,10 @@ starting_animation = "Peck_Floor"
 environment = SubResource("Environment_bcbe7")
 
 [node name="water" type="MeshInstance3D" parent="." unique_id=1751993946]
-transform = Transform3D(2.9687982, 0, 0, 0, 1, 0, 0, 0, 5.981792, 0, -0.9338994, -127.231186)
+transform = Transform3D(2.9687982, 0, 0, 0, 1, 0, 0, 0, 5.981792, 124.77271, -0.9338994, -5.4243813)
 mesh = SubResource("BoxMesh_4jmdl")
 
 [node name="Kuca" parent="." unique_id=49636183 instance=ExtResource("7_4jmdl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.243187, 2.1077518, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2, 0, 0)
 
 [connection signal="drop_item" from="Player" to="." method="_on_player_drop_item"]
