@@ -114,6 +114,7 @@ toggle_mouse={
 
 common/physics_jitter_fix=0.0
 3d/physics_engine="Jolt Physics"
+jolt_physics_3d/simulation/penetration_slop=0.01
 common/physics_interpolation=true
 
 [rendering]

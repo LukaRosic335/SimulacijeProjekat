@@ -30,7 +30,8 @@ func _physics_process(delta: float) -> void:
 				play_animation("Idle") # TODO nastaviti AI
 	if thrown:
 		ragdoll_time -= delta
-		position = physical_bone.global_position
+		global_position = physical_bone.global_position
+		return
 	move_and_slide()
 
 
@@ -39,12 +40,14 @@ func play_animation(animation : String):
 
 
 func is_ragdolling() -> bool:
+	collision_shape_3d.disabled = true
 	return physical_bone_simulator_3d.is_simulating_physics()
 
 
 func stop_ragdoll():
 	physical_bone_simulator_3d.physical_bones_stop_simulation()
 	thrown = false
+	collision_shape_3d.disabled = false
 
 
 func set_dropped():
