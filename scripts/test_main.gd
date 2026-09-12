@@ -5,6 +5,7 @@ var fullscreen : bool = false
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	Engine.max_fps = 60
 	if event.is_action_pressed("fullscreen"):
 		if fullscreen:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)

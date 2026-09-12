@@ -29,12 +29,13 @@ sky_material = ExtResource("4_x4b8f")
 [sub_resource type="Environment" id="Environment_tmr53"]
 background_mode = 2
 sky = SubResource("Sky_31pel")
-fog_mode = 1
-fog_light_color = Color(0.7529692, 0.5146157, 0.99273974, 1)
-fog_density = 0.952
+fog_enabled = true
+fog_light_energy = 0.18
 fog_aerial_perspective = 0.248
-fog_sky_affect = 0.254
+fog_sky_affect = 0.359
 fog_depth_end = 50.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0085
 
 [node name="TestLevel" type="Node3D" unique_id=222213529]
 
@@ -60,3 +61,6 @@ mesh = SubResource("BoxMesh_x4b8f")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2126082420]
 environment = SubResource("Environment_tmr53")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1093573772]
+transform = Transform3D(0.78463495, -0.39598933, 0.4770118, -0.5104649, 0.023974394, 0.8595643, -0.35181442, -0.917942, -0.18332756, 217.53168, 1.6585655, -14.743384)
