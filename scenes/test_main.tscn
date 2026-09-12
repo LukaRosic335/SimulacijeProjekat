@@ -4,84 +4,44 @@
 [ext_resource type="PackedScene" uid="uid://dahnvfrmv83kt" path="res://scenes/test_level.tscn" id="1_xl5go"]
 [ext_resource type="PackedScene" uid="uid://clvia347ah0w2" path="res://scenes/player.tscn" id="2_3hvsj"]
 [ext_resource type="PackedScene" uid="uid://cgcl86iip81al" path="res://scenes/galeb_2.tscn" id="3_3hvsj"]
-[ext_resource type="Material" uid="uid://b7s60e6s6qarf" path="res://assets/resources/skybox.tres" id="5_31pel"]
-[ext_resource type="Shader" uid="uid://cittesf1rf1qo" path="res://shader.gdshader" id="6_bcbe7"]
-[ext_resource type="PackedScene" uid="uid://byvyej1v6bl0y" path="res://scenes/kuca.tscn" id="7_4jmdl"]
-
-[sub_resource type="Sky" id="Sky_31pel"]
-sky_material = ExtResource("5_31pel")
-
-[sub_resource type="Environment" id="Environment_bcbe7"]
-background_mode = 2
-sky = SubResource("Sky_31pel")
-fog_mode = 1
-fog_light_color = Color(0.7529692, 0.5146157, 0.99273974, 1)
-fog_density = 0.952
-fog_aerial_perspective = 0.248
-fog_sky_affect = 0.254
-fog_depth_end = 50.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_j8oaa"]
-render_priority = 0
-shader = ExtResource("6_bcbe7")
-shader_parameter/water_color = Color(0.05, 0.45, 0.65, 0.75)
-shader_parameter/wave_strength = 0.08
-shader_parameter/wave_speed = 1.5
-shader_parameter/wave_scale = 2.5
-
-[sub_resource type="BoxMesh" id="BoxMesh_4jmdl"]
-resource_local_to_scene = true
-resource_name = "wwater2"
-material = SubResource("ShaderMaterial_j8oaa")
-size = Vector3(80, 1.7, 40)
 
 [node name="TestMain" type="Node3D" unique_id=642261019]
 script = ExtResource("1_7yu4j")
 
-[node name="TestLevel" parent="." unique_id=990706140 instance=ExtResource("1_xl5go")]
+[node name="TestLevel" parent="." unique_id=222213529 instance=ExtResource("1_xl5go")]
 
 [node name="Player" parent="." unique_id=1679093002 instance=ExtResource("2_3hvsj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4567878, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.692075, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1052065534]
 transform = Transform3D(0.93597466, -0.347759, -0.054911174, -0.013348535, -0.19090845, 0.9815171, -0.35181445, -0.91794205, -0.18332754, 0, 7, -14.743384)
 
 [node name="Galeb2" parent="." unique_id=2098463881 instance=ExtResource("3_3hvsj")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.2930152, 0.22369742, -4.1553087)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 17.957317, 0.32320952, -4.1553087)
 starting_animation = "Peck_Floor"
 
 [node name="Galeb3" parent="." unique_id=565030494 instance=ExtResource("3_3hvsj")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.3442113, 0.22369742, -4.1553087)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 17.008514, 0.32320952, -4.1553087)
 starting_animation = "Idle"
 
 [node name="Galeb4" parent="." unique_id=1223279645 instance=ExtResource("3_3hvsj")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.2091935, 0.22369742, -4.1553087)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 15.873496, 0.32320952, -4.1553087)
 starting_animation = "Peck_Floor"
 
 [node name="Galeb5" parent="." unique_id=2021055381 instance=ExtResource("3_3hvsj")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.20586205, 0.22369742, -4.1553087)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 14.870165, 0.32320952, -4.1553087)
 starting_animation = "Peck_Floor"
 
 [node name="Galeb6" parent="." unique_id=1165677865 instance=ExtResource("3_3hvsj")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.8278189, 0.22369742, -4.1553087)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 13.836484, 0.32320952, -4.1553087)
 starting_animation = "Peck_Floor"
 
 [node name="Galeb7" parent="." unique_id=1960890796 instance=ExtResource("3_3hvsj")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.7846799, 0.22369742, -4.1553087)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 12.879623, 0.32320952, -4.1553087)
 starting_animation = "Idle"
 
 [node name="Galeb8" parent="." unique_id=2048943155 instance=ExtResource("3_3hvsj")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.9265122, 0.22369742, -4.1553087)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 11.737791, 0.32320952, -4.1553087)
 starting_animation = "Peck_Floor"
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1097617979]
-environment = SubResource("Environment_bcbe7")
-
-[node name="water" type="MeshInstance3D" parent="." unique_id=1751993946]
-transform = Transform3D(2.9687982, 0, 0, 0, 1, 0, 0, 0, 5.981792, 124.77271, -0.9338994, -5.4243813)
-mesh = SubResource("BoxMesh_4jmdl")
-
-[node name="Kuca" parent="." unique_id=49636183 instance=ExtResource("7_4jmdl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2, 0, 0)
 
 [connection signal="drop_item" from="Player" to="." method="_on_player_drop_item"]

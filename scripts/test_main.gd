@@ -17,9 +17,9 @@ func _unhandled_input(event: InputEvent) -> void:
 func _on_player_drop_item(item: Node3D, force: Vector3) -> void:
 	item.reparent(self)
 	if item.is_in_group("Galeb"):
-		if force == Vector3.ZERO:
+		if force.length() <= 1:
 			if not item.dead:
-				item.set_dropped()
+				item.set_dropped(force)
 			else:
 				item.set_thrown(force)
 				print("GALEB DROP")

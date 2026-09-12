@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://0o4dny0f61jt"]
+
+[ext_resource type="PackedScene" uid="uid://byhr8u4cvxlrm" path="res://assets/models/grad.blend" id="1_cfnb5"]
+
+[node name="Grad" type="Node3D" unique_id=1068784772]
+
+[node name="grad" parent="." unique_id=1396690380 instance=ExtResource("1_cfnb5")]
+
+[node name="kuca za referencu" parent="grad" index="0" unique_id=1002535400]
+visible = false
+
+[node name="StaticBody3D" parent="grad/zgrada1" parent_id_path=PackedInt32Array(1396690380, 677748635) index="0" unique_id=748386262]
+collision_layer = 2
+collision_mask = 21
+
+[node name="StaticBody3D" parent="grad/zgrada2" parent_id_path=PackedInt32Array(1396690380, 1984923248) index="0" unique_id=2064430538]
+collision_layer = 2
+collision_mask = 21
+
+[node name="StaticBody3D" parent="grad/zgrada3" parent_id_path=PackedInt32Array(1396690380, 542039291) index="0" unique_id=463676310]
+collision_layer = 2
+collision_mask = 21
+
+[node name="StaticBody3D" parent="grad/zgrada4" parent_id_path=PackedInt32Array(1396690380, 174115589) index="0" unique_id=1472024033]
+collision_layer = 2
+collision_mask = 21
+
+[node name="StaticBody3D" parent="grad/zgrada5" parent_id_path=PackedInt32Array(1396690380, 1435531439) index="0" unique_id=1920648686]
+collision_layer = 2
+collision_mask = 21
+
+[node name="StaticBody3D" parent="grad/zgrada6" parent_id_path=PackedInt32Array(1396690380, 617610417) index="0" unique_id=1624610378]
+collision_layer = 2
+collision_mask = 21
+
+[node name="StaticBody3D" parent="grad/zgrada7" parent_id_path=PackedInt32Array(1396690380, 70381623) index="0" unique_id=2085500192]
+collision_layer = 2
+collision_mask = 21
+
+[editable path="grad"]

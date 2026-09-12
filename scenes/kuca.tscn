@@ -6,206 +6,206 @@
 
 [node name="kuca" parent="." unique_id=1707974739 instance=ExtResource("1_lv8g1")]
 
-[node name="StaticBody3D" parent="kuca/daska_004" parent_id_path=PackedInt32Array(1707974739, 612924829) index="0" unique_id=1419931674]
+[node name="StaticBody3D" parent="kuca/daska_004" parent_id_path=PackedInt32Array(1707974739, 531853718) index="0" unique_id=2082984698]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/daska_005" parent_id_path=PackedInt32Array(1707974739, 81782206) index="0" unique_id=1921990885]
+[node name="StaticBody3D" parent="kuca/daska_005" parent_id_path=PackedInt32Array(1707974739, 1998996200) index="0" unique_id=1348628889]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/daska_ograda" parent_id_path=PackedInt32Array(1707974739, 1572077766) index="0" unique_id=453586847]
+[node name="StaticBody3D" parent="kuca/daska_ograda" parent_id_path=PackedInt32Array(1707974739, 576932272) index="0" unique_id=863174707]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/daska_ograda_001" parent_id_path=PackedInt32Array(1707974739, 94065206) index="0" unique_id=630570719]
+[node name="StaticBody3D" parent="kuca/daska_ograda_001" parent_id_path=PackedInt32Array(1707974739, 1495999520) index="0" unique_id=19648688]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/daska_ograda_002" parent_id_path=PackedInt32Array(1707974739, 939411953) index="0" unique_id=1802949713]
+[node name="StaticBody3D" parent="kuca/daska_ograda_002" parent_id_path=PackedInt32Array(1707974739, 587480907) index="0" unique_id=1539727127]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/daska_ograda_003" parent_id_path=PackedInt32Array(1707974739, 1993126270) index="0" unique_id=362290848]
+[node name="StaticBody3D" parent="kuca/daska_ograda_003" parent_id_path=PackedInt32Array(1707974739, 1302904268) index="0" unique_id=223150130]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/daska_ograda_004" parent_id_path=PackedInt32Array(1707974739, 2103409298) index="0" unique_id=265119663]
+[node name="StaticBody3D" parent="kuca/daska_ograda_004" parent_id_path=PackedInt32Array(1707974739, 871273578) index="0" unique_id=1164728839]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/daska_ograda_005" parent_id_path=PackedInt32Array(1707974739, 1191712009) index="0" unique_id=2109336214]
+[node name="StaticBody3D" parent="kuca/daska_ograda_005" parent_id_path=PackedInt32Array(1707974739, 1233184846) index="0" unique_id=984934351]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/daska_ograda_009" parent_id_path=PackedInt32Array(1707974739, 860065348) index="0" unique_id=549085354]
+[node name="StaticBody3D" parent="kuca/daska_ograda_009" parent_id_path=PackedInt32Array(1707974739, 140046151) index="0" unique_id=203820533]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/daska_ograda_010" parent_id_path=PackedInt32Array(1707974739, 1190745437) index="0" unique_id=523346566]
+[node name="StaticBody3D" parent="kuca/daska_ograda_010" parent_id_path=PackedInt32Array(1707974739, 1343602318) index="0" unique_id=815299217]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/daska_ograda_011" parent_id_path=PackedInt32Array(1707974739, 1783486772) index="0" unique_id=1883036122]
+[node name="StaticBody3D" parent="kuca/daska_ograda_011" parent_id_path=PackedInt32Array(1707974739, 1077613354) index="0" unique_id=1134884882]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/daska_ograda_012" parent_id_path=PackedInt32Array(1707974739, 1795392402) index="0" unique_id=94903088]
+[node name="StaticBody3D" parent="kuca/daska_ograda_012" parent_id_path=PackedInt32Array(1707974739, 372218991) index="0" unique_id=1037419322]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/daska_ograda_013" parent_id_path=PackedInt32Array(1707974739, 1648501270) index="0" unique_id=328460367]
+[node name="StaticBody3D" parent="kuca/daska_ograda_013" parent_id_path=PackedInt32Array(1707974739, 1336131674) index="0" unique_id=1013448335]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/daska_ograda_014" parent_id_path=PackedInt32Array(1707974739, 490361049) index="0" unique_id=555937609]
+[node name="StaticBody3D" parent="kuca/daska_ograda_014" parent_id_path=PackedInt32Array(1707974739, 2022288524) index="0" unique_id=543428761]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/daska_ograda_015" parent_id_path=PackedInt32Array(1707974739, 1340306978) index="0" unique_id=869702441]
+[node name="StaticBody3D" parent="kuca/daska_ograda_015" parent_id_path=PackedInt32Array(1707974739, 1445572892) index="0" unique_id=1854233068]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/daska_ograda_016" parent_id_path=PackedInt32Array(1707974739, 1916488439) index="0" unique_id=1701340269]
+[node name="StaticBody3D" parent="kuca/daska_ograda_016" parent_id_path=PackedInt32Array(1707974739, 1187994476) index="0" unique_id=211751275]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/daska_ograda_017" parent_id_path=PackedInt32Array(1707974739, 1250380091) index="0" unique_id=90905959]
+[node name="StaticBody3D" parent="kuca/daska_ograda_017" parent_id_path=PackedInt32Array(1707974739, 572858928) index="0" unique_id=2033469752]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/daska_ograda_018" parent_id_path=PackedInt32Array(1707974739, 86113275) index="0" unique_id=1176621879]
+[node name="StaticBody3D" parent="kuca/daska_ograda_018" parent_id_path=PackedInt32Array(1707974739, 1234946584) index="0" unique_id=2127482022]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/daska_ograda_019" parent_id_path=PackedInt32Array(1707974739, 41488905) index="0" unique_id=1687833038]
+[node name="StaticBody3D" parent="kuca/daska_ograda_019" parent_id_path=PackedInt32Array(1707974739, 1158941197) index="0" unique_id=1211990815]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/daska_ograda_020" parent_id_path=PackedInt32Array(1707974739, 58799945) index="0" unique_id=575719618]
+[node name="StaticBody3D" parent="kuca/daska_ograda_020" parent_id_path=PackedInt32Array(1707974739, 823052278) index="0" unique_id=1881711666]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/daska_ograda_021" parent_id_path=PackedInt32Array(1707974739, 1535979015) index="0" unique_id=778323180]
+[node name="StaticBody3D" parent="kuca/daska_ograda_021" parent_id_path=PackedInt32Array(1707974739, 1762582122) index="0" unique_id=439961187]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/daska_ograda_022" parent_id_path=PackedInt32Array(1707974739, 1412097677) index="0" unique_id=2122557639]
+[node name="StaticBody3D" parent="kuca/daska_ograda_022" parent_id_path=PackedInt32Array(1707974739, 1190933774) index="0" unique_id=2048573445]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/daska_ograda_023" parent_id_path=PackedInt32Array(1707974739, 1402873343) index="0" unique_id=2092572055]
+[node name="StaticBody3D" parent="kuca/daska_ograda_023" parent_id_path=PackedInt32Array(1707974739, 259577858) index="0" unique_id=2040941685]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/daska_ograda_024" parent_id_path=PackedInt32Array(1707974739, 2039366119) index="0" unique_id=978600148]
+[node name="StaticBody3D" parent="kuca/daska_ograda_024" parent_id_path=PackedInt32Array(1707974739, 2045994726) index="0" unique_id=808794977]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/daska_ograda_025" parent_id_path=PackedInt32Array(1707974739, 707262956) index="0" unique_id=2043825321]
+[node name="StaticBody3D" parent="kuca/daska_ograda_025" parent_id_path=PackedInt32Array(1707974739, 1003625200) index="0" unique_id=1505492017]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/daska_ograda_026" parent_id_path=PackedInt32Array(1707974739, 1177867043) index="0" unique_id=1836977257]
+[node name="StaticBody3D" parent="kuca/daska_ograda_026" parent_id_path=PackedInt32Array(1707974739, 1630857611) index="0" unique_id=665452473]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/daska_ograda_027" parent_id_path=PackedInt32Array(1707974739, 1133131711) index="0" unique_id=677691403]
+[node name="StaticBody3D" parent="kuca/daska_ograda_027" parent_id_path=PackedInt32Array(1707974739, 1036966713) index="0" unique_id=1609579582]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/daska_ograda_028" parent_id_path=PackedInt32Array(1707974739, 1747757898) index="0" unique_id=1303066325]
+[node name="StaticBody3D" parent="kuca/daska_ograda_028" parent_id_path=PackedInt32Array(1707974739, 1282736557) index="0" unique_id=1011172502]
 collision_layer = 2
 collision_mask = 21
 
-[node name="hodanje" parent="kuca" index="32" unique_id=1199046661]
+[node name="hodanje" parent="kuca" index="32" unique_id=340600588]
 visible = false
 
-[node name="StaticBody3D" parent="kuca/hodanje" index="0" unique_id=1566748356]
+[node name="StaticBody3D" parent="kuca/hodanje" index="0" unique_id=467631886]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/krov" parent_id_path=PackedInt32Array(1707974739, 565565806) index="0" unique_id=131369698]
+[node name="StaticBody3D" parent="kuca/krov" parent_id_path=PackedInt32Array(1707974739, 717451969) index="0" unique_id=2114977045]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/plafon" parent_id_path=PackedInt32Array(1707974739, 1220080328) index="0" unique_id=1638597617]
+[node name="StaticBody3D" parent="kuca/plafon" parent_id_path=PackedInt32Array(1707974739, 1481517376) index="0" unique_id=790043185]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/pod" parent_id_path=PackedInt32Array(1707974739, 99145598) index="0" unique_id=446034635]
+[node name="StaticBody3D" parent="kuca/pod" parent_id_path=PackedInt32Array(1707974739, 548416463) index="0" unique_id=273245337]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/potpora" parent_id_path=PackedInt32Array(1707974739, 71020171) index="0" unique_id=880135825]
+[node name="StaticBody3D" parent="kuca/potpora" parent_id_path=PackedInt32Array(1707974739, 445705833) index="0" unique_id=1831355469]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/potpora_001" parent_id_path=PackedInt32Array(1707974739, 1715000737) index="0" unique_id=143206594]
+[node name="StaticBody3D" parent="kuca/potpora_001" parent_id_path=PackedInt32Array(1707974739, 410458815) index="0" unique_id=1563244397]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/potpora_002" parent_id_path=PackedInt32Array(1707974739, 879187429) index="0" unique_id=2054736074]
+[node name="StaticBody3D" parent="kuca/potpora_002" parent_id_path=PackedInt32Array(1707974739, 985743042) index="0" unique_id=770793810]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/stub2" parent_id_path=PackedInt32Array(1707974739, 1504608487) index="0" unique_id=1676459622]
+[node name="StaticBody3D" parent="kuca/stub2" parent_id_path=PackedInt32Array(1707974739, 1043347800) index="0" unique_id=674180068]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/stub3" parent_id_path=PackedInt32Array(1707974739, 1615092833) index="0" unique_id=1426676182]
+[node name="StaticBody3D" parent="kuca/stub3" parent_id_path=PackedInt32Array(1707974739, 2008011734) index="0" unique_id=338175652]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/stub4" parent_id_path=PackedInt32Array(1707974739, 291769051) index="0" unique_id=1408595918]
+[node name="StaticBody3D" parent="kuca/stub4" parent_id_path=PackedInt32Array(1707974739, 427289295) index="0" unique_id=1581874605]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/stub5" parent_id_path=PackedInt32Array(1707974739, 138140114) index="0" unique_id=2088379685]
+[node name="StaticBody3D" parent="kuca/stub5" parent_id_path=PackedInt32Array(1707974739, 26842141) index="0" unique_id=313504075]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/stub6" parent_id_path=PackedInt32Array(1707974739, 2020854271) index="0" unique_id=586646934]
+[node name="StaticBody3D" parent="kuca/stub6" parent_id_path=PackedInt32Array(1707974739, 2133011669) index="0" unique_id=360486219]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/stub7" parent_id_path=PackedInt32Array(1707974739, 14179443) index="0" unique_id=758919931]
+[node name="StaticBody3D" parent="kuca/stub7" parent_id_path=PackedInt32Array(1707974739, 594860976) index="0" unique_id=437702840]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/stub7_001" parent_id_path=PackedInt32Array(1707974739, 517027778) index="0" unique_id=536540188]
+[node name="StaticBody3D" parent="kuca/stub7_001" parent_id_path=PackedInt32Array(1707974739, 1305661412) index="0" unique_id=534169019]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/stub" parent_id_path=PackedInt32Array(1707974739, 108756925) index="0" unique_id=1039063129]
+[node name="StaticBody3D" parent="kuca/stub" parent_id_path=PackedInt32Array(1707974739, 1972909389) index="0" unique_id=1538740379]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/temelj" parent_id_path=PackedInt32Array(1707974739, 1458889678) index="0" unique_id=1194075395]
+[node name="StaticBody3D" parent="kuca/temelj" parent_id_path=PackedInt32Array(1707974739, 1271068331) index="0" unique_id=2114788774]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/terasa_plafon" parent_id_path=PackedInt32Array(1707974739, 961424688) index="0" unique_id=607762842]
+[node name="StaticBody3D" parent="kuca/terasa_plafon" parent_id_path=PackedInt32Array(1707974739, 1694477306) index="0" unique_id=379212693]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/terasa_pod" parent_id_path=PackedInt32Array(1707974739, 158942701) index="0" unique_id=913657946]
+[node name="StaticBody3D" parent="kuca/terasa_pod" parent_id_path=PackedInt32Array(1707974739, 219252203) index="0" unique_id=871317446]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/zid1" parent_id_path=PackedInt32Array(1707974739, 529968107) index="0" unique_id=36791565]
+[node name="StaticBody3D" parent="kuca/zid1" parent_id_path=PackedInt32Array(1707974739, 473688757) index="0" unique_id=1595506166]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/zid2" parent_id_path=PackedInt32Array(1707974739, 2071719471) index="0" unique_id=1067473885]
+[node name="StaticBody3D" parent="kuca/zid2" parent_id_path=PackedInt32Array(1707974739, 1022454288) index="0" unique_id=1570466936]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/zid3" parent_id_path=PackedInt32Array(1707974739, 740504082) index="0" unique_id=44616649]
+[node name="StaticBody3D" parent="kuca/zid3" parent_id_path=PackedInt32Array(1707974739, 779913982) index="0" unique_id=1524252981]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="kuca/zid4" parent_id_path=PackedInt32Array(1707974739, 1642735402) index="0" unique_id=1490510229]
+[node name="StaticBody3D" parent="kuca/zid4" parent_id_path=PackedInt32Array(1707974739, 1831204366) index="0" unique_id=1107704390]
 collision_layer = 2
 collision_mask = 21
 

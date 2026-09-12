@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cclpek0cpsohx"]
 
 [ext_resource type="PackedScene" uid="uid://clvia347ah0w2" path="res://scenes/player.tscn" id="1_emdr5"]
-[ext_resource type="Shader" uid="uid://cittesf1rf1qo" path="res://shader.gdshader" id="2_nobgd"]
+[ext_resource type="Shader" uid="uid://cittesf1rf1qo" path="res://assets/resources/shader.gdshader" id="2_nobgd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nobgd"]
 size = Vector3(40, 2, 0.5)

@@ -12,6 +12,7 @@ extends CharacterBody3D
 var dead : bool = false # TODO implementirati smrt tako da upali ragdoll i posledice i pri pucnju/pogotku itemom
 var dropped : bool = false
 var thrown : bool = false
+var drop_velocity: Vector3 = Vector3.ZERO
 @export var ragdoll_time : float = 5
 @onready var area_3d: Area3D = $Area3D
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
@@ -23,7 +24,10 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if dropped:
-		velocity += get_gravity() * delta
+		if drop_velocity != Vector3.ZERO:
+			velocity += drop_velocity
+			drop_velocity = Vector3.ZERO
+		velocity += get_gravity() / 2 * delta
 		if is_on_floor():
 			dropped = false
 			if not dead:
@@ -32,6 +36,10 @@ func _physics_process(delta: float) -> void:
 		ragdoll_time -= delta
 		global_position = physical_bone.global_position
 		return
+	
+	velocity.x = lerp(velocity.x, 0.0, delta)
+	velocity.z = lerp(velocity.z, 0.0, delta)
+	
 	move_and_slide()
 
 
@@ -48,9 +56,10 @@ func stop_ragdoll():
 	thrown = false
 
 
-func set_dropped():
+func set_dropped(force: Vector3):
 	global_rotation_degrees.x = 0
 	global_rotation_degrees.z = 0
+	drop_velocity += force
 	dropped = true
 	animation_player.play("Flying")
 

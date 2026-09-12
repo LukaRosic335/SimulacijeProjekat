@@ -40,6 +40,7 @@ func pick_up(target) -> void:
 	# TODO namestiti rotaciju itema
 	if item.is_in_group("Galeb"):
 		if not item.dead:
+			item.velocity = Vector3.ZERO
 			item.play_animation("Struggle")
 		if item.is_ragdolling():
 			item.stop_ragdoll()

@@ -19,7 +19,7 @@ signal drop_item(item : Node3D, force : Vector3)
 @export var _walk_smoothing: float = 0.35
 @export var _air_smoothing: float = 0.12
 @export var _sprint_multiplier: float = 2
-@export var _jump_height: float = 0.5
+@export var _jump_height: float = 1
 @export var _mouse_sensitivity: float = 0.05
 
 @onready var _vxz: Vector3 = Vector3.ZERO
@@ -78,7 +78,14 @@ func _process(_delta: float) -> void:
 		interaction_ray.interact()
 	
 	if Input.is_action_just_pressed("drop_item"):
-		interaction_ray.drop(Vector3.ZERO)
+		var force = -head.basis.z.normalized()
+		var forward_speed: float = force.dot(velocity)
+		#print(forward_speed)
+		#if forward_speed > 1:
+			#force *= min(forward_speed, 5)
+		#print(force)
+		#print(force.length())
+		interaction_ray.drop(force)
 	
 	# movement
 	if _allow_movement:
