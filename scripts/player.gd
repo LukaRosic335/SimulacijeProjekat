@@ -79,7 +79,7 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("drop_item"):
 		var force = -head.basis.z.normalized()
-		var forward_speed: float = force.dot(velocity)
+		#var forward_speed: float = force.dot(velocity)
 		#print(forward_speed)
 		#if forward_speed > 1:
 			#force *= min(forward_speed, 5)
