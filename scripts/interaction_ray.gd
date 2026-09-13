@@ -41,6 +41,8 @@ func pick_up(target) -> void:
 	if item.is_in_group("Galeb"):
 		if not item.dead:
 			item.velocity = Vector3.ZERO
+			item.land()
+			item.scare_area.monitoring = false
 			item.play_animation("Struggle")
 		if item.is_ragdolling():
 			item.stop_ragdoll()

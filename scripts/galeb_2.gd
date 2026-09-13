@@ -7,6 +7,8 @@ extends CharacterBody3D
 @onready var physical_bone_simulator_3d: PhysicalBoneSimulator3D = $galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D
 @onready var physical_bone: PhysicalBone3D = $"galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone Telo"
 @onready var galeb_eksplozija = preload("res://scenes/galeb_eksplozija.tscn")
+@onready var scare_area: Area3D = $ScareArea
+@onready var wall_check: RayCast3D = $WallCheck
 
 
 var dead : bool = false # TODO implementirati smrt tako da upali ragdoll i posledice i pri pucnju/pogotku itemom
@@ -17,6 +19,10 @@ var drop_velocity: Vector3 = Vector3.ZERO
 @onready var area_3d: Area3D = $Area3D
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
 
+var flying: bool = false
+var target: Vector3
+var flight_speed: float = 5.0
+var run_off_height: float
 
 func _ready() -> void:
 	animation_player.play(starting_animation)
@@ -37,10 +43,38 @@ func _physics_process(delta: float) -> void:
 		global_position = physical_bone.global_position
 		return
 	
+	if flying:
+		if run_off_height > 0.0:
+			if run_off_height > global_position.y:
+				target.y = lerp(target.y, run_off_height, delta)
+			else:
+				run_off_height = 0.0
+		else:
+			target.y = lerp(target.y, 0.0, delta)
+		var direction = global_position.direction_to(target)
+		look_at(global_position + direction, Vector3.UP)
+		if wall_check.is_colliding():
+			avoid_wall()
+		velocity = direction * flight_speed
+		if global_position.distance_to(target) < 0.5:
+			if is_on_floor():
+				land()
+			else:
+				target = lerp(target, target + direction, 0.3)
+	
 	velocity.x = lerp(velocity.x, 0.0, delta)
 	velocity.z = lerp(velocity.z, 0.0, delta)
 	
 	move_and_slide()
+
+
+func avoid_wall() -> void:
+	var collision_normal = wall_check.get_collision_normal()
+	if collision_normal.y > 0.6: # zid gejming
+		return
+	var cur_dir = velocity.normalized()
+	var new_dir = cur_dir.bounce(collision_normal).normalized()
+	fly_to(global_position + new_dir * randf_range(3, 10), global_position.y + randf_range(0.5, 3))
 
 
 func play_animation(animation : String):
@@ -90,6 +124,21 @@ func kill(force: Vector3) -> void:
 		bone.apply_central_impulse(force * randf_range(1.0, 1.5))
 
 
+func fly_to(target_loc: Vector3, height: float):
+	run_off_height = height
+	target = target_loc
+	flying = true
+	animation_player.play("Flying")
+
+
+func land():
+	global_rotation_degrees.x = 0
+	global_rotation_degrees.z = 0
+	flying = false
+	velocity = Vector3.ZERO
+	animation_player.play("Idle")
+
+
 func get_inertia() -> Vector3:
 	return physical_bone.linear_velocity
 
@@ -102,3 +151,17 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 	var inertia: Vector3 = obj.get_inertia()
 	if inertia.abs() > Vector3.ONE * 2: # magicni faking brojevi upomoc
 		set_thrown(inertia / 7)
+
+
+func _on_scare_area_body_entered(body: Node3D) -> void:
+	if thrown or dropped or dead:
+		return
+	if body == self:
+		return
+	if body.is_in_group("Galeb") and !body.dead:
+		return
+	var direction = (global_position - body.global_position).normalized()
+	direction.y = 0
+	direction.x += randf_range(-1,1)
+	var distance = randf_range(3, 10)
+	fly_to(global_position + direction * distance, global_position.y + randf_range(0.5, 3))
