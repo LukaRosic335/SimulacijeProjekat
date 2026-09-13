@@ -152,7 +152,7 @@ func _physics_process(delta: float) -> void:
 	if water_check.is_colliding() && !jump_out:
 		# TODO play ne znam da plivam sfx
 		jump_out = true
-		var direction = -Vector3(velocity.x, 0.0, velocity.y).normalized()
+		var direction = -Vector3(velocity.x, 0.0, velocity.z).normalized()
 		velocity.y = 5
 		velocity.x = direction.x * 4
 		velocity.z = direction.z * 4

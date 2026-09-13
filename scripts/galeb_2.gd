@@ -24,9 +24,12 @@ var target: Vector3
 var flight_speed: float = 5.0
 var run_off_height: float
 
+@export var exibition: bool = false
+
 func _ready() -> void:
 	animation_player.play(starting_animation)
-	set_dropped(Vector3.ZERO)
+	if !exibition:
+		set_dropped(Vector3.ZERO)
 
 
 func _physics_process(delta: float) -> void:
@@ -157,7 +160,7 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 
 
 func _on_scare_area_body_entered(body: Node3D) -> void:
-	if thrown or dropped or dead:
+	if thrown or dropped or dead or exibition:
 		return
 	if body == self:
 		return

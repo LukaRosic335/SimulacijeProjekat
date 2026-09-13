@@ -1,0 +1,456 @@
+[gd_scene format=3 uid="uid://d1fp1gnxl022"]
+
+[ext_resource type="PackedScene" uid="uid://cgcl86iip81al" path="res://scenes/galeb_2.tscn" id="1_ph7e1"]
+[ext_resource type="PackedScene" path="res://scenes/testkocka.tscn" id="2_1dlpa"]
+[ext_resource type="Script" uid="uid://bodjwov5t5idi" path="res://scripts/path_follow_3d.gd" id="3_0jgoj"]
+
+[sub_resource type="Curve3D" id="Curve3D_wwvwb"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 2.00558, 0, -1.65415, 0, 0, 0, 0, 0, 0, 0.987643, 0, -2.7448, 0, 0, 0, 0, 0, 0, -0.018178, 0, -3.09623, 0, 0, 0, 0, 0, 0, -1.12095, 0, -3.10835, 0, 0, 0, 0, 0, 0, -2.39337, 0, -2.79327, 0, 0, 0, 0, 0, 0, -3.56167, 0, -2.10845, 0, 0, 0, 0, 0, 0, -4.24128, 0, -1.01188, 0, 0, 0, 0, 0, 0, -4.34442, 0, 0.0424142, 0, 0, 0, 0, 0, 0, -4.28383, 0, 0.93917, 0, 0, 0, 0, 0, 0, -4.10205, 0, 1.53297, 0, 0, 0, 0, 0, 0, -3.26589, 0, 2.151, 0, 0, 0, 0, 0, 0, -2.26007, 0, 2.50243, 0, 0, 0, 0, 0, 0, -1.18154, 0, 2.63574, 0, 0, 0, 0, 0, 0, -0.163597, 0, 2.62362, 0, 0, 0, 0, 0, 0, 0.563502, 0, 2.49032, 0, 0, 0, 0, 0, 0, 1.46026, 0, 2.0177, 0, 0, 0, 0, 0, 0, 2.19948, 0, 0.999762, 0, 0, 0, 0, 0, 0, 2.26007, 0, 0.369609, 0, 0, 0, 0, 0, 0, 2.21159, 0, -0.660449, 0, 0, 0, 0, 0, 0, 2.00558, 0, -1.65415),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 20
+
+[sub_resource type="Curve3D" id="Curve3D_dk8ls"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -1.57024, 0.0012455, -2.56216, 0, 0, 0, 0, 0, 0, -0.292526, 0.000227928, -2.63818, 0, 0, 0, 0, 0, 0, 0.52867, -0.000425339, -2.47407, 0, 0, 0, 0, 0, 0, 1.54882, -0.00123596, -1.70788, 0, 0, 0, 0, 0, 0, 2.00859, -0.00159979, -0.690897, 0, 0, 0, 0, 0, 0, 2.08491, -0.00165749, 0.701103, 0, 0, 0, 0, 0, 0, 1.6405, -0.00130081, 1.60614, 0, 0, 0, 0, 0, 0, 0.987036, -0.000779629, 2.02341, 0, 0, 0, 0, 0, 0, -0.0306742, 3.14713e-05, 2.20266, 0, 0, 0, 0, 0, 0, -0.612591, 0.00049448, 2.1626, 0, 0, 0, 0, 0, 0, -1.39215, 0.00111532, 2.02955, 0, 0, 0, 0, 0, 0, -2.15122, 0.001719, 1.78216, 0, 0, 0, 0, 0, 0, -2.55705, 0.00204182, 1.53386, 0, 0, 0, 0, 0, 0, -2.77633, 0.00221539, 1.10846, 0, 0, 0, 0, 0, 0, -2.8195, 0.00224876, 0.4852, 0, 0, 0, 0, 0, 0, -2.81137, 0.00224113, -0.387541, 0, 0, 0, 0, 0, 0, -2.60594, 0.00207567, -1.30235, 0, 0, 0, 0, 0, 0, -2.23363, 0.00177813, -1.96824, 0, 0, 0, 0, 0, 0, -1.57024, 0.0012455, -2.56216),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 19
+
+[node name="Galeb Exibition" type="Node3D" unique_id=2038400034]
+
+[node name="Galeb2" parent="." unique_id=360929507 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.560971, 0, 0.827835, 0, 1, 0, -0.827835, 0, 0.560971, -0.21542, -1.00555, 0.6325)
+starting_animation = "Idle"
+exibition = true
+
+[node name="Galeb6" parent="." unique_id=154717940 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(-0.226668, 0, 0.973972, 0, 1, 0, -0.973972, 0, -0.226668, -0.21542, -1.00555, -0.57563)
+exibition = true
+
+[node name="Galeb7" parent="." unique_id=1771497796 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(-0.855437, 0, 0.517908, 0, 1, 0, -0.517908, 0, -0.855437, -1.09146, -1.00555, -1.3291)
+starting_animation = "Idle"
+exibition = true
+
+[node name="Galeb3" parent="." unique_id=1344103413 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17341, -1.00555, 1.49596)
+starting_animation = "Idle"
+exibition = true
+
+[node name="Galeb8" parent="." unique_id=899160761 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.694997, 0, -0.719012, 0, 1, 0, 0.719012, 0, 0.694997, -2.68514, -1.00555, 1.00341)
+exibition = true
+
+[node name="Galeb4" parent="." unique_id=1925148011 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.55717, -0.412643, -0.13407)
+starting_animation = "Peck_Floor"
+exibition = true
+
+[node name="Galeb5" parent="." unique_id=1160726868 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(-0.00647508, 0, -0.999979, 0, 1, 0, 0.999979, 0, -0.00647508, -2.11164, -1.00555, -0.2995)
+starting_animation = "Peck_Wall"
+exibition = true
+
+[node name="StaticCube" parent="." unique_id=542854368 instance=ExtResource("2_1dlpa")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.5614, -0.707594, -0.25478)
+
+[node name="jato" type="Node3D" parent="." unique_id=1267088140]
+
+[node name="Path3D" type="Path3D" parent="jato" unique_id=539162493]
+transform = Transform3D(0.887623, 0, 0.460572, 0, 1, 0, -0.460572, 0, 0.887623, -0.501596, 0.440912, -0.272966)
+curve = SubResource("Curve3D_wwvwb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="jato/Path3D" unique_id=1534407154]
+transform = Transform3D(0.731055, 0, 0.68231595, 0, 1, 0, -0.68231595, 0, 0.731055, 2.00558, 0, -1.65415)
+script = ExtResource("3_0jgoj")
+
+[node name="Galeb9" parent="jato/Path3D/PathFollow3D" unique_id=897506923 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.995463, 0, -0.0951523, 0, 1, 0, 0.0951523, 0, 0.995463, -0.192399, -0.0574521, 0.0618322)
+motion_mode = 1
+exibition = true
+
+[node name="Path3D2" type="Path3D" parent="jato" unique_id=1074630561]
+transform = Transform3D(-0.653077, 0, -0.757291, 0, 1, 0, 0.757291, 0, -0.653077, -1.55813, 1.07917, 0.453878)
+curve = SubResource("Curve3D_wwvwb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="jato/Path3D2" unique_id=162879652]
+transform = Transform3D(0.731055, 0, 0.68231595, 0, 1, 0, -0.68231595, 0, 0.731055, 2.00558, 0, -1.65415)
+script = ExtResource("3_0jgoj")
+speed = 7
+
+[node name="Galeb9" parent="jato/Path3D2/PathFollow3D" unique_id=231788882 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.995463, 0, -0.0951523, 0, 1, 0, 0.0951523, 0, 0.995463, -0.192399, -0.0574521, 0.0618322)
+motion_mode = 1
+starting_animation = "Flying"
+exibition = true
+
+[node name="Path3D3" type="Path3D" parent="jato" unique_id=1643431021]
+transform = Transform3D(0.996994, 0, 0.0774846, 0, 1, 0, -0.0774846, 0, 0.996994, -0.501596, 1.59717, 1.29856)
+curve = SubResource("Curve3D_wwvwb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="jato/Path3D3" unique_id=36117315]
+transform = Transform3D(0.731055, 0, 0.68231595, 0, 1, 0, -0.68231595, 0, 0.731055, 2.00558, 0, -1.65415)
+script = ExtResource("3_0jgoj")
+speed = 4
+
+[node name="Galeb9" parent="jato/Path3D3/PathFollow3D" unique_id=101994307 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.995463, 0, -0.0951523, 0, 1, 0, 0.0951523, 0, 0.995463, -0.192399, -0.0574521, 0.0618322)
+motion_mode = 1
+starting_animation = "Flying"
+exibition = true
+
+[node name="Path3D4" type="Path3D" parent="jato" unique_id=1565866377]
+transform = Transform3D(-0.999689, 0, -0.0249555, 0, 1, 0, 0.0249555, 0, -0.999689, -1.49207, 1.65635, 0.543532)
+curve = SubResource("Curve3D_wwvwb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="jato/Path3D4" unique_id=66020413]
+transform = Transform3D(0.731055, 0, 0.68231595, 0, 1, 0, -0.68231595, 0, 0.731055, 2.00558, 0, -1.65415)
+script = ExtResource("3_0jgoj")
+speed = 7
+
+[node name="Galeb9" parent="jato/Path3D4/PathFollow3D" unique_id=1318381235 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.995463, 0, -0.0951523, 0, 1, 0, 0.0951523, 0, 0.995463, -0.192399, -0.0574521, 0.0618322)
+motion_mode = 1
+starting_animation = "Flying"
+exibition = true
+
+[node name="Path3D5" type="Path3D" parent="jato" unique_id=1917818118]
+transform = Transform3D(0.386437, 0, -0.922316, 0, 1, 0, 0.922316, 0, 0.386437, -0.441318, 1.09379, 1.26851)
+curve = SubResource("Curve3D_wwvwb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="jato/Path3D5" unique_id=1243710265]
+transform = Transform3D(0.731055, 0, 0.68231595, 0, 1, 0, -0.68231595, 0, 0.731055, 2.00558, 0, -1.65415)
+script = ExtResource("3_0jgoj")
+speed = 7
+
+[node name="Galeb9" parent="jato/Path3D5/PathFollow3D" unique_id=1080343702 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.995463, 0, -0.0951523, 0, 1, 0, 0.0951523, 0, 0.995463, -0.192399, -0.0574521, 0.0618322)
+motion_mode = 1
+starting_animation = "Flying"
+exibition = true
+
+[node name="jato2" type="Node3D" parent="." unique_id=1542101542]
+transform = Transform3D(-0.412516, 0, -0.91095, 0, 1, 0, 0.91095, 0, -0.412516, -1.61548, 0.588999, 1.1595)
+
+[node name="Path3D" type="Path3D" parent="jato2" unique_id=1412478217]
+transform = Transform3D(0.887623, 0, 0.460572, 0, 1, 0, -0.460572, 0, 0.887623, -0.501596, 0.440912, -0.272966)
+curve = SubResource("Curve3D_wwvwb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="jato2/Path3D" unique_id=996311563]
+transform = Transform3D(0.731055, 0, 0.68231595, 0, 1, 0, -0.68231595, 0, 0.731055, 2.00558, 0, -1.65415)
+script = ExtResource("3_0jgoj")
+
+[node name="Galeb9" parent="jato2/Path3D/PathFollow3D" unique_id=491292048 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.995463, 0, -0.0951523, 0, 1, 0, 0.0951523, 0, 0.995463, -0.192399, -0.0574521, 0.0618322)
+motion_mode = 1
+starting_animation = "Flying"
+exibition = true
+
+[node name="Path3D2" type="Path3D" parent="jato2" unique_id=528448355]
+transform = Transform3D(-0.653077, 0, -0.757291, 0, 1, 0, 0.757291, 0, -0.653077, -1.55813, 1.07917, 0.453878)
+curve = SubResource("Curve3D_wwvwb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="jato2/Path3D2" unique_id=1746963423]
+transform = Transform3D(0.731055, 0, 0.68231595, 0, 1, 0, -0.68231595, 0, 0.731055, 2.00558, 0, -1.65415)
+script = ExtResource("3_0jgoj")
+speed = 7
+
+[node name="Galeb9" parent="jato2/Path3D2/PathFollow3D" unique_id=27008767 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.995463, 0, -0.0951523, 0, 1, 0, 0.0951523, 0, 0.995463, -0.192399, -0.0574521, 0.0618322)
+motion_mode = 1
+starting_animation = "Flying"
+exibition = true
+
+[node name="Path3D3" type="Path3D" parent="jato2" unique_id=135197391]
+transform = Transform3D(0.996994, 0, 0.0774846, 0, 1, 0, -0.0774846, 0, 0.996994, -0.501596, 1.59717, 1.29856)
+curve = SubResource("Curve3D_wwvwb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="jato2/Path3D3" unique_id=78471754]
+transform = Transform3D(0.731055, 0, 0.68231595, 0, 1, 0, -0.68231595, 0, 0.731055, 2.00558, 0, -1.65415)
+script = ExtResource("3_0jgoj")
+speed = 4
+
+[node name="Galeb9" parent="jato2/Path3D3/PathFollow3D" unique_id=628791096 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.995463, 0, -0.0951523, 0, 1, 0, 0.0951523, 0, 0.995463, -0.192399, -0.0574521, 0.0618322)
+motion_mode = 1
+starting_animation = "Flying"
+exibition = true
+
+[node name="Path3D4" type="Path3D" parent="jato2" unique_id=1221653823]
+transform = Transform3D(-0.999689, 0, -0.0249555, 0, 1, 0, 0.0249555, 0, -0.999689, -1.49207, 1.65635, 0.543532)
+curve = SubResource("Curve3D_wwvwb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="jato2/Path3D4" unique_id=1224223841]
+transform = Transform3D(0.731055, 0, 0.68231595, 0, 1, 0, -0.68231595, 0, 0.731055, 2.00558, 0, -1.65415)
+script = ExtResource("3_0jgoj")
+speed = 7
+
+[node name="Galeb9" parent="jato2/Path3D4/PathFollow3D" unique_id=864753728 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.995463, 0, -0.0951523, 0, 1, 0, 0.0951523, 0, 0.995463, -0.192399, -0.0574521, 0.0618322)
+motion_mode = 1
+starting_animation = "Flying"
+exibition = true
+
+[node name="Path3D5" type="Path3D" parent="jato2" unique_id=1805547889]
+transform = Transform3D(0.386437, 0, -0.922316, 0, 1, 0, 0.922316, 0, 0.386437, -0.441318, 1.09379, 1.26851)
+curve = SubResource("Curve3D_wwvwb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="jato2/Path3D5" unique_id=1882257958]
+transform = Transform3D(0.731055, 0, 0.68231595, 0, 1, 0, -0.68231595, 0, 0.731055, 2.00558, 0, -1.65415)
+script = ExtResource("3_0jgoj")
+speed = 7
+
+[node name="Galeb9" parent="jato2/Path3D5/PathFollow3D" unique_id=1776397275 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.995463, 0, -0.0951523, 0, 1, 0, 0.0951523, 0, 0.995463, -0.192399, -0.0574521, 0.0618322)
+motion_mode = 1
+starting_animation = "Flying"
+exibition = true
+
+[node name="jato3" type="Node3D" parent="." unique_id=1232911255]
+transform = Transform3D(0.662293, 0, -0.749245, 0, 1, 0, 0.749245, 0, 0.662293, -1.61548, -0.577825, 1.1595)
+
+[node name="Path3D" type="Path3D" parent="jato3" unique_id=1276224581]
+transform = Transform3D(0.887623, 0, 0.460572, 0, 1, 0, -0.460572, 0, 0.887623, -0.501596, 0.440912, -0.272966)
+curve = SubResource("Curve3D_wwvwb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="jato3/Path3D" unique_id=1254102142]
+transform = Transform3D(0.731055, 0, 0.68231595, 0, 1, 0, -0.68231595, 0, 0.731055, 2.00558, 0, -1.65415)
+script = ExtResource("3_0jgoj")
+
+[node name="Galeb9" parent="jato3/Path3D/PathFollow3D" unique_id=944076724 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.995463, 0, -0.0951523, 0, 1, 0, 0.0951523, 0, 0.995463, -0.192399, -0.0574521, 0.0618322)
+motion_mode = 1
+starting_animation = "Flying"
+exibition = true
+
+[node name="Path3D2" type="Path3D" parent="jato3" unique_id=359229464]
+transform = Transform3D(-0.653077, 0, -0.757291, 0, 1, 0, 0.757291, 0, -0.653077, -1.55813, 1.07917, 0.453878)
+curve = SubResource("Curve3D_wwvwb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="jato3/Path3D2" unique_id=1188420988]
+transform = Transform3D(0.731055, 0, 0.68231595, 0, 1, 0, -0.68231595, 0, 0.731055, 2.00558, 0, -1.65415)
+script = ExtResource("3_0jgoj")
+speed = 7
+
+[node name="Galeb9" parent="jato3/Path3D2/PathFollow3D" unique_id=330088495 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.995463, 0, -0.0951523, 0, 1, 0, 0.0951523, 0, 0.995463, -0.192399, -0.0574521, 0.0618322)
+motion_mode = 1
+starting_animation = "Flying"
+exibition = true
+
+[node name="Path3D3" type="Path3D" parent="jato3" unique_id=2067351571]
+transform = Transform3D(0.996994, 0, 0.0774846, 0, 1, 0, -0.0774846, 0, 0.996994, -0.501596, 1.59717, 1.29856)
+curve = SubResource("Curve3D_wwvwb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="jato3/Path3D3" unique_id=1591167638]
+transform = Transform3D(0.731055, 0, 0.68231595, 0, 1, 0, -0.68231595, 0, 0.731055, 2.00558, 0, -1.65415)
+script = ExtResource("3_0jgoj")
+speed = 4
+
+[node name="Galeb9" parent="jato3/Path3D3/PathFollow3D" unique_id=1598671313 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.995463, 0, -0.0951523, 0, 1, 0, 0.0951523, 0, 0.995463, -0.192399, -0.0574521, 0.0618322)
+motion_mode = 1
+starting_animation = "Flying"
+
+[node name="Path3D4" type="Path3D" parent="jato3" unique_id=186992231]
+transform = Transform3D(-0.999689, 0, -0.0249555, 0, 1, 0, 0.0249555, 0, -0.999689, -1.49207, 1.65635, 0.543532)
+curve = SubResource("Curve3D_wwvwb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="jato3/Path3D4" unique_id=203431990]
+transform = Transform3D(0.731055, 0, 0.68231595, 0, 1, 0, -0.68231595, 0, 0.731055, 2.00558, 0, -1.65415)
+script = ExtResource("3_0jgoj")
+speed = 7
+
+[node name="Galeb9" parent="jato3/Path3D4/PathFollow3D" unique_id=957479463 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.995463, 0, -0.0951523, 0, 1, 0, 0.0951523, 0, 0.995463, -0.192399, -0.0574521, 0.0618322)
+motion_mode = 1
+starting_animation = "Flying"
+exibition = true
+
+[node name="Path3D5" type="Path3D" parent="jato3" unique_id=1460522924]
+transform = Transform3D(0.386437, 0, -0.922316, 0, 1, 0, 0.922316, 0, 0.386437, -0.441318, 1.09379, 1.26851)
+curve = SubResource("Curve3D_wwvwb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="jato3/Path3D5" unique_id=497716699]
+transform = Transform3D(0.731055, 0, 0.68231595, 0, 1, 0, -0.68231595, 0, 0.731055, 2.00558, 0, -1.65415)
+script = ExtResource("3_0jgoj")
+speed = 7
+
+[node name="Galeb9" parent="jato3/Path3D5/PathFollow3D" unique_id=349502036 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.995463, 0, -0.0951523, 0, 1, 0, 0.0951523, 0, 0.995463, -0.192399, -0.0574521, 0.0618322)
+motion_mode = 1
+starting_animation = "Flying"
+exibition = true
+
+[node name="jato4" type="Node3D" parent="." unique_id=1384442342]
+transform = Transform3D(-0.102983, 0, -0.994683, 0, 1, 0, 0.994683, 0, -0.102983, -1.55633, 0.202572, 0.66437)
+
+[node name="Path3D" type="Path3D" parent="jato4" unique_id=1946578740]
+transform = Transform3D(0.887623, 0, 0.460572, 0, 1, 0, -0.460572, 0, 0.887623, -0.501596, 0.440912, -0.272966)
+curve = SubResource("Curve3D_wwvwb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="jato4/Path3D" unique_id=1003425161]
+transform = Transform3D(0.731055, 0, 0.68231595, 0, 1, 0, -0.68231595, 0, 0.731055, 2.00558, 0, -1.65415)
+script = ExtResource("3_0jgoj")
+
+[node name="Galeb9" parent="jato4/Path3D/PathFollow3D" unique_id=1474027658 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.995463, 0, -0.0951523, 0, 1, 0, 0.0951523, 0, 0.995463, -0.192399, -0.0574521, 0.0618322)
+motion_mode = 1
+starting_animation = "Flying"
+exibition = true
+
+[node name="Path3D2" type="Path3D" parent="jato4" unique_id=1618810789]
+transform = Transform3D(-0.653077, 0, -0.757291, 0, 1, 0, 0.757291, 0, -0.653077, -1.55813, 1.07917, 0.453878)
+curve = SubResource("Curve3D_wwvwb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="jato4/Path3D2" unique_id=284483345]
+transform = Transform3D(0.731055, 0, 0.68231595, 0, 1, 0, -0.68231595, 0, 0.731055, 2.00558, 0, -1.65415)
+script = ExtResource("3_0jgoj")
+speed = 7
+
+[node name="Galeb9" parent="jato4/Path3D2/PathFollow3D" unique_id=377503427 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.995463, 0, -0.0951523, 0, 1, 0, 0.0951523, 0, 0.995463, -0.192399, -0.0574521, 0.0618322)
+motion_mode = 1
+starting_animation = "Flying"
+exibition = true
+
+[node name="Path3D3" type="Path3D" parent="jato4" unique_id=975831273]
+transform = Transform3D(0.996994, 0, 0.0774846, 0, 1, 0, -0.0774846, 0, 0.996994, -0.501596, 1.59717, 1.29856)
+curve = SubResource("Curve3D_wwvwb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="jato4/Path3D3" unique_id=1965421181]
+transform = Transform3D(0.731055, 0, 0.68231595, 0, 1, 0, -0.68231595, 0, 0.731055, 2.00558, 0, -1.65415)
+script = ExtResource("3_0jgoj")
+speed = 4
+
+[node name="Galeb9" parent="jato4/Path3D3/PathFollow3D" unique_id=924987831 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.995463, 0, -0.0951523, 0, 1, 0, 0.0951523, 0, 0.995463, -0.192399, -0.0574521, 0.0618322)
+motion_mode = 1
+starting_animation = "Flying"
+exibition = true
+
+[node name="Path3D4" type="Path3D" parent="jato4" unique_id=1893915395]
+transform = Transform3D(-0.999689, 0, -0.0249555, 0, 1, 0, 0.0249555, 0, -0.999689, -1.49207, 1.65635, 0.543532)
+curve = SubResource("Curve3D_wwvwb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="jato4/Path3D4" unique_id=1858752109]
+transform = Transform3D(0.731055, 0, 0.68231595, 0, 1, 0, -0.68231595, 0, 0.731055, 2.00558, 0, -1.65415)
+script = ExtResource("3_0jgoj")
+speed = 7
+
+[node name="Galeb9" parent="jato4/Path3D4/PathFollow3D" unique_id=559149694 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.995463, 0, -0.0951523, 0, 1, 0, 0.0951523, 0, 0.995463, -0.192399, -0.0574521, 0.0618322)
+motion_mode = 1
+starting_animation = "Flying"
+exibition = true
+
+[node name="Path3D5" type="Path3D" parent="jato4" unique_id=1672588576]
+transform = Transform3D(0.386437, 0, -0.922316, 0, 1, 0, 0.922316, 0, 0.386437, -0.441318, 1.09379, 1.26851)
+curve = SubResource("Curve3D_wwvwb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="jato4/Path3D5" unique_id=681815495]
+transform = Transform3D(0.731055, 0, 0.68231595, 0, 1, 0, -0.68231595, 0, 0.731055, 2.00558, 0, -1.65415)
+script = ExtResource("3_0jgoj")
+speed = 7
+
+[node name="Galeb9" parent="jato4/Path3D5/PathFollow3D" unique_id=997846693 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.995463, 0, -0.0951523, 0, 1, 0, 0.0951523, 0, 0.995463, -0.192399, -0.0574521, 0.0618322)
+motion_mode = 1
+starting_animation = "Flying"
+exibition = true
+
+[node name="jato5" type="Node3D" parent="." unique_id=649035128]
+transform = Transform3D(-0.818952, 0, -0.573862, 0, 1, 0, 0.573862, 0, -0.818952, -1.55633, 0.637404, 1.22246)
+
+[node name="Path3D" type="Path3D" parent="jato5" unique_id=18177014]
+transform = Transform3D(0.887623, 0, 0.460572, 0, 1, 0, -0.460572, 0, 0.887623, -0.501596, 0.440912, -0.272966)
+curve = SubResource("Curve3D_wwvwb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="jato5/Path3D" unique_id=836499609]
+transform = Transform3D(0.731055, 0, 0.68231595, 0, 1, 0, -0.68231595, 0, 0.731055, 2.00558, 0, -1.65415)
+script = ExtResource("3_0jgoj")
+
+[node name="Galeb9" parent="jato5/Path3D/PathFollow3D" unique_id=1103299855 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.995463, 0, -0.0951523, 0, 1, 0, 0.0951523, 0, 0.995463, -0.192399, -0.0574521, 0.0618322)
+motion_mode = 1
+starting_animation = "Flying"
+exibition = true
+
+[node name="Path3D2" type="Path3D" parent="jato5" unique_id=105351707]
+transform = Transform3D(-0.653077, 0, -0.757291, 0, 1, 0, 0.757291, 0, -0.653077, -1.55813, 1.07917, 0.453878)
+curve = SubResource("Curve3D_wwvwb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="jato5/Path3D2" unique_id=968518592]
+transform = Transform3D(0.731055, 0, 0.68231595, 0, 1, 0, -0.68231595, 0, 0.731055, 2.00558, 0, -1.65415)
+script = ExtResource("3_0jgoj")
+speed = 7
+
+[node name="Galeb9" parent="jato5/Path3D2/PathFollow3D" unique_id=1069013827 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.995463, 0, -0.0951523, 0, 1, 0, 0.0951523, 0, 0.995463, -0.192399, -0.0574521, 0.0618322)
+motion_mode = 1
+starting_animation = "Flying"
+exibition = true
+
+[node name="Path3D3" type="Path3D" parent="jato5" unique_id=721582512]
+transform = Transform3D(0.996994, 0, 0.0774846, 0, 1, 0, -0.0774846, 0, 0.996994, -0.501596, 1.59717, 1.29856)
+curve = SubResource("Curve3D_wwvwb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="jato5/Path3D3" unique_id=1581603478]
+transform = Transform3D(0.731055, 0, 0.68231595, 0, 1, 0, -0.68231595, 0, 0.731055, 2.00558, 0, -1.65415)
+script = ExtResource("3_0jgoj")
+speed = 4
+
+[node name="Galeb9" parent="jato5/Path3D3/PathFollow3D" unique_id=1984183104 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.995463, 0, -0.0951523, 0, 1, 0, 0.0951523, 0, 0.995463, -0.192399, -0.0574521, 0.0618322)
+motion_mode = 1
+starting_animation = "Flying"
+exibition = true
+
+[node name="Path3D4" type="Path3D" parent="jato5" unique_id=452108053]
+transform = Transform3D(-0.999689, 0, -0.0249555, 0, 1, 0, 0.0249555, 0, -0.999689, -1.49207, 1.65635, 0.543532)
+curve = SubResource("Curve3D_wwvwb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="jato5/Path3D4" unique_id=777750104]
+transform = Transform3D(0.731055, 0, 0.68231595, 0, 1, 0, -0.68231595, 0, 0.731055, 2.00558, 0, -1.65415)
+script = ExtResource("3_0jgoj")
+speed = 7
+
+[node name="Galeb9" parent="jato5/Path3D4/PathFollow3D" unique_id=635770465 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.995463, 0, -0.0951523, 0, 1, 0, 0.0951523, 0, 0.995463, -0.192399, -0.0574521, 0.0618322)
+motion_mode = 1
+starting_animation = "Flying"
+exibition = true
+
+[node name="Path3D5" type="Path3D" parent="jato5" unique_id=1791828030]
+transform = Transform3D(0.386437, 0, -0.922316, 0, 1, 0, 0.922316, 0, 0.386437, -0.441318, 1.09379, 1.26851)
+curve = SubResource("Curve3D_wwvwb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="jato5/Path3D5" unique_id=1244562265]
+transform = Transform3D(0.731055, 0, 0.68231595, 0, 1, 0, -0.68231595, 0, 0.731055, 2.00558, 0, -1.65415)
+script = ExtResource("3_0jgoj")
+speed = 7
+
+[node name="Galeb9" parent="jato5/Path3D5/PathFollow3D" unique_id=1291267195 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.995463, 0, -0.0951523, 0, 1, 0, 0.0951523, 0, 0.995463, -0.192399, -0.0574521, 0.0618322)
+motion_mode = 1
+starting_animation = "Flying"
+exibition = true
+
+[node name="patrola" type="Node3D" parent="." unique_id=599903818]
+
+[node name="Path3D" type="Path3D" parent="patrola" unique_id=1565439360]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.72079, 0)
+curve = SubResource("Curve3D_dk8ls")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="patrola/Path3D" unique_id=1820494501]
+transform = Transform3D(0.0593919, 0.0007935912, -0.998233, -8.731134e-11, 0.99999994, 0.00079499325, 0.998233, -4.7216236e-05, 0.0593919, -1.57024, 0.0012455, -2.56216)
+script = ExtResource("3_0jgoj")
+speed = 1
+
+[node name="Galeb9" parent="patrola/Path3D/PathFollow3D" unique_id=853465906 instance=ExtResource("1_ph7e1")]
+transform = Transform3D(0.995463, 0, -0.0951523, 0, 1, 0, 0.0951523, 0, 0.995463, -0.192399, -0.0574521, 0.0618322)
+motion_mode = 1
+starting_animation = "Walking"
+exibition = true

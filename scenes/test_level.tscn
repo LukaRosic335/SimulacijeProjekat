@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ipsmq2fbmfym" path="res://scenes/water.tscn" id="3_qcd3b"]
 [ext_resource type="Material" uid="uid://b7s60e6s6qarf" path="res://assets/resources/skybox.tres" id="4_x4b8f"]
 [ext_resource type="PackedScene" uid="uid://cgmw371c0j2h4" path="res://assets/models/pesak.blend" id="5_tmr53"]
+[ext_resource type="PackedScene" uid="uid://d1fp1gnxl022" path="res://scenes/galeb_exibition.tscn" id="6_qcd3b"]
 
 [sub_resource type="Sky" id="Sky_31pel"]
 sky_material = ExtResource("4_x4b8f")
@@ -27,7 +28,7 @@ volumetric_fog_density = 0.0085
 [node name="Grad" parent="." unique_id=1068784772 instance=ExtResource("2_paw1w")]
 
 [node name="water2" parent="." unique_id=1299731762 instance=ExtResource("3_qcd3b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 220.03595, -1.4817123, -21.433365)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 221.65828, -1.1, -21.433)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2126082420]
 environment = SubResource("Environment_tmr53")
@@ -35,10 +36,13 @@ environment = SubResource("Environment_tmr53")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1093573772]
 transform = Transform3D(0.78463495, -0.39598933, 0.4770118, -0.5104649, 0.023974394, 0.8595643, -0.35181442, -0.917942, -0.18332756, 217.53168, 1.6585655, -14.743384)
 
-[node name="pesak" parent="." unique_id=162751094 instance=ExtResource("5_tmr53")]
+[node name="pesak" parent="." unique_id=45053280 instance=ExtResource("5_tmr53")]
 
-[node name="StaticBody3D" parent="pesak/Pesak" parent_id_path=PackedInt32Array(162751094, 750974431) index="0" unique_id=752656901]
+[node name="StaticBody3D" parent="pesak/Pesak" parent_id_path=PackedInt32Array(45053280, 2087224276) index="0" unique_id=1091944281]
 collision_layer = 2
 collision_mask = 5
+
+[node name="Galeb Exibition" parent="." unique_id=481353823 instance=ExtResource("6_qcd3b")]
+transform = Transform3D(-0.32391748, 0, -0.94608533, 0, 1, 0, 0.94608533, 0, -0.32391748, 12.792, 1, -87.119865)
 
 [editable path="pesak"]
