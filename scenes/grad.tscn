@@ -6,33 +6,30 @@
 
 [node name="grad" parent="." unique_id=355367682 instance=ExtResource("1_cfnb5")]
 
-[node name="kuca za referencu" parent="grad" index="0" unique_id=884816951]
+[node name="StaticBody3D" parent="grad/zgrada1" parent_id_path=PackedInt32Array(355367682, 2068690165) index="0" unique_id=685480992]
+collision_layer = 2
+collision_mask = 21
+
+[node name="StaticBody3D" parent="grad/zgrada2" parent_id_path=PackedInt32Array(355367682, 1323951037) index="0" unique_id=1591768117]
+collision_layer = 2
+collision_mask = 21
+
+[node name="StaticBody3D" parent="grad/zgrada3" parent_id_path=PackedInt32Array(355367682, 1320010454) index="0" unique_id=551937548]
+collision_layer = 2
+collision_mask = 21
+
+[node name="zgrada4" parent="grad" index="3" unique_id=467449511]
 visible = false
 
-[node name="StaticBody3D" parent="grad/zgrada1" parent_id_path=PackedInt32Array(355367682, 813962871) index="0" unique_id=1021165895]
+[node name="StaticBody3D" parent="grad/zgrada4" index="0" unique_id=2091803598]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="grad/zgrada2" parent_id_path=PackedInt32Array(355367682, 2074827104) index="0" unique_id=931385391]
+[node name="StaticBody3D" parent="grad/zgrada5" parent_id_path=PackedInt32Array(355367682, 1940538657) index="0" unique_id=2017753752]
 collision_layer = 2
 collision_mask = 21
 
-[node name="StaticBody3D" parent="grad/zgrada3" parent_id_path=PackedInt32Array(355367682, 1117527649) index="0" unique_id=787397876]
-collision_layer = 2
-collision_mask = 21
-
-[node name="zgrada4" parent="grad" index="4" unique_id=1264816706]
-visible = false
-
-[node name="StaticBody3D" parent="grad/zgrada4" index="0" unique_id=1989167064]
-collision_layer = 2
-collision_mask = 21
-
-[node name="StaticBody3D" parent="grad/zgrada5" parent_id_path=PackedInt32Array(355367682, 1469653802) index="0" unique_id=1229551092]
-collision_layer = 2
-collision_mask = 21
-
-[node name="StaticBody3D" parent="grad/zgrada7" parent_id_path=PackedInt32Array(355367682, 823442968) index="0" unique_id=2074403365]
+[node name="StaticBody3D" parent="grad/zgrada7" parent_id_path=PackedInt32Array(355367682, 1629348442) index="0" unique_id=2132168026]
 collision_layer = 2
 collision_mask = 21
 

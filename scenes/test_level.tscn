@@ -6,6 +6,8 @@
 [ext_resource type="Material" uid="uid://b7s60e6s6qarf" path="res://assets/resources/skybox.tres" id="4_x4b8f"]
 [ext_resource type="PackedScene" uid="uid://cgmw371c0j2h4" path="res://assets/models/pesak.blend" id="5_tmr53"]
 [ext_resource type="PackedScene" uid="uid://d1fp1gnxl022" path="res://scenes/galeb_exibition.tscn" id="6_qcd3b"]
+[ext_resource type="PackedScene" uid="uid://cgcl86iip81al" path="res://scenes/galeb_2.tscn" id="7_88ety"]
+[ext_resource type="Script" uid="uid://d253owietyavv" path="res://spawn_area.gd" id="8_ahbqi"]
 
 [sub_resource type="Sky" id="Sky_31pel"]
 sky_material = ExtResource("4_x4b8f")
@@ -20,6 +22,16 @@ fog_sky_affect = 0.359
 fog_depth_end = 50.0
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.0085
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_88ety"]
+resource_local_to_scene = true
+size = Vector3(28.766876, 1, 23.127071)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ahbqi"]
+size = Vector3(16.881836, 1, 14.821777)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7gix3"]
+size = Vector3(5.5283203, 1, 8.71698)
 
 [node name="TestLevel" type="Node3D" unique_id=222213529]
 
@@ -44,5 +56,27 @@ collision_mask = 5
 
 [node name="Galeb Exibition" parent="." unique_id=481353823 instance=ExtResource("6_qcd3b")]
 transform = Transform3D(-0.32391748, 0, -0.94608533, 0, 1, 0, 0.94608533, 0, -0.32391748, 12.792, 1, -87.119865)
+
+[node name="prozorskiGaleb" parent="." unique_id=565030494 instance=ExtResource("7_88ety")]
+transform = Transform3D(-0.94934875, 0, -0.3142245, 0, 1, 0, 0.3142245, 0, -0.94934875, -2.9010434, 7.010906, -8.989024)
+starting_animation = "Peck_Floor"
+exibition = true
+
+[node name="SpawnArea" type="Area3D" parent="." unique_id=1269672702]
+monitorable = false
+script = ExtResource("8_ahbqi")
+metadata/_custom_type_script = "uid://d253owietyavv"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnArea" unique_id=845033853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.723, 1.9, -17.258)
+shape = SubResource("BoxShape3D_88ety")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="SpawnArea" unique_id=945565841]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.006348, 1.9, 1.697998)
+shape = SubResource("BoxShape3D_ahbqi")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="SpawnArea" unique_id=202115520]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.139824, 1.9, 4.738678)
+shape = SubResource("BoxShape3D_7gix3")
 
 [editable path="pesak"]

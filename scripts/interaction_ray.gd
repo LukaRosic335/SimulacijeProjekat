@@ -35,19 +35,15 @@ func pick_up(target) -> void:
 		drop(Vector3.ZERO)
 	item = target
 	#item.apply_force(Vector3.ZERO, item.global_position)
-	item.reparent(head)
-	item.position = item_position
 	# TODO namestiti rotaciju itema
 	if item.is_in_group("Galeb"):
-		if not item.dead:
-			item.velocity = Vector3.ZERO
-			item.land()
-			item.scare_area.monitoring = false
-			item.play_animation("Struggle")
+		item.set_held()
 		if item.is_ragdolling():
 			item.stop_ragdoll()
 	if item.is_in_group("Item"):
 		item.freeze = true
+	item.reparent(head)
+	item.position = item_position
 	print("Item picked up") # DEBUG
 
 
