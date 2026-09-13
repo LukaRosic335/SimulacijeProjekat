@@ -47,6 +47,10 @@ const GALEB_THROW_FORCE_MULTIPLIER = 1.5
 const GALEB_THROW_VECTOR = Vector3(0.0, 0.5, 0.0)
 
 
+var jump_out: bool = false
+@onready var water_check: RayCast3D = $WaterCheck
+
+
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
@@ -136,6 +140,29 @@ func _input(event) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	# head bob
+	if is_on_floor():
+		t_bob += delta * velocity.length()
+	else:
+		t_bob += delta * velocity.length() * 0.5
+	camera_3d.position = _headbob(t_bob)
+	
+	head.rotation_degrees = Vector3(_look_pitch + _recoil_pitch, _look_yaw, 0.0)
+	
+	if water_check.is_colliding() && !jump_out:
+		# TODO play ne znam da plivam sfx
+		jump_out = true
+		var direction = -Vector3(velocity.x, 0.0, velocity.y).normalized()
+		velocity.y = 5
+		velocity.x = direction.x * 4
+		velocity.z = direction.z * 4
+	if jump_out:
+		if is_on_floor() && !water_check.is_colliding():
+			jump_out = false
+		velocity.y -= 9.81 * delta
+		move_and_slide()
+		return
+	
 	# jump
 	var vy = Vector3.ZERO
 	var on_floor = is_on_floor()
@@ -164,15 +191,6 @@ func _physics_process(delta: float) -> void:
 	
 	# end calculation
 	velocity = res_vxz + vy
-	
-	# head bob
-	if is_on_floor():
-		t_bob += delta * velocity.length()
-	else:
-		t_bob += delta * velocity.length() * 0.5
-	camera_3d.position = _headbob(t_bob)
-	
-	head.rotation_degrees = Vector3(_look_pitch + _recoil_pitch, _look_yaw, 0.0)
 	
 	move_and_slide()
 

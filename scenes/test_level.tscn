@@ -2,26 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://byvyej1v6bl0y" path="res://scenes/kuca.tscn" id="1_2venv"]
 [ext_resource type="PackedScene" uid="uid://0o4dny0f61jt" path="res://scenes/grad.tscn" id="2_paw1w"]
-[ext_resource type="Shader" uid="uid://cittesf1rf1qo" path="res://assets/resources/shader.gdshader" id="3_j6w7d"]
+[ext_resource type="PackedScene" uid="uid://ipsmq2fbmfym" path="res://scenes/water.tscn" id="3_qcd3b"]
 [ext_resource type="Material" uid="uid://b7s60e6s6qarf" path="res://assets/resources/skybox.tres" id="4_x4b8f"]
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_3p835"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_2venv"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_j8oaa"]
-render_priority = 0
-shader = ExtResource("3_j6w7d")
-shader_parameter/water_color = Color(0.05, 0.45, 0.65, 0.75)
-shader_parameter/wave_strength = 0.08
-shader_parameter/wave_speed = 1.5
-shader_parameter/wave_scale = 2.5
-
-[sub_resource type="BoxMesh" id="BoxMesh_x4b8f"]
-resource_local_to_scene = true
-resource_name = "wwater2"
-material = SubResource("ShaderMaterial_j8oaa")
-size = Vector3(80, 1.7, 40)
+[ext_resource type="PackedScene" uid="uid://cgmw371c0j2h4" path="res://assets/models/pesak.blend" id="5_tmr53"]
 
 [sub_resource type="Sky" id="Sky_31pel"]
 sky_material = ExtResource("4_x4b8f")
@@ -39,28 +22,23 @@ volumetric_fog_density = 0.0085
 
 [node name="TestLevel" type="Node3D" unique_id=222213529]
 
-[node name="pod" type="StaticBody3D" parent="." unique_id=217615891]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.063877, 0, -12.69143)
-collision_layer = 2
-collision_mask = 5
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="pod" unique_id=324031479]
-shape = SubResource("WorldBoundaryShape3D_3p835")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="pod" unique_id=656681526]
-transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, -12.455627, 0, 0)
-mesh = SubResource("PlaneMesh_2venv")
-
 [node name="Kuca" parent="." unique_id=49636183 instance=ExtResource("1_2venv")]
 
 [node name="Grad" parent="." unique_id=1068784772 instance=ExtResource("2_paw1w")]
 
-[node name="water" type="MeshInstance3D" parent="." unique_id=1072336829]
-transform = Transform3D(4.950468, 0, 0, 0, 1, 0, 0, 0, 25.067345, 231.87363, -0.8252106, -21.433365)
-mesh = SubResource("BoxMesh_x4b8f")
+[node name="water2" parent="." unique_id=1299731762 instance=ExtResource("3_qcd3b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 220.03595, -1.4817123, -21.433365)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2126082420]
 environment = SubResource("Environment_tmr53")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1093573772]
 transform = Transform3D(0.78463495, -0.39598933, 0.4770118, -0.5104649, 0.023974394, 0.8595643, -0.35181442, -0.917942, -0.18332756, 217.53168, 1.6585655, -14.743384)
+
+[node name="pesak" parent="." unique_id=162751094 instance=ExtResource("5_tmr53")]
+
+[node name="StaticBody3D" parent="pesak/Pesak" parent_id_path=PackedInt32Array(162751094, 750974431) index="0" unique_id=752656901]
+collision_layer = 2
+collision_mask = 5
+
+[editable path="pesak"]

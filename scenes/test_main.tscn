@@ -14,31 +14,31 @@ script = ExtResource("1_7yu4j")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.692075, 0)
 
 [node name="Galeb2" parent="." unique_id=2098463881 instance=ExtResource("3_3hvsj")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 17.957317, 0, -4.1553087)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 17.957317, 2.6749344, -4.1553087)
 starting_animation = "Peck_Floor"
 
 [node name="Galeb3" parent="." unique_id=565030494 instance=ExtResource("3_3hvsj")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 17.008514, 0, -4.1553087)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 17.008514, 2.6749344, -4.1553087)
 starting_animation = "Idle"
 
 [node name="Galeb4" parent="." unique_id=1223279645 instance=ExtResource("3_3hvsj")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 15.873496, 0, -4.1553087)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 15.873496, 2.6749344, -4.1553087)
 starting_animation = "Peck_Floor"
 
 [node name="Galeb5" parent="." unique_id=2021055381 instance=ExtResource("3_3hvsj")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 14.870165, 0, -4.1553087)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 14.870165, 2.6749344, -4.1553087)
 starting_animation = "Peck_Floor"
 
 [node name="Galeb6" parent="." unique_id=1165677865 instance=ExtResource("3_3hvsj")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 13.836484, 0, -4.1553087)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 13.836484, 2.6749344, -4.1553087)
 starting_animation = "Peck_Floor"
 
 [node name="Galeb7" parent="." unique_id=1960890796 instance=ExtResource("3_3hvsj")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 12.879623, 0, -4.1553087)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 12.879623, 2.6749344, -4.1553087)
 starting_animation = "Idle"
 
 [node name="Galeb8" parent="." unique_id=2048943155 instance=ExtResource("3_3hvsj")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 11.737791, 0, -4.1553087)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 11.737791, 2.6749344, -4.1553087)
 starting_animation = "Peck_Floor"
 
 [connection signal="drop_item" from="Player" to="." method="_on_player_drop_item"]

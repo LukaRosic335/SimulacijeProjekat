@@ -26,6 +26,7 @@ var run_off_height: float
 
 func _ready() -> void:
 	animation_player.play(starting_animation)
+	set_dropped(Vector3.ZERO)
 
 
 func _physics_process(delta: float) -> void:
@@ -50,17 +51,19 @@ func _physics_process(delta: float) -> void:
 			else:
 				run_off_height = 0.0
 		else:
-			target.y = lerp(target.y, 0.0, delta)
+			target.y = lerp(target.y, 0.0, delta / 2)
 		var direction = global_position.direction_to(target)
 		look_at(global_position + direction, Vector3.UP)
 		if wall_check.is_colliding():
 			avoid_wall()
 		velocity = direction * flight_speed
-		if global_position.distance_to(target) < 0.5:
+		var pos_xz = Vector3(global_position.x, 0.0, global_position.z)
+		var target_xz = Vector3(target.x, 0.0, target.z)
+		if pos_xz.distance_to(target_xz) < 0.3:
 			if is_on_floor():
 				land()
 			else:
-				target = lerp(target, target + direction, 0.3)
+				target = lerp(target, target + direction, 0.5)
 	
 	velocity.x = lerp(velocity.x, 0.0, delta)
 	velocity.z = lerp(velocity.z, 0.0, delta)
@@ -164,4 +167,5 @@ func _on_scare_area_body_entered(body: Node3D) -> void:
 	direction.y = 0
 	direction.x += randf_range(-1,1)
 	var distance = randf_range(3, 10)
-	fly_to(global_position + direction * distance, global_position.y + randf_range(0.5, 3))
+	var height = randf_range(0.1, 0.5) * distance
+	fly_to(global_position + direction * distance, global_position.y + height)

@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://delnw76340bj3" path="res://scripts/hud.gd" id="5_ep83s"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vfoq8"]
+resource_local_to_scene = true
 height = 1.7299805
 
 [sub_resource type="Image" id="Image_qlg0r"]
@@ -26,7 +27,7 @@ outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
 [node name="Player" type="CharacterBody3D" unique_id=1679093002]
-collision_mask = 18
+collision_mask = 26
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
@@ -121,3 +122,7 @@ offset_right = 37.0
 grow_vertical = 0
 text = "60"
 label_settings = SubResource("LabelSettings_nobe3")
+
+[node name="WaterCheck" type="RayCast3D" parent="." unique_id=1841985096]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5070932, 0)
+collision_mask = 8
