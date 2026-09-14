@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b4l46rhovkyo1"]
 
 [ext_resource type="Script" uid="uid://bwh1giprgo4ju" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="PackedScene" uid="uid://cbla6xttmmh6c" path="res://scenes/controls.tscn" id="2_ekxnf"]
 
 [node name="MainMenu" type="Control" unique_id=1349941609]
 layout_mode = 3
@@ -41,6 +42,13 @@ text = "Settings"
 [node name="btnQuit" type="Button" parent="GridContainer" unique_id=286089353]
 layout_mode = 2
 text = "Quit"
+
+[node name="Controls" parent="." unique_id=528137280 instance=ExtResource("2_ekxnf")]
+layout_mode = 1
+offset_left = 15.0
+offset_top = 16.0
+offset_right = 15.0
+offset_bottom = 16.0
 
 [connection signal="pressed" from="GridContainer/btnStart" to="." method="_on_btn_start_pressed"]
 [connection signal="pressed" from="GridContainer/btnSettings" to="." method="_on_btn_settings_pressed"]

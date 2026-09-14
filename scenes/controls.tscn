@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cbla6xttmmh6c"]
+
+[node name="Controls" type="RichTextLabel" unique_id=1058891335]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[color=orange]Movement:[/color] W A S D
+[color=orange]Sprint:[/color] Shift
+[color=orange]Jump:[/color] Space
+
+[color=orange]Interact:[/color] F
+[color=orange]Drop Item:[/color] X
+[color=orange]Throw:[/color] Right Click
+[color=orange]Shoot:[/color] Left Click
+
+[color=orange]Toggle Fullscreen:[/color] F11
+
+[color=orange]Pause:[/color] Esc"
