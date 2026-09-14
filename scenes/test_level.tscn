@@ -16,6 +16,7 @@ sky_material = ExtResource("4_x4b8f")
 [sub_resource type="Environment" id="Environment_tmr53"]
 background_mode = 2
 sky = SubResource("Sky_31pel")
+sky_rotation = Vector3(0, 0, -0.017453292)
 fog_enabled = true
 fog_light_energy = 0.18
 fog_aerial_perspective = 0.248
@@ -49,7 +50,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 221.65828, -1.1, -21.433)
 environment = SubResource("Environment_tmr53")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1093573772]
-transform = Transform3D(0.78463495, -0.39598933, 0.4770118, -0.5104649, 0.023974394, 0.8595643, -0.35181442, -0.917942, -0.18332756, 217.53168, 1.6585655, -14.743384)
+transform = Transform3D(-0.05042661, -0.17697826, 0.98292226, -0.9347105, 0.35505083, 0.015974738, -0.3518145, -0.91794205, -0.18332751, 217.53168, 1.6585655, -14.743384)
+light_energy = 1.5
+shadow_enabled = true
 
 [node name="pesak" parent="." unique_id=45053280 instance=ExtResource("5_tmr53")]
 

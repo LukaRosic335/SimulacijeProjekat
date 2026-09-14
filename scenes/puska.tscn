@@ -40,11 +40,13 @@ metadata/_custom_type_script = "uid://gs1cvy8lxlcg"
 
 [node name="puska" parent="." unique_id=1314788078 instance=ExtResource("1_xgy0g")]
 
-[node name="Cylinder" parent="puska" index="0" unique_id=1272635764]
+[node name="Cylinder" parent="puska" index="0" unique_id=1264815612]
 transform = Transform3D(-2.7078852e-09, 1, 0, -0.061949193, -4.371139e-08, 0, 0, 0, 0.061949193, 0, 0, 0)
+cast_shadow = 0
 
-[node name="Cylinder_001" parent="puska" index="1" unique_id=1767783689]
+[node name="Cylinder_001" parent="puska" index="1" unique_id=343669100]
 transform = Transform3D(0.49730957, -0.014721309, 0, 0.007321841, 0.99989164, 0, 0, 0, 1, 0.35389543, 0.0068478067, 0)
+cast_shadow = 0
 
 [node name="muzzleFlash" type="Node3D" parent="." unique_id=94222493]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.9928805, 0, 0)

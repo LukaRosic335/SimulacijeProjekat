@@ -17,7 +17,6 @@ func spawn_galebs() -> void:
 	var areas = get_children()
 	for i in range(0, galeb_count):
 		var area = areas[randi_range(0, areas.size() - 1)]
-		print(area)
 		var box3d = area.shape as BoxShape3D
 		var area_size = box3d.size
 		var pos = Vector3(
