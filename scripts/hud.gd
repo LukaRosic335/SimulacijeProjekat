@@ -5,6 +5,7 @@ extends Control
 @onready var camera_3d: Camera3D = $"../head/Camera3D"
 @onready var framerate: Label = $framerate
 @onready var text: Label = $text
+@onready var game_timer: RichTextLabel = $GameTimer
 
 @onready var general = preload("res://assets/crosshairs/general.png")
 @onready var interact = preload("res://assets/crosshairs/interact.png")
@@ -50,8 +51,17 @@ func show_text(tex: String) -> void:
 	text_timer = 3
 	text.show()
 
+
 func show_ne_znam_da_plivam() -> void:
 	var index = randi_range(0, ne_plivanje_voicelines.size()-1)
 	while index == last_np_voiceline:
 		index = randi_range(0, ne_plivanje_voicelines.size()-1)
+	last_np_voiceline = index
 	show_text(ne_plivanje_voicelines[index])
+
+
+func update_game_timer(time: String) -> void:
+	if(int(time)%60 < 10):
+		game_timer.text = str("0", int(time) / 60, ":0", int(time) % 60)
+	else:
+		game_timer.text = str("0", int(time) / 60, ":", int(time) % 60)

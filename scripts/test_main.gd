@@ -2,7 +2,9 @@ extends Node3D
 
 
 @onready var pause_menu: Control = $PauseMenu
+@onready var player: Player = $Player
 
+var game_timer: float = 0
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_PAUSABLE
@@ -27,6 +29,11 @@ func unpause() -> void:
 
 
 func _process(delta: float) -> void:
+	# GAMELOOP
+	# start timer
+	game_timer += delta
+	player.hud.update_game_timer(str(game_timer))
+	# proveri end condition
 	pass
 
 
