@@ -1,4 +1,4 @@
-extends Control
+extends Node3D
 
 
 func _on_btn_start_pressed() -> void:
