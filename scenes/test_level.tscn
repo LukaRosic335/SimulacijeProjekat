@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d1fp1gnxl022" path="res://scenes/galeb_exibition.tscn" id="6_qcd3b"]
 [ext_resource type="PackedScene" uid="uid://cgcl86iip81al" path="res://scenes/galeb_2.tscn" id="7_88ety"]
 [ext_resource type="Script" uid="uid://d253owietyavv" path="res://scripts/spawn_area.gd" id="8_ahbqi"]
+[ext_resource type="PackedScene" uid="uid://vtg16gh1pets" path="res://scenes/dnevnik.tscn" id="10_4asn1"]
 
 [sub_resource type="Sky" id="Sky_31pel"]
 sky_material = ExtResource("4_x4b8f")
@@ -84,6 +85,9 @@ shape = SubResource("BoxShape3D_ahbqi")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="SpawnArea" unique_id=202115520]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.139824, 1.9, 4.738678)
 shape = SubResource("BoxShape3D_7gix3")
+
+[node name="Dnevnik" parent="." unique_id=1178681970 instance=ExtResource("10_4asn1")]
+transform = Transform3D(0.5241197, 0, 0.85164464, 0, 1, 0, -0.85164464, 0, 0.5241197, -0.21945629, 2, 2.0166316)
 
 [connection signal="spawn_galeb" from="SpawnArea" to="." method="_on_spawn_area_spawn_galeb"]
 

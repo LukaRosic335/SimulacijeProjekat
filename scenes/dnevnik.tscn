@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://vtg16gh1pets"]
+
+[ext_resource type="PackedScene" uid="uid://dgn1twrsqv160" path="res://assets/models/dnevnik.blend" id="1_edrr2"]
+[ext_resource type="Script" uid="uid://bwkf8t620e26c" path="res://scripts/dnevnik.gd" id="1_lp6i0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lp6i0"]
+size = Vector3(0.46875, 0.09378052, 0.65234375)
+
+[node name="Dnevnik" type="Node3D" unique_id=853386563 groups=["Interactable"]]
+script = ExtResource("1_lp6i0")
+
+[node name="dnevnik" parent="." unique_id=916244071 instance=ExtResource("1_edrr2")]
+
+[node name="StaticBody3D" parent="dnevnik/Dnevnik" parent_id_path=PackedInt32Array(916244071, 529923215) index="0" unique_id=293440115]
+collision_layer = 32
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1783395749 groups=["Interactable"]]
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=6785129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.046829224, 0)
+shape = SubResource("BoxShape3D_lp6i0")
+
+[editable path="dnevnik"]

@@ -4,14 +4,25 @@ extends Control
 @onready var crosshair: TextureRect = $crosshair
 @onready var camera_3d: Camera3D = $"../head/Camera3D"
 @onready var framerate: Label = $framerate
+@onready var text: Label = $text
 
 @onready var general = preload("res://assets/crosshairs/general.png")
 @onready var interact = preload("res://assets/crosshairs/interact.png")
 @onready var screen = preload("res://assets/crosshairs/screen.png")
 @onready var service = preload("res://assets/crosshairs/service.png")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+var text_timer: float = 0.0
+
+
+func _ready() -> void:
+	text.hide()
+
+
+func _process(delta: float) -> void:
+	if text_timer <= 0:
+		text.hide()
+	text_timer -= delta
+	
 	framerate.text = str(Engine.get_frames_per_second())
 	var target = interaction_ray.__find_target()
 	if target == null:
@@ -19,5 +30,13 @@ func _process(_delta: float) -> void:
 		return
 	if target.is_in_group("Pickable"):
 		crosshair.texture = interact
+	elif target.is_in_group("Interactable"):
+		crosshair.texture = interact
 	else:
 		crosshair.texture = general
+
+
+func show_text(tex: String) -> void:
+	text.text = tex
+	text_timer = 3
+	text.show()

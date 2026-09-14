@@ -3,6 +3,7 @@ extends RayCast3D
 
 @onready var head: Node3D = $".."
 @onready var player: Player = $"../../.."
+@onready var hud: Control = $"../../../HUD"
 
 @export var item_position := Vector3(-0.5,-0.5,-0.5)
 
@@ -14,6 +15,9 @@ func __find_target() -> Node:
 		return null
 	
 	var target = get_collider().get_parent()
+	
+	if target.is_in_group("Interactable"): # HACK
+		return target
 	
 	if !__target_is_visible(target):
 		return null
@@ -28,6 +32,9 @@ func interact() -> void:
 	
 	if target.is_in_group("Pickable"):
 		pick_up(target)
+	if target.is_in_group("Interactable"):
+		if target is Dnevnik:
+			hud.show_text(target.read())
 
 
 func pick_up(target) -> void:
