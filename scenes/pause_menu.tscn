@@ -36,15 +36,18 @@ grow_vertical = 2
 
 [node name="btnResume" type="Button" parent="GridContainer" unique_id=1949016294]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Resume
 "
 
 [node name="btnQuitToMenu" type="Button" parent="GridContainer" unique_id=277297498]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Quit To Menu"
 
 [node name="btnQuitGame" type="Button" parent="GridContainer" unique_id=1452913217]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Quit Game"
 
 [node name="Controls" parent="." unique_id=1467966634 instance=ExtResource("2_myx47")]
