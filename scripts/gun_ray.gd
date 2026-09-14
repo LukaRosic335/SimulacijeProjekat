@@ -9,7 +9,7 @@ func get_target() -> Node:
 	var right = head.global_transform.basis.x
 	var up = head.global_transform.basis.y
 	
-	var spread = tan(deg_to_rad(10))
+	var spread = tan(deg_to_rad(15))
 	var angle = randf_range(0.0, TAU)
 	var radius = sqrt(randf()) * spread
 	

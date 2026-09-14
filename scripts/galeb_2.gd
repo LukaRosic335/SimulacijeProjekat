@@ -11,6 +11,7 @@ enum ai_state {walking, flying, peck_floor, idle, dropped, thrown, NULL, held}
 @onready var galeb_eksplozija = preload("res://scenes/galeb_eksplozija.tscn")
 @onready var scare_area: Area3D = $ScareArea
 @onready var wall_check: RayCast3D = $WallCheck
+@onready var sfx_player: GalebSfxPlayer = $sfx_player
 
 
 var state : ai_state = ai_state.NULL
@@ -26,6 +27,7 @@ var run_off_height: float
 var walk_speed: float = 1.0
 
 var timer: float
+@onready var sfx_timer: float = randf_range(1, 10)
 
 @export var exibition: bool = false
 
@@ -33,6 +35,15 @@ func _ready() -> void:
 	animation_player.play(starting_animation)
 	if !exibition:
 		set_dropped(Vector3.ZERO)
+
+
+func _process(delta: float) -> void:
+	if dead:
+		return
+	if sfx_timer <= 0:
+		sfx_player.play_sfx()
+		sfx_timer = randf_range(3,15)
+	sfx_timer -= delta
 
 
 func _physics_process(delta: float) -> void:
@@ -155,6 +166,8 @@ func set_thrown(force : Vector3):
 func kill(force: Vector3) -> void:
 	physical_bone_simulator_3d.physical_bones_stop_simulation()
 	animation_player.stop()
+	if !dead:
+		sfx_player.play_death_sfx()
 	dead = true
 	var eksplozija = galeb_eksplozija.instantiate()
 	add_child(eksplozija)
