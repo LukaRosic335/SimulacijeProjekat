@@ -98,7 +98,7 @@ func _process(_delta: float) -> void:
 		
 		if Input.is_action_just_pressed("left_click"):
 			if !puska.reloading:
-				puska.shoot(gun_ray.get_target(), -head.basis.z)
+				puska.shoot(gun_ray, -head.basis.z)
 				_recoil_target += _recoil_amount
 		
 		if Input.is_action_just_released("right_click"):

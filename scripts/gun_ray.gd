@@ -1,9 +1,22 @@
+class_name ShotgunRaycast
 extends RayCast3D
 
 @onready var head: Node3D = $"../.."
 
 
 func get_target() -> Node:
+	var forward = -head.global_transform.basis.z
+	var right = head.global_transform.basis.x
+	var up = head.global_transform.basis.y
+	
+	var spread = tan(deg_to_rad(10))
+	var angle = randf_range(0.0, TAU)
+	var radius = sqrt(randf()) * spread
+	
+	var direction = (forward + right * cos(angle) * radius + up * sin(angle) * radius).normalized()
+	target_position = to_local(global_position + direction * 100)
+	force_raycast_update()
+	
 	if !is_colliding():
 		return null
 	var target = get_collider().get_parent()

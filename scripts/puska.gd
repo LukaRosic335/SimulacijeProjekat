@@ -8,6 +8,7 @@ extends Node3D
 @onready var reloading = false
 
 const GUN_KNOCKBACK = 1.0
+@export var pelet_count = 24
 
 
 func reload() -> void:
@@ -16,12 +17,14 @@ func reload() -> void:
 	reloading = false
 
 
-func shoot(target: Node, vector: Vector3) -> void:
+func shoot(raycast: ShotgunRaycast, vector: Vector3) -> void:
 	animation_player.play("shoot")
 	muzzle.emitting = true
 	reloading = true
-	if target != null and target.is_in_group("Galeb"):
-		var galeb: Galeb = target
-		galeb.kill(vector * GUN_KNOCKBACK)
+	for i in pelet_count:
+		var target = raycast.get_target()
+		if target != null and target.is_in_group("Galeb"):
+			var galeb: Galeb = target
+			galeb.kill(vector * GUN_KNOCKBACK)
 	await animation_player.animation_finished
 	reload()

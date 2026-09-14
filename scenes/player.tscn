@@ -56,13 +56,14 @@ collide_with_areas = true
 collide_with_bodies = false
 script = ExtResource("2_4ob08")
 
-[node name="gunRay" type="RayCast3D" parent="head/Camera3D" unique_id=1508147025]
-transform = Transform3D(1, 0, 0, 0, 0.00441569, -0.99999, 0, 0.99999, 0.00441569, 0, 0, 0)
+[node name="gunRay" type="RayCast3D" parent="head/Camera3D" unique_id=969569695]
+transform = Transform3D(1, 0, 0, 0, -4.3711374e-08, -0.9999997, 0, 0.9999997, -4.3711374e-08, 0, 0, 0)
 target_position = Vector3(0, -100, 0)
 collision_mask = 22
 collide_with_areas = true
 collide_with_bodies = false
 script = ExtResource("3_qlg0r")
+metadata/_custom_type_script = "uid://b7fjuc2qv8nid"
 
 [node name="puska" parent="head" unique_id=1158997249 instance=ExtResource("3_dqkch")]
 transform = Transform3D(-0.25342986, 0.056928363, 0.9656772, 0.3006284, 0.9534715, 0.022687335, -0.9194541, 0.29605964, -0.25875244, 0.532, -0.41, 0.005)
