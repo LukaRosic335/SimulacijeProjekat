@@ -1,6 +1,7 @@
 class_name Mlevilica
 extends Node3D
 
+@onready var animation_player: AnimationPlayer = $MlevilicaPastetarnik7259tm/AnimationPlayer
 @onready var koralovo_uredjaj_ulaz: Area3D = $KoralovoUredjajUlaz
 
 @onready var pasteta_scene = preload("res://scenes/pasteta.tscn")
@@ -39,3 +40,7 @@ func izbaci_pastetu() -> void:
 	pasteta.rotation_degrees.y = randf_range(-180,180)
 	pasteta.rotation_degrees.z = randf_range(-70,70)
 	pass
+
+
+func _ready() -> void:
+	animation_player.play("Mlevenje")
