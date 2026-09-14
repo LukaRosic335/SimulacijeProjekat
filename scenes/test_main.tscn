@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bqtd0bdoh1p6f" path="res://scripts/test_main.gd" id="1_7yu4j"]
 [ext_resource type="PackedScene" uid="uid://dahnvfrmv83kt" path="res://scenes/test_level.tscn" id="1_xl5go"]
 [ext_resource type="PackedScene" uid="uid://clvia347ah0w2" path="res://scenes/player.tscn" id="2_3hvsj"]
+[ext_resource type="PackedScene" uid="uid://d2trb35o5sc1o" path="res://scenes/pause_menu.tscn" id="4_7yu4j"]
 
 [node name="TestMain" type="Node3D" unique_id=642261019]
 script = ExtResource("1_7yu4j")
@@ -11,6 +12,9 @@ script = ExtResource("1_7yu4j")
 
 [node name="Player" parent="." unique_id=1679093002 instance=ExtResource("2_3hvsj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.692075, 0)
+
+[node name="PauseMenu" parent="." unique_id=986999106 instance=ExtResource("4_7yu4j")]
+visible = false
 
 [connection signal="spawn_galeb" from="TestLevel" to="." method="_on_test_level_spawn_galeb"]
 [connection signal="drop_item" from="Player" to="." method="_on_player_drop_item"]

@@ -52,8 +52,6 @@ var jump_out: bool = false
 
 
 func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	
 	_look_pitch = head.rotation_degrees.x
 	_look_yaw = head.rotation_degrees.y
 
@@ -64,18 +62,8 @@ func __get_look_vector():
 
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_released("quit"):
-		get_tree().quit(0)
 	
 	var res_dir = Vector3.ZERO
-	
-	if Input.is_action_just_pressed("toggle_mouse"):
-		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-			_allow_movement = false
-		else:
-			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-			_allow_movement = true
 	
 	# interact
 	if Input.is_action_just_pressed("interact"):

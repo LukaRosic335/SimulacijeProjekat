@@ -35,6 +35,7 @@ text = "Start"
 
 [node name="btnSettings" type="Button" parent="GridContainer" unique_id=1501967633]
 layout_mode = 2
+disabled = true
 text = "Settings"
 
 [node name="btnQuit" type="Button" parent="GridContainer" unique_id=286089353]

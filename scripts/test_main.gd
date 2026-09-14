@@ -1,6 +1,31 @@
 extends Node3D
 
 
+@onready var pause_menu: Control = $PauseMenu
+
+
+func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_PAUSABLE
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+
+func _unhandled_key_input(event: InputEvent) -> void:
+	if event.is_action_pressed("quit"):
+		pause()
+
+
+func pause() -> void:
+	get_tree().paused = true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	pause_menu.show()
+
+
+func unpause() -> void:
+	pause_menu.hide()
+	get_tree().paused = false
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+
 func _process(delta: float) -> void:
 	pass
 
