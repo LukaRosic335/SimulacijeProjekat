@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://bqtd0bdoh1p6f" path="res://scripts/test_main.gd" id="1_7yu4j"]
 [ext_resource type="PackedScene" uid="uid://dahnvfrmv83kt" path="res://scenes/test_level.tscn" id="1_xl5go"]
 [ext_resource type="PackedScene" uid="uid://clvia347ah0w2" path="res://scenes/player.tscn" id="2_3hvsj"]
-[ext_resource type="PackedScene" uid="uid://cgcl86iip81al" path="res://scenes/galeb_2.tscn" id="3_3hvsj"]
 
 [node name="TestMain" type="Node3D" unique_id=642261019]
 script = ExtResource("1_7yu4j")
@@ -13,32 +12,5 @@ script = ExtResource("1_7yu4j")
 [node name="Player" parent="." unique_id=1679093002 instance=ExtResource("2_3hvsj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.692075, 0)
 
-[node name="Galeb2" parent="." unique_id=2098463881 instance=ExtResource("3_3hvsj")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 17.957317, 2.6749344, -13.155309)
-starting_animation = "Peck_Floor"
-
-[node name="Galeb3" parent="." unique_id=565030494 instance=ExtResource("3_3hvsj")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 19.008514, 2.6749344, 2.8446913)
-starting_animation = "Idle"
-
-[node name="Galeb4" parent="." unique_id=1223279645 instance=ExtResource("3_3hvsj")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 11.873496, 2.6749344, -8.155309)
-starting_animation = "Peck_Floor"
-
-[node name="Galeb5" parent="." unique_id=2021055381 instance=ExtResource("3_3hvsj")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 14.870165, 2.6749344, -18.155308)
-starting_animation = "Peck_Floor"
-
-[node name="Galeb6" parent="." unique_id=1165677865 instance=ExtResource("3_3hvsj")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 23.836483, 2.6749344, -4.1553087)
-starting_animation = "Peck_Floor"
-
-[node name="Galeb7" parent="." unique_id=1960890796 instance=ExtResource("3_3hvsj")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 12.879623, 2.6749344, 1.8446913)
-starting_animation = "Idle"
-
-[node name="Galeb8" parent="." unique_id=2048943155 instance=ExtResource("3_3hvsj")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.737791, 2.6749344, -15.155309)
-starting_animation = "Peck_Floor"
-
+[connection signal="spawn_galeb" from="TestLevel" to="." method="_on_test_level_spawn_galeb"]
 [connection signal="drop_item" from="Player" to="." method="_on_player_drop_item"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dahnvfrmv83kt"]
 
 [ext_resource type="PackedScene" uid="uid://byvyej1v6bl0y" path="res://scenes/kuca.tscn" id="1_2venv"]
+[ext_resource type="Script" uid="uid://plb00qs08x71" path="res://scenes/level.gd" id="1_7gix3"]
 [ext_resource type="PackedScene" uid="uid://0o4dny0f61jt" path="res://scenes/grad.tscn" id="2_paw1w"]
 [ext_resource type="PackedScene" uid="uid://ipsmq2fbmfym" path="res://scenes/water.tscn" id="3_qcd3b"]
 [ext_resource type="Material" uid="uid://b7s60e6s6qarf" path="res://assets/resources/skybox.tres" id="4_x4b8f"]
@@ -33,7 +34,9 @@ size = Vector3(16.881836, 1, 14.821777)
 [sub_resource type="BoxShape3D" id="BoxShape3D_7gix3"]
 size = Vector3(5.5283203, 1, 8.71698)
 
-[node name="TestLevel" type="Node3D" unique_id=222213529]
+[node name="TestLevel" type="Node3D" unique_id=406903697]
+script = ExtResource("1_7gix3")
+metadata/_custom_type_script = "uid://plb00qs08x71"
 
 [node name="Kuca" parent="." unique_id=49636183 instance=ExtResource("1_2venv")]
 
@@ -78,5 +81,7 @@ shape = SubResource("BoxShape3D_ahbqi")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="SpawnArea" unique_id=202115520]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.139824, 1.9, 4.738678)
 shape = SubResource("BoxShape3D_7gix3")
+
+[connection signal="spawn_galeb" from="SpawnArea" to="." method="_on_spawn_area_spawn_galeb"]
 
 [editable path="pesak"]

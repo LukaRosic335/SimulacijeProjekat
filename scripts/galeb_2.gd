@@ -38,7 +38,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	match state:
 		ai_state.NULL:
-			if is_on_floor():
+			if is_on_floor() and !exibition:
 				start_ai()
 		ai_state.held:
 			return

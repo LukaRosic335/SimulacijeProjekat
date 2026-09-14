@@ -39,3 +39,7 @@ func _on_player_drop_item(item: Node3D, force: Vector3) -> void:
 		item.apply_impulse(force, item.global_position)
 		item.apply_force(force / 4, item.global_position)
 	print("Item dropped") # DEBUG
+
+
+func _on_test_level_spawn_galeb(galeb: Galeb) -> void:
+	galeb.reparent.call_deferred(self, true)
