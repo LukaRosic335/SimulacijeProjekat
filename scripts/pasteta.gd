@@ -1,0 +1,2 @@
+class_name Pasteta
+extends RigidBody3D

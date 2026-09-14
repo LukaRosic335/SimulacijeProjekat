@@ -6,9 +6,13 @@ extends Node3D
 
 var game_timer: float = 0
 
+var pobeda: bool = false
+
+
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_PAUSABLE
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	player.connect("njam_njam", _on_njam_njam)
 
 
 func _unhandled_key_input(event: InputEvent) -> void:
@@ -30,11 +34,9 @@ func unpause() -> void:
 
 func _process(delta: float) -> void:
 	# GAMELOOP
-	# start timer
-	game_timer += delta
-	player.hud.update_game_timer(str(game_timer))
-	# proveri end condition
-	pass
+	if !pobeda:
+		game_timer += delta
+		player.hud.update_game_timer(str(game_timer))
 
 
 func _on_player_drop_item(item: Node3D, force: Vector3) -> void:
@@ -58,3 +60,10 @@ func _on_player_drop_item(item: Node3D, force: Vector3) -> void:
 
 func _on_test_level_spawn_galeb(galeb: Galeb) -> void:
 	galeb.reparent.call_deferred(self, true)
+
+
+func _on_njam_njam():
+	pobeda = true
+	player.hud.show_pobeda()
+	player._allow_movement = false
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

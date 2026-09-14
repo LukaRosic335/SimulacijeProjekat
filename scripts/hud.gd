@@ -6,6 +6,7 @@ extends Control
 @onready var framerate: Label = $framerate
 @onready var text: Label = $text
 @onready var game_timer: RichTextLabel = $GameTimer
+@onready var pobeda: GridContainer = $pobeda
 
 @onready var general = preload("res://assets/crosshairs/general.png")
 @onready var interact = preload("res://assets/crosshairs/interact.png")
@@ -26,6 +27,7 @@ var last_np_voiceline: int = 0
 
 func _ready() -> void:
 	text.hide()
+	pobeda.hide()
 
 
 func _process(delta: float) -> void:
@@ -65,3 +67,8 @@ func update_game_timer(time: String) -> void:
 		game_timer.text = str("0", int(time) / 60, ":0", int(time) % 60)
 	else:
 		game_timer.text = str("0", int(time) / 60, ":", int(time) % 60)
+
+
+func show_pobeda() -> void:
+	crosshair.hide()
+	pobeda.show()

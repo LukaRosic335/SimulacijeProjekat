@@ -30,6 +30,7 @@ window/vsync/vsync_mode=0
 [global_group]
 
 Water=""
+Interactable=""
 
 [input]
 
@@ -127,6 +128,7 @@ toggle_mouse={
 3d_physics/layer_4="water"
 3d_physics/layer_5="GalebArea"
 3d_physics/layer_6="Interactable"
+3d_physics/layer_7="KoralovoUredjaj"
 
 [physics]
 

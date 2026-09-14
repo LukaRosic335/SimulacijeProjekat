@@ -181,6 +181,16 @@ func kill(force: Vector3) -> void:
 		bone.apply_central_impulse(velocity.normalized() + force * randf_range(1.0, 1.5))
 
 
+func frickin_explode(mlevilica: Mlevilica) -> void:
+	if !dead:
+		sfx_player.play_death_sfx()
+	var eksplozija = galeb_eksplozija.instantiate()
+	mlevilica.add_child(eksplozija)
+	eksplozija.global_position = mlevilica.koralovo_uredjaj_ulaz.global_position
+	eksplozija.explode()
+	queue_free()
+
+
 func fly_to(target_loc: Vector3, height: float):
 	run_off_height = height
 	target = target_loc

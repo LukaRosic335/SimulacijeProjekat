@@ -15,7 +15,6 @@ func __find_target() -> Node:
 		return null
 	
 	var target = get_collider().get_parent()
-	
 	if target.is_in_group("Interactable"): # HACK
 		return target
 	
@@ -27,6 +26,7 @@ func __find_target() -> Node:
 
 func interact() -> void:
 	var target = __find_target()
+	print(target)
 	if !target:
 		return
 	
@@ -35,6 +35,9 @@ func interact() -> void:
 	if target.is_in_group("Interactable"):
 		if target is Dnevnik:
 			hud.show_text(target.read())
+		if target is Pasteta:
+			player.njam()
+			target.queue_free()
 
 
 func pick_up(target) -> void:

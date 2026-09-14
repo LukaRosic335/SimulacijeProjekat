@@ -3,6 +3,7 @@ extends CharacterBody3D
 
 
 signal drop_item(item : Node3D, force : Vector3)
+signal njam_njam
 
 
 @onready var head: Node3D = $head
@@ -189,3 +190,15 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
+
+
+func njam() -> void:
+	njam_njam.emit()
+
+
+func _on_btn_ponovo_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/test_main.tscn")
+
+
+func _on_btn_quit_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

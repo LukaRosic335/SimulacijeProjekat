@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://7y43deuq55d4"]
+
+[ext_resource type="Script" uid="uid://blucc83unejvn" path="res://scripts/mlevilica.gd" id="1_x88b8"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4om83"]
+size = Vector3(2, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4om83"]
+
+[node name="Mlevilica" type="Node3D" unique_id=449248837]
+script = ExtResource("1_x88b8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1614661130]
+mesh = SubResource("BoxMesh_4om83")
+
+[node name="KoralovoUredjajUlaz" type="Area3D" parent="." unique_id=989264277]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44460472, 0, 0.95265496)
+collision_layer = 64
+collision_mask = 16
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KoralovoUredjajUlaz" unique_id=1792202207]
+shape = SubResource("BoxShape3D_4om83")
+
+[node name="PastetaDropPoint" type="Node3D" parent="." unique_id=1968338446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5946524, 0.46566546, 0.91063595)
+
+[connection signal="area_entered" from="KoralovoUredjajUlaz" to="." method="_on_koralovo_uredjaj_ulaz_area_entered"]
