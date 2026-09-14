@@ -1,25 +1,8 @@
 extends Node3D
 
 
-var fullscreen : bool = false
-
-
-func _ready() -> void:
-	Engine.max_fps = 60
-
-
 func _process(delta: float) -> void:
 	pass
-
-
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("fullscreen"):
-		if fullscreen:
-			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-			fullscreen = false
-		else:
-			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-			fullscreen = true
 
 
 func _on_player_drop_item(item: Node3D, force: Vector3) -> void:

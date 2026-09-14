@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://b4l46rhovkyo1"]
+
+[ext_resource type="Script" uid="uid://bwh1giprgo4ju" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+
+[node name="MainMenu" type="Control" unique_id=1349941609]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l6cm7")
+
+[node name="Pozadina" type="TextureRect" parent="." unique_id=203428318]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=33928193]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="btnStart" type="Button" parent="GridContainer" unique_id=79382471]
+layout_mode = 2
+text = "Start"
+
+[node name="btnSettings" type="Button" parent="GridContainer" unique_id=1501967633]
+layout_mode = 2
+text = "Settings"
+
+[node name="btnQuit" type="Button" parent="GridContainer" unique_id=286089353]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="GridContainer/btnStart" to="." method="_on_btn_start_pressed"]
+[connection signal="pressed" from="GridContainer/btnSettings" to="." method="_on_btn_settings_pressed"]
+[connection signal="pressed" from="GridContainer/btnQuit" to="." method="_on_btn_quit_pressed"]
