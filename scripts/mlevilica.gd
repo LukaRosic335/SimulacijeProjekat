@@ -35,6 +35,7 @@ func izbaci_pastetu() -> void:
 	var pasteta: Pasteta = pasteta_scene.instantiate()
 	add_child(pasteta)
 	pasteta.global_position = pasteta_drop_point.global_position
-	pasteta.rotation_degrees.x = randf_range(-30,30)
-	pasteta.rotation_degrees.z = randf_range(-30,30)
+	pasteta.rotation_degrees.x = randf_range(-70,70)
+	pasteta.rotation_degrees.y = randf_range(-180,180)
+	pasteta.rotation_degrees.z = randf_range(-70,70)
 	pass

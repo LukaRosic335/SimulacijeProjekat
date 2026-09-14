@@ -13,7 +13,6 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0
 
 [node name="Player" parent="." unique_id=1679093002 instance=ExtResource("2_3hvsj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9499454, 3.6698914, -1.1210084)
-metadata/_edit_group_ = true
 
 [node name="PauseMenu" parent="." unique_id=986999106 instance=ExtResource("4_7yu4j")]
 visible = false
