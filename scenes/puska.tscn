@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bcjuu6roiirof" path="res://assets/models/puska.blend" id="1_xgy0g"]
 [ext_resource type="Texture2D" uid="uid://bsbgn02yeryl1" path="res://assets/models/textures/muzzle_flash.png" id="3_4wqey"]
 [ext_resource type="ArrayMesh" uid="uid://bk8r6mgit7hgg" path="res://assets/models/muzzlePlanes.obj" id="3_qjdjx"]
+[ext_resource type="AudioStream" uid="uid://bf43bmv34m3x5" path="res://assets/sfx/shotgun-sound.mp3" id="5_ku1xs"]
+[ext_resource type="AudioStream" uid="uid://kpq4pats1amh" path="res://assets/sfx/shotgun-reloading-sound.mp3" id="6_t26q2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qjdjx"]
 transparency = 1
@@ -61,5 +63,15 @@ randomness = 1.0
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_ku1xs")
 draw_pass_1 = ExtResource("3_qjdjx")
+
+[node name="shoot_sfx" type="AudioStreamPlayer3D" parent="." unique_id=364279412]
+stream = ExtResource("5_ku1xs")
+volume_db = -30.0
+bus = &"sfx"
+
+[node name="reload_sfx" type="AudioStreamPlayer3D" parent="." unique_id=903166625]
+stream = ExtResource("6_t26q2")
+volume_db = -30.0
+bus = &"sfx"
 
 [editable path="puska"]

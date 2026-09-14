@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="SimulacijeProjekat"
-run/main_scene="uid://c5ltodt6vi478"
+run/main_scene="uid://c65vinshnq6ax"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://dxedhip7afna3"
 
 [display]
 

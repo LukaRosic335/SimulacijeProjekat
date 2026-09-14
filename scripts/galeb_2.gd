@@ -165,7 +165,7 @@ func kill(force: Vector3) -> void:
 	physical_bone_simulator_3d.physical_bones_start_simulation()
 	state = ai_state.thrown
 	for bone in physical_bone_simulator_3d.get_children():
-		bone.apply_central_impulse(force * randf_range(1.0, 1.5))
+		bone.apply_central_impulse(velocity.normalized() + force * randf_range(1.0, 1.5))
 
 
 func fly_to(target_loc: Vector3, height: float):

@@ -8,17 +8,22 @@ extends Node3D
 @onready var reloading = false
 
 const GUN_KNOCKBACK = 1.0
-@export var pelet_count = 24
+@export var pelet_count = 48
+
+@onready var shoot_sfx: AudioStreamPlayer3D = $shoot_sfx
+@onready var reload_sfx: AudioStreamPlayer3D = $reload_sfx
 
 
 func reload() -> void:
 	animation_player.play("reload")
+	reload_sfx.play()
 	await animation_player.animation_finished
 	reloading = false
 
 
 func shoot(raycast: ShotgunRaycast, vector: Vector3) -> void:
 	animation_player.play("shoot")
+	shoot_sfx.play()
 	muzzle.emitting = true
 	reloading = true
 	for i in pelet_count:
