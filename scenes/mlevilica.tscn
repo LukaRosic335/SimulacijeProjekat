@@ -1,32 +1,13 @@
 [gd_scene format=3 uid="uid://7y43deuq55d4"]
 
 [ext_resource type="Script" uid="uid://blucc83unejvn" path="res://scripts/mlevilica.gd" id="1_x88b8"]
-[ext_resource type="PackedScene" uid="uid://cqf7u3yp4xhj3" path="res://assets/models/MlevilicaPastetarnik7259tm.blend" id="2_0swy1"]
+[ext_resource type="PackedScene" uid="uid://bhg71uyau3oj2" path="res://assets/models/MlevilicaPastetarnik7259tm.glb" id="2_0swy1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4om83"]
 size = Vector3(1.4995728, 1.3688965, 0.5859375)
 
 [node name="Mlevilica" type="Node3D" unique_id=449248837]
 script = ExtResource("1_x88b8")
-
-[node name="MlevilicaPastetarnik7259tm" parent="." unique_id=1291613747 instance=ExtResource("2_0swy1")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-
-[node name="StaticBody3D" parent="MlevilicaPastetarnik7259tm/Masina" parent_id_path=PackedInt32Array(1291613747, 1775850560) index="0" unique_id=653979228]
-collision_layer = 2
-collision_mask = 37
-
-[node name="StaticBody3D" parent="MlevilicaPastetarnik7259tm/Mlevac2" parent_id_path=PackedInt32Array(1291613747, 1347395508) index="0" unique_id=1304309732]
-collision_layer = 2
-collision_mask = 37
-
-[node name="StaticBody3D" parent="MlevilicaPastetarnik7259tm/Mlevac" parent_id_path=PackedInt32Array(1291613747, 1930285401) index="0" unique_id=1357356047]
-collision_layer = 2
-collision_mask = 37
-
-[node name="StaticBody3D" parent="MlevilicaPastetarnik7259tm/Odzak" parent_id_path=PackedInt32Array(1291613747, 1944373506) index="0" unique_id=6239604]
-collision_layer = 2
-collision_mask = 37
 
 [node name="KoralovoUredjajUlaz" type="Area3D" parent="." unique_id=989264277]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44460472, 0, 0.95265496)
@@ -39,7 +20,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3004456, -0.111694336, -0.
 shape = SubResource("BoxShape3D_4om83")
 
 [node name="PastetaDropPoint" type="Node3D" parent="." unique_id=1968338446]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5410035, 0.14483646, 2.6169236)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9544206, 0.54449856, 1.7109988)
+
+[node name="MlevilicaPastetarnik7259tm" parent="." unique_id=469533311 instance=ExtResource("2_0swy1")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Masina" parent="MlevilicaPastetarnik7259tm" index="0" unique_id=1392538960]
+transform = Transform3D(2.998742, -0.02219108, 0, 0.05111441, 1.3018897, 0, 0, 0, 1, 0.0052990383, 0.047946833, 0.0067437543)
+
+[node name="StaticBody3D" parent="MlevilicaPastetarnik7259tm/Masina" index="0" unique_id=401024305]
+collision_layer = 2
+collision_mask = 37
+
+[node name="Mlevac2" parent="MlevilicaPastetarnik7259tm" index="1" unique_id=2140895594]
+transform = Transform3D(0.0032903943, -0.99994725, 0.009724535, -0.33381054, 0.008068457, 0.9426057, -0.94263446, -0.0063476968, -0.33376643, 0.6635872, -0.53760445, -0.38525856)
+
+[node name="StaticBody3D" parent="MlevilicaPastetarnik7259tm/Mlevac2" index="0" unique_id=1906754557]
+collision_layer = 2
+collision_mask = 37
+
+[node name="Mlevac" parent="MlevilicaPastetarnik7259tm" index="2" unique_id=77285042]
+transform = Transform3D(0.00071696704, -0.9999853, 0.0053682327, 0.9866763, 0.0015807842, 0.16268796, -0.16269407, 0.0051800655, 0.986663, 0.71226376, 0.50108266, -0.38525856)
+
+[node name="StaticBody3D" parent="MlevilicaPastetarnik7259tm/Mlevac" index="0" unique_id=2050456910]
+collision_layer = 2
+collision_mask = 37
+
+[node name="Odzak" parent="MlevilicaPastetarnik7259tm" index="3" unique_id=1886805340]
+transform = Transform3D(-0.21669176, 0.03302607, 0.10365489, -0.103330866, 0.016389094, -0.21731989, -0.018432252, -0.48013538, -0.00028817417, -2.9777374, 0.7737655, -1.4349741)
+
+[node name="StaticBody3D" parent="MlevilicaPastetarnik7259tm/Odzak" index="0" unique_id=1860256108]
+collision_layer = 2
+collision_mask = 37
 
 [connection signal="area_entered" from="KoralovoUredjajUlaz" to="." method="_on_koralovo_uredjaj_ulaz_area_entered"]
 
