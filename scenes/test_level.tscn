@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://dahnvfrmv83kt"]
 
 [ext_resource type="PackedScene" uid="uid://byvyej1v6bl0y" path="res://scenes/kuca.tscn" id="1_2venv"]
-[ext_resource type="Script" uid="uid://plb00qs08x71" path="res://scenes/level.gd" id="1_7gix3"]
+[ext_resource type="Script" uid="uid://plb00qs08x71" path="res://scripts/level.gd" id="1_7gix3"]
 [ext_resource type="PackedScene" uid="uid://0o4dny0f61jt" path="res://scenes/grad.tscn" id="2_paw1w"]
 [ext_resource type="PackedScene" uid="uid://ipsmq2fbmfym" path="res://scenes/water.tscn" id="3_qcd3b"]
 [ext_resource type="Material" uid="uid://b7s60e6s6qarf" path="res://assets/resources/skybox.tres" id="4_x4b8f"]
 [ext_resource type="PackedScene" uid="uid://cgmw371c0j2h4" path="res://assets/models/pesak.blend" id="5_tmr53"]
 [ext_resource type="PackedScene" uid="uid://d1fp1gnxl022" path="res://scenes/galeb_exibition.tscn" id="6_qcd3b"]
 [ext_resource type="PackedScene" uid="uid://cgcl86iip81al" path="res://scenes/galeb_2.tscn" id="7_88ety"]
-[ext_resource type="Script" uid="uid://d253owietyavv" path="res://spawn_area.gd" id="8_ahbqi"]
+[ext_resource type="Script" uid="uid://d253owietyavv" path="res://scripts/spawn_area.gd" id="8_ahbqi"]
 
 [sub_resource type="Sky" id="Sky_31pel"]
 sky_material = ExtResource("4_x4b8f")

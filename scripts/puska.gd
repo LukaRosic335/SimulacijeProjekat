@@ -8,7 +8,7 @@ extends Node3D
 @onready var reloading = false
 
 const GUN_KNOCKBACK = 1.0
-@export var pelet_count = 48
+@export var pelet_count = 24
 
 @onready var shoot_sfx: AudioStreamPlayer3D = $shoot_sfx
 @onready var reload_sfx: AudioStreamPlayer3D = $reload_sfx

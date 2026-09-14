@@ -13,7 +13,6 @@ config_version=5
 config/name="SimulacijeProjekat"
 run/main_scene="uid://c65vinshnq6ax"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
 
 [audio]
 
