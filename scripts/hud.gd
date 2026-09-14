@@ -13,6 +13,15 @@ extends Control
 
 var text_timer: float = 0.0
 
+@export var ne_plivanje_voicelines = [
+	"Voleo bih da znam da plivam",
+	"Udavicu se",
+	"Plaism se riba",
+	"Necu da ukvasim carape",
+	"Mrzim sol",
+]
+var last_np_voiceline: int = 0
+
 
 func _ready() -> void:
 	text.hide()
@@ -40,3 +49,9 @@ func show_text(tex: String) -> void:
 	text.text = tex
 	text_timer = 3
 	text.show()
+
+func show_ne_znam_da_plivam() -> void:
+	var index = randi_range(0, ne_plivanje_voicelines.size()-1)
+	while index == last_np_voiceline:
+		index = randi_range(0, ne_plivanje_voicelines.size()-1)
+	show_text(ne_plivanje_voicelines[index])

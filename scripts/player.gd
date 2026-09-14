@@ -10,6 +10,7 @@ signal drop_item(item : Node3D, force : Vector3)
 @onready var interaction_ray: RayCast3D = $head/Camera3D/InteractionRay
 @onready var gun_ray: RayCast3D = $head/Camera3D/gunRay
 @onready var puska: Puska = $head/puska
+@onready var hud: Control = $HUD
 
 @onready var _g_vector: Vector3 = ProjectSettings.get_setting("physics/3d/default_gravity_vector")
 @onready var _g_const: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -139,6 +140,7 @@ func _physics_process(delta: float) -> void:
 	
 	if water_check.is_colliding() && !jump_out:
 		# TODO play ne znam da plivam sfx
+		hud.show_ne_znam_da_plivam()
 		jump_out = true
 		var direction = -Vector3(velocity.x, 0.0, velocity.z).normalized()
 		velocity.y = 5
