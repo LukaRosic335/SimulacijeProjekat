@@ -1,6 +1,9 @@
 extends Control
 
 
+@onready var settings_scene = preload("res://scenes/settings.tscn")
+
+
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 
@@ -17,3 +20,7 @@ func _on_btn_quit_to_menu_pressed() -> void:
 
 func _on_btn_quit_game_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_btn_settings_pressed() -> void:
+	add_child(settings_scene.instantiate())

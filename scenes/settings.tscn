@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://cujmlwivytjp1"]
+
+[ext_resource type="Script" uid="uid://n7pvtulin4kw" path="res://scripts/settings.gd" id="1_5p8wc"]
+
+[sub_resource type="Gradient" id="Gradient_x2hje"]
+resource_local_to_scene = true
+offsets = PackedFloat32Array(0, 0.34931508, 1)
+colors = PackedColorArray(0.44044712, 0, 0, 1, 0.5784191, 0.24657534, 0.24657534, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_nkug2"]
+domain_warp_enabled = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3ykye"]
+noise = SubResource("FastNoiseLite_nkug2")
+color_ramp = SubResource("Gradient_x2hje")
+
+[sub_resource type="Gradient" id="Gradient_5p8wc"]
+resource_local_to_scene = true
+offsets = PackedFloat32Array(0, 0.43835616, 1)
+colors = PackedColorArray(0.44044712, 0, 0, 1, 0.6285371, 0.3361433, 0.3361433, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5p8wc"]
+domain_warp_enabled = true
+domain_warp_frequency = 0.07
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6wm04"]
+noise = SubResource("FastNoiseLite_5p8wc")
+color_ramp = SubResource("Gradient_5p8wc")
+
+[sub_resource type="Gradient" id="Gradient_r6d6q"]
+resource_local_to_scene = true
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.44044712, 0, 0, 1, 0.6285371, 0.3361433, 0.3361433, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_r6d6q"]
+domain_warp_enabled = true
+domain_warp_frequency = 0.09
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_f4mfi"]
+noise = SubResource("FastNoiseLite_r6d6q")
+color_ramp = SubResource("Gradient_r6d6q")
+
+[sub_resource type="Gradient" id="Gradient_6wm04"]
+resource_local_to_scene = true
+offsets = PackedFloat32Array(0, 0.39041096, 1)
+colors = PackedColorArray(0.44044712, 0, 0, 1, 0.60184026, 0.28843227, 0.28843227, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6wm04"]
+domain_warp_enabled = true
+domain_warp_frequency = 0.07
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_es4n0"]
+noise = SubResource("FastNoiseLite_6wm04")
+color_ramp = SubResource("Gradient_6wm04")
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_gc0em"]
+frames = 4
+speed_scale = 0.5
+frame_0/texture = SubResource("NoiseTexture2D_3ykye")
+frame_0/duration = 0.1
+frame_1/texture = SubResource("NoiseTexture2D_6wm04")
+frame_1/duration = 0.1
+frame_2/texture = SubResource("NoiseTexture2D_f4mfi")
+frame_2/duration = 0.1
+frame_3/texture = SubResource("NoiseTexture2D_es4n0")
+frame_3/duration = 0.1
+
+[node name="Settings" type="Control" unique_id=1767399315]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_5p8wc")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=444967627]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AnimatedTexture_gc0em")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1851399904]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -11.5
+offset_right = 150.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer" unique_id=1364523489]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer/HBoxContainer" unique_id=621295058]
+layout_mode = 2
+text = "Volume: "
+
+[node name="HSlider" type="HSlider" parent="GridContainer/HBoxContainer" unique_id=113252837]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="btnback" type="Button" parent="GridContainer" unique_id=586109691]
+layout_mode = 2
+text = "Nazad"
+
+[connection signal="value_changed" from="GridContainer/HBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="GridContainer/btnback" to="." method="_on_btnback_pressed"]

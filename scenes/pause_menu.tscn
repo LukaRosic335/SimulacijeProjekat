@@ -40,6 +40,11 @@ theme_override_font_sizes/font_size = 32
 text = "Resume
 "
 
+[node name="btnSettings" type="Button" parent="GridContainer" unique_id=5880258]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Settings"
+
 [node name="btnQuitToMenu" type="Button" parent="GridContainer" unique_id=277297498]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
@@ -58,5 +63,6 @@ offset_right = 9.0
 offset_bottom = 9.0
 
 [connection signal="pressed" from="GridContainer/btnResume" to="." method="_on_btn_resume_pressed"]
+[connection signal="pressed" from="GridContainer/btnSettings" to="." method="_on_btn_settings_pressed"]
 [connection signal="pressed" from="GridContainer/btnQuitToMenu" to="." method="_on_btn_quit_to_menu_pressed"]
 [connection signal="pressed" from="GridContainer/btnQuitGame" to="." method="_on_btn_quit_game_pressed"]
