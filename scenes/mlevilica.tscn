@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://blucc83unejvn" path="res://scripts/mlevilica.gd" id="1_x88b8"]
 [ext_resource type="PackedScene" uid="uid://bhg71uyau3oj2" path="res://assets/models/MlevilicaPastetarnik7259tm.glb" id="2_0swy1"]
+[ext_resource type="AudioStream" uid="uid://b32qksl84e16d" path="res://assets/sfx/mlevilica/pasteta-niz-cev.mp3" id="3_cxy7l"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4om83"]
 size = Vector3(1.4995728, 1.3688965, 0.5859375)
@@ -55,6 +56,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9544206, 0.54449856, 1.7109
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=768319942]
 volume_db = -30.0
+
+[node name="pasteta-niz-cev" type="AudioStreamPlayer3D" parent="." unique_id=1233104087]
+stream = ExtResource("3_cxy7l")
+volume_db = -5.0
 
 [connection signal="area_entered" from="KoralovoUredjajUlaz" to="." method="_on_koralovo_uredjaj_ulaz_area_entered"]
 

@@ -9,6 +9,7 @@ var MLEVILICA = preload("uid://bak6j2b40dvy")
 
 @onready var pasteta_scene = preload("res://scenes/pasteta.tscn")
 @onready var pasteta_drop_point: Node3D = $PastetaDropPoint
+@onready var pasteta_niz_cev: AudioStreamPlayer3D = $"pasteta-niz-cev"
 
 
 var samleveni_galebovi: int = 0
@@ -33,10 +34,10 @@ func samelji_galeba() -> void:
 
 func izbaci_pastetu() -> void:
 	# pusti animaciju
-	# pusti zvuk
+	pasteta_niz_cev.play()
 	# sacekaj kraj animacije
 	# izbaci pastetu
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1).timeout
 	var pasteta: Pasteta = pasteta_scene.instantiate()
 	add_child(pasteta)
 	pasteta.global_position = pasteta_drop_point.global_position
