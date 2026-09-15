@@ -11,7 +11,7 @@ script = ExtResource("1_lp6i0")
 
 [node name="dnevnik" parent="." unique_id=916244071 instance=ExtResource("1_edrr2")]
 
-[node name="StaticBody3D" parent="dnevnik/Dnevnik" parent_id_path=PackedInt32Array(916244071, 529923215) index="0" unique_id=293440115]
+[node name="StaticBody3D" parent="dnevnik/Dnevnik" parent_id_path=PackedInt32Array(916244071, 916167760) index="0" unique_id=1308635279]
 collision_layer = 32
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1783395749 groups=["Interactable"]]

@@ -5,7 +5,9 @@ extends Node3D
 @export var lines = [
 	"gladan sam",
 	"galeb pasteta",
-	"njam njam"
+	"njam njam",
+	"4 galeba",
+	"njam njam",
 ]
 @export var next_line: int = 0
 

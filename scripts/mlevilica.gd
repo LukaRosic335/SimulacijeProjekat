@@ -4,6 +4,9 @@ extends Node3D
 @onready var animation_player: AnimationPlayer = $MlevilicaPastetarnik7259tm/AnimationPlayer
 @onready var koralovo_uredjaj_ulaz: Area3D = $KoralovoUredjajUlaz
 
+@onready var audio_stream_player_3d: AudioStreamPlayer3D = $AudioStreamPlayer3D
+var MLEVILICA = preload("uid://bak6j2b40dvy")
+
 @onready var pasteta_scene = preload("res://scenes/pasteta.tscn")
 @onready var pasteta_drop_point: Node3D = $PastetaDropPoint
 
@@ -33,6 +36,7 @@ func izbaci_pastetu() -> void:
 	# pusti zvuk
 	# sacekaj kraj animacije
 	# izbaci pastetu
+	await get_tree().create_timer(2).timeout
 	var pasteta: Pasteta = pasteta_scene.instantiate()
 	add_child(pasteta)
 	pasteta.global_position = pasteta_drop_point.global_position
@@ -44,3 +48,6 @@ func izbaci_pastetu() -> void:
 
 func _ready() -> void:
 	animation_player.play("Mlevenje")
+	MLEVILICA.loop = true
+	audio_stream_player_3d.stream = MLEVILICA
+	audio_stream_player_3d.play()

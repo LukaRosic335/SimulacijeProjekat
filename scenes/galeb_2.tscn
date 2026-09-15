@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://i2m4w27753hj" path="res://assets/models/galeb2.blend" id="1_glt5j"]
 [ext_resource type="Script" uid="uid://cnm384qlol0w5" path="res://scripts/galeb_2.gd" id="1_x4ql3"]
 [ext_resource type="Script" uid="uid://1y8x68t1nvbl" path="res://scripts/galeb_sfx_player.gd" id="3_o3wgy"]
+[ext_resource type="AudioStream" uid="uid://cif3d6dxtjyh3" path="res://assets/sfx/galeb/gnjec.mp3" id="4_eooo4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k6fdo"]
 radius = 0.0201037
@@ -55,7 +56,23 @@ metadata/_custom_type_script = "uid://cnm384qlol0w5"
 
 [node name="galeb2" parent="." unique_id=244859851 instance=ExtResource("1_glt5j")]
 
-[node name="PhysicalBoneSimulator3D" type="PhysicalBoneSimulator3D" parent="galeb2/Armature/Skeleton3D" parent_id_path=PackedInt32Array(244859851, 1797100402) index="1" unique_id=1572621370]
+[node name="Skeleton3D" parent="galeb2/Armature" parent_id_path=PackedInt32Array(244859851, 852913866) index="0" unique_id=1957104073]
+bones/1/rotation = Quaternion(0.499908, -0.5000921, 0.500092, -0.499908)
+bones/2/rotation = Quaternion(0.111300305, -0.65327024, -0.3622119, 0.6554791)
+bones/3/rotation = Quaternion(0.07462601, 0.32810187, 0.023564776, 0.9413952)
+bones/4/rotation = Quaternion(-0.17949829, -0.2711828, 0.2246434, 0.91857266)
+bones/5/rotation = Quaternion(-0.36221197, -0.6554793, 0.111300364, 0.65326995)
+bones/6/rotation = Quaternion(0.07462613, -0.32810172, -0.02356476, 0.94139516)
+bones/7/rotation = Quaternion(-0.17949833, 0.2711828, -0.22464335, 0.9185726)
+bones/8/rotation = Quaternion(-0.6352914, 0.77225935, -0.0034876957, 0.0028692412)
+bones/9/rotation = Quaternion(0.0034875993, 0.0028690933, 0.6352914, 0.77225935)
+bones/10/rotation = Quaternion(0.53550255, 0.4617761, -0.53550225, 0.4617763)
+bones/11/rotation = Quaternion(0.03794215, 1.8624974e-07, -1.6688235e-08, 0.9992799)
+bones/12/rotation = Quaternion(0.038508818, -2.8220366e-08, -6.758391e-08, 0.9992583)
+bones/13/rotation = Quaternion(0.52796626, 7.051431e-08, 1.13713085e-07, 0.84926546)
+bones/14/rotation = Quaternion(0.380239, -0.59616965, -0.380239, -0.5961697)
+
+[node name="PhysicalBoneSimulator3D" type="PhysicalBoneSimulator3D" parent="galeb2/Armature/Skeleton3D" index="1" unique_id=1572621370]
 
 [node name="Physical Bone Root" type="PhysicalBone3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D" unique_id=791412294]
 transform = Transform3D(-0.99999994, 0.00036801017, 6.3150075e-19, 6.315022e-19, 3.8131903e-21, 1, 0.00036801017, 0.99999994, -4.0455893e-21, 0, 0, 0)
@@ -70,12 +87,12 @@ transform = Transform3D(1, -7.632783e-17, 0, 0, -4.371139e-08, 1, 1.0446885e-26,
 shape = SubResource("CapsuleShape3D_k6fdo")
 
 [node name="Physical Bone Telo" type="PhysicalBone3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D" unique_id=1395958841]
-transform = Transform3D(7.0530194e-07, 6.1889796e-07, -1, -1.192091e-07, -1, -6.18898e-07, -1, 1.1920953e-07, -7.053019e-07, 3.6915666e-12, 0.2010375, 2.980233e-08)
+transform = Transform3D(9.4372064e-07, 7.977119e-07, -1, -1.7881355e-07, -1, -7.9771206e-07, -1, 1.788143e-07, -9.4372047e-07, 3.6915666e-12, 0.2010375, 2.980233e-08)
 collision_layer = 4
 collision_mask = 2
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06581385e-14, -1.2705527e-21, 8.8938395e-21)
-body_offset = Transform3D(1.0000002, -1.1916576e-07, 8.046626e-07, 1.1920903e-07, 1.0000002, 7.381075e-07, -8.34465e-07, -7.381074e-07, 1.0000004, -1.0658141e-14, 0, 0)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06581385e-14, -1.270552e-21, 8.89384e-21)
+body_offset = Transform3D(1.0000002, -1.7883622e-07, 8.642963e-07, 1.1920903e-07, 1.0000002, 6.7850283e-07, -8.34465e-07, -7.381074e-07, 1.0000002, -1.0658141e-14, 0, 0)
 mass = 0.2
 bone_name = "Telo"
 joint_constraints/bias = 0.3
@@ -87,12 +104,12 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_xweqa")
 
 [node name="Physical Bone Krilo_R" type="PhysicalBone3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D" unique_id=1897682490]
-transform = Transform3D(-0.49238932, -0.68976647, -0.53082496, 0.31116754, 0.43006754, -0.8474767, 0.81285155, -0.5824639, 0.002872269, 0.09040943, 0.27289805, 0.017427703)
+transform = Transform3D(-0.0059534907, 0.4899517, -0.8717293, -0.21239951, 0.85123384, 0.47988284, 0.97716486, 0.18801185, 0.09899768, 0.09035272, 0.2729475, 0.017406061)
 collision_layer = 4
 collision_mask = 2
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7498554e-05, 4.7058875e-05, -7.0896356e-05)
-body_offset = Transform3D(0.023090929, -0.9298788, 0.3671415, -0.1741854, -0.36536446, -0.91442275, 0.9844424, -0.042835772, -0.17040774, 7.0884824e-05, -5.5909157e-05, 3.669411e-05)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7471854e-05, 4.7093537e-05, -7.10131e-05)
+body_offset = Transform3D(0.023090944, -0.9298786, 0.36714184, -0.17418548, -0.3653648, -0.9144224, 0.9844424, -0.04283583, -0.170408, 7.095933e-05, -5.5998564e-05, 3.6649406e-05)
 mass = 0.2
 friction = 0.35
 bone_name = "Krilo.R"
@@ -105,12 +122,12 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_6hgdd")
 
 [node name="Physical Bone Krilo_001_R" type="PhysicalBone3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D" unique_id=1429173426]
-transform = Transform3D(0.042798664, 0.99797845, 0.046983052, -0.4567358, -0.022280484, 0.8893234, 0.88857234, -0.05952069, 0.45485887, 0.013608858, 0.26997563, 0.021268373)
+transform = Transform3D(-0.117441125, 0.0019094085, 0.993078, -0.54596096, -0.83544177, -0.06295887, 0.8295386, -0.5495758, 0.09915767, 0.08818124, 0.32917124, 0.07568815)
 collision_layer = 4
 collision_mask = 2
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014494199, 0.14146422, 0.050345592)
-body_offset = Transform3D(0.8358033, 0.23401855, -0.49665788, 0.1880067, 0.7279257, 0.6593772, 0.51583636, -0.64448434, 0.56440544, 0.004013583, -0.13344719, 0.070232786)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014494218, 0.14146423, 0.050345577)
+body_offset = Transform3D(0.83580315, 0.23401853, -0.4966576, 0.18800668, 0.7279258, 0.65937704, 0.51583624, -0.6444842, 0.56440556, 0.004013568, -0.13344719, 0.07023279)
 mass = 0.2
 friction = 0.35
 bone_name = "Krilo.001.R"
@@ -123,12 +140,12 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_wruwv")
 
 [node name="Physical Bone Krilo_L" type="PhysicalBone3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D" unique_id=306876682]
-transform = Transform3D(-0.49242133, 0.68973225, 0.53083956, -0.31120992, 0.43005508, -0.8474675, -0.81281585, -0.5825136, 0.002883203, -0.090447664, 0.2729641, 0.017366609)
+transform = Transform3D(-0.005907245, -0.48995957, 0.87172514, 0.21235749, 0.8512424, 0.47988608, -0.9771742, 0.18795218, 0.09901808, -0.0904382, 0.272953, 0.017358726)
 collision_layer = 4
 collision_mask = 2
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.873621e-07, 9.433279e-06, 5.5570863e-06)
-body_offset = Transform3D(0.02302736, 0.929883, -0.36713466, 0.17418963, -0.3653467, -0.91442883, -0.9844427, -0.042894125, -0.17038886, -6.7204237e-06, 8.612871e-06, 8.7171793e-07)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.748386e-07, 9.422711e-06, 5.531105e-06)
+body_offset = Transform3D(0.023027346, 0.9298829, -0.36713454, 0.17418963, -0.36534655, -0.9144288, -0.9844428, -0.042894334, -0.1703889, -6.7204237e-06, 8.583069e-06, 8.791685e-07)
 mass = 0.2
 friction = 0.35
 bone_name = "Krilo.L"
@@ -141,12 +158,12 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_m6hb3")
 
 [node name="Physical Bone Krilo_001_L" type="PhysicalBone3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D" unique_id=1550255750]
-transform = Transform3D(0.042795867, -0.9979788, -0.04697855, 0.45673656, -0.022277704, 0.88932306, -0.8885721, -0.05951617, 0.4548599, -0.013607517, 0.26997998, 0.021272736)
+transform = Transform3D(-0.11744243, -0.0019129848, -0.9930779, 0.54595894, -0.83544326, -0.06295633, -0.8295398, -0.5495734, 0.09916089, -0.0881868, 0.32917124, 0.07569121)
 collision_layer = 4
 collision_mask = 2
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014496401, 0.1414661, 0.05033921)
-body_offset = Transform3D(0.8358033, -0.23401852, 0.496658, -0.18800445, 0.727929, 0.6593741, -0.51583713, -0.64448076, 0.56440854, -0.0040118247, -0.13344426, 0.07023808)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014496468, 0.14146611, 0.050339174)
+body_offset = Transform3D(0.83580303, -0.23401865, 0.4966581, -0.18800429, 0.72792906, 0.659374, -0.51583725, -0.64448035, 0.5644086, -0.0040118396, -0.13344425, 0.07023809)
 mass = 0.2
 friction = 0.35
 bone_name = "Krilo.001.L"
@@ -159,12 +176,12 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_sudc7")
 
 [node name="Physical Bone Telo_001" type="PhysicalBone3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D" unique_id=1525278269]
-transform = Transform3D(1, -6.180805e-07, -2.9169246e-07, 3.7940947e-07, 0.14704868, 0.98912925, -5.684685e-07, -0.98912925, 0.14704868, 3.6791325e-12, 0.20103751, 2.9802319e-08)
+transform = Transform3D(1, -9.137067e-07, -5.232379e-07, 3.545688e-07, -0.17569123, 0.9844454, -9.914224e-07, -0.9844454, -0.17569123, 3.676468e-12, 0.20103751, 2.9802319e-08)
 collision_layer = 4
 collision_mask = 2
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4210848e-14, -7.573633e-21, -5.6095665e-21)
-body_offset = Transform3D(1.0000005, -3.5687862e-07, -5.036252e-07, 6.30927e-07, 0.9479081, 0.31854495, 2.0440791e-07, -0.31854504, 0.947908, -1.4210855e-14, 0, 0)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4210846e-14, -7.5736326e-21, -5.609566e-21)
+body_offset = Transform3D(1.0000006, -5.037908e-07, -5.578606e-07, 6.3092705e-07, 0.94790804, 0.3185452, 2.0440793e-07, -0.31854507, 0.94790804, -1.4210855e-14, 0, 0)
 mass = 0.2
 bone_name = "Telo.001"
 joint_constraints/bias = 0.3
@@ -176,12 +193,12 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_k2h45")
 
 [node name="Physical Bone Telo_002" type="PhysicalBone3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D" unique_id=373963885]
-transform = Transform3D(1, -6.5178125e-07, 2.4501137e-08, 1.2056395e-07, 0.22163227, 0.9751303, -6.410019e-07, -0.9751303, 0.22163227, 1.6722925e-09, 0.21307826, -0.08099671)
+transform = Transform3D(1, -9.381957e-07, -2.5562574e-07, -7.753542e-08, -0.338977, 0.94079465, -9.693007e-07, -0.9407947, -0.338977, -8.4125045e-09, 0.18753329, -0.07421072)
 collision_layer = 4
 collision_mask = 2
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8543357e-08, -0.0022751484, 0.026333638)
-body_offset = Transform3D(1.0000005, -2.5723585e-07, -5.248107e-07, 5.747563e-07, 0.8422692, 0.53905773, 1.1048644e-07, -0.5390578, 0.84226906, 3.177829e-08, -0.012279063, -0.023406446)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7901915e-08, -0.0022751652, 0.026333645)
+body_offset = Transform3D(1.0000006, -3.6832827e-07, -5.587677e-07, 5.747564e-07, 0.8422691, 0.53905815, 1.10486454e-07, -0.53905797, 0.8422691, 3.1778306e-08, -0.012279063, -0.02340646)
 mass = 0.2
 bone_name = "Telo.002"
 joint_constraints/bias = 0.3
@@ -193,12 +210,12 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_ml162")
 
 [node name="Physical Bone Vrat" type="PhysicalBone3D" parent="galeb2/Armature/Skeleton3D/PhysicalBoneSimulator3D" unique_id=397368100]
-transform = Transform3D(1, -6.319302e-07, 1.8054412e-07, 1.4613647e-08, 0.29602307, 0.9551808, -6.5705285e-07, -0.9551808, 0.29602307, -2.0086574e-08, 0.22882634, -0.15028244)
+transform = Transform3D(1, -8.3463385e-07, -1.5385966e-07, -4.1800135e-07, -0.6421363, 0.76659054, -7.386213e-07, -0.7665905, -0.6421363, -3.5076752e-08, 0.17319217, -0.114726566)
 collision_layer = 4
 collision_mask = 2
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4402098e-08, -0.008468097, 0.06548062)
-body_offset = Transform3D(1.0000005, -2.6806848e-07, -3.2799625e-07, 3.9332286e-07, 0.54214656, 0.84028447, -2.525993e-07, -0.8402845, 0.54214644, 3.3609474e-08, -0.0504314, -0.042615697)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5320868e-08, -0.008468108, 0.06548062)
+body_offset = Transform3D(1.0000005, -3.1905319e-07, -3.2055817e-07, 3.9332286e-07, 0.5421463, 0.8402846, -2.525993e-07, -0.8402844, 0.5421463, 3.3609446e-08, -0.0504314, -0.042615697)
 mass = 0.2
 bone_name = "Vrat"
 joint_constraints/bias = 0.3
@@ -239,6 +256,10 @@ volume_db = -5.0
 bus = &"sfx"
 script = ExtResource("3_o3wgy")
 metadata/_custom_type_script = "uid://1y8x68t1nvbl"
+
+[node name="gnjec" type="AudioStreamPlayer3D" parent="." unique_id=1611478625]
+stream = ExtResource("4_eooo4")
+volume_db = 10.0
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="body_entered" from="ScareArea" to="." method="_on_scare_area_body_entered"]

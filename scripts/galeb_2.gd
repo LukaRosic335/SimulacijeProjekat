@@ -188,6 +188,8 @@ func frickin_explode(mlevilica: Mlevilica) -> void:
 	mlevilica.add_child(eksplozija)
 	eksplozija.global_position = mlevilica.koralovo_uredjaj_ulaz.global_position
 	eksplozija.explode()
+	$gnjec.play()
+	await $gnjec.finished
 	queue_free()
 
 
